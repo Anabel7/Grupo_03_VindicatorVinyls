@@ -1,6 +1,9 @@
 /*Fuentes*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
+/*Fuente lekely sans*/
+@import url("https://use.typekit.net/ngr4ktc.css");
+
 * {
   box-sizing: border-box;
   margin: 0;

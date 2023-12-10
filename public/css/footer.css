@@ -1,12 +1,34 @@
 footer {
   height: 4vh;
-  background-color: #393939;
-  position: fixed;
+  background-color: black;
+  /* position: fixed; */
   bottom: 0px;
   width: 100%;
 }
 
 footer h4 {
-  color: antiquewhite;
+  color: #23ce6b;
+  text-align: left;
+  font-family: likely-sans, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.7em;
+}
+
+.footer-contenido {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.iconos-redes li {
+  display: inline-block;
+}
+
+.iconos-redes {
+  color: #23ce6b;
   text-align: right;
+}
+
+.iconos-redes a {
+  color: #23ce6b;
 }
