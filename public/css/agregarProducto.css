@@ -1,0 +1,98 @@
+body {
+  background-color: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.admin-section {
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: column; */
+}
+
+.titulo-agregar {
+  padding-top: 2%;
+  font-size: 0.5em;
+  margin-left: 2%;
+}
+
+.contenedor-form {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 5%;
+  border: #dd3a01 2px solid;
+  background-color: #fff2dd;
+  padding: 2%;
+  box-shadow: 0px 0px 15px #dd3a01;
+}
+
+.imagenesCargadas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagenesCargadas img {
+  width: 45%;
+}
+
+.formCargarDatos,
+.imagenesCargadas {
+  width: 50%;
+}
+
+.formCargarDatos input,
+.formCargarDatos textarea {
+  width: 100%;
+}
+
+.contenedor-boton-atras {
+  width: 40vw;
+  margin-top: 5%;
+  margin-left: 3%;
+}
+
+.regresar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dd3a01;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  color: #fff2dd;
+  border: none;
+  cursor: pointer;
+}
+.regresar i {
+  margin-right: 10px;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .titulo-agregar {
+    padding-top: 2%;
+    font-size: 0.8em;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .contenedor-boton-atras {
+    height: 5vh;
+    width: 20%;
+  }
+  .formCargarDatos input,
+  .formCargarDatos textarea {
+    width: 90%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up)
+    @media only screen and (min-width: 992px) {...}
+    
+     Extra large devices (large laptops and desktops, 1200px and up) */
+/*  @media only screen and (min-width: 1200px) {...}*/

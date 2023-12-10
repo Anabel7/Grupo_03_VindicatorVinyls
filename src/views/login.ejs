@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+
+    <main>
+        <h1 class="encabezado">Iniciar sesión</h1>
+        <section class="log-o-registro">
+            <div class="login-opcion">
+                <h2>Iniciar sesión</h2>
+            </div>
+            <div class="registro-opcion">
+                <h2><a href="registro">Registrarme</a></h2>
+            </div>
+        </section>
+
+        <div class="conteiner">
+            <section class="mail">
+                <form action="resultado.html" method="POST">
+                    <label for="mail">Email:</label> <br>
+                    <input type="email" name="mail" id="mail">
+                </form>
+            </section>
+            <section class="contra">
+                <form action="contra.html" method="POST">
+                    <label for="contra">Contraseña:</label> <br>
+                    <input type="password" name="contra" id="contra">
+                </form>
+            </section>
+
+            <section>
+                <input type="checkbox" name="memory" value="y">
+                <label>Recordarme</label>
+            </section>
+            <a href="https://www.mayoclinic.org/es/healthy-lifestyle/healthy-aging/in-depth/memory-loss/art-20046518">¿Olvidaste
+                tu contraseña?</a>
+            <button type="submit">Iniciar sesión</button>
+            <p>¿No tienes cuenta?<a href="registro.html">Registrate</a></p>
+        </div>
+    </main>
+
+    <%- include('./partials/footer') %>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+body {
+  background-color: #fff2dd;
+}
+
+.titulo-registrarme {
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+}
+
+.log-o-registro {
+  display: flex;
+  justify-content: center;
+  /* border: #939393  solid 1px; */
+}
+
+.login-opcion {
+  width: 50%;
+  text-align: center;
+}
+
+.registro-opcion {
+  width: 50%;
+  text-align: center;
+  border-bottom: 2px solid #dd3a01;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-datos {
+  border: white solid 1px;
+  width: 70%;
+  padding: 2%;
+}
+
+.celda {
+  display: flex;
+  flex-wrap: wrap;
+  width: 45%;
+  justify-content: center;
+}
+
+.datos-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2vh;
+}
+
+.boton-crear {
+  margin: auto;
+  display: block;
+  background-color: #dd3a01;
+  color: #fff2dd;
+}
+
+.boton-crear:hover {
+  box-shadow: 0px 0px 10px rgb(147, 147, 147);
+}
+
+a:visited {
+  color: inherit;
+}

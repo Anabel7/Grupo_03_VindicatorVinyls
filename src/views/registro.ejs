@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NewMen</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- <link rel="stylesheet" href="/css/styles.css" /> -->
+    <link rel="stylesheet" href="/css/registro.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/header') %>
+
+    <main>
+      <div class="titulo-registrarme">
+        <h1>Registro</h1>
+      </div>
+
+      <section class="log-o-registro">
+        <div class="login-opcion">
+          <h2><a href="login">Iniciar sesión</a></h2>
+        </div>
+        <div class="registro-opcion">
+          <h2>Registrarme</h2>
+        </div>
+      </section>
+
+      <div class="contenedor">
+        <section class="section-datos">
+          <label for="datos-personales">Datos Personales</label>
+          <div class="datos-box">
+            <input
+              type="text"
+              name="nombre"
+              id="nombre"
+              placeholder="Nombre"
+              class="celda"
+              required
+            />
+            <input
+              type="text"
+              name="apellido"
+              id="apellido"
+              placeholder="Apellido"
+              class="celda"
+              required
+            />
+            <div class="celda">
+              <select name="documento" id="documento">
+                <option value="dni">DNI</option>
+              </select>
+              <input
+                type="number"
+                name="dni"
+                id="dni"
+                placeholder="Número de Documento"
+                class="celda"
+                required
+              />
+            </div>
+            <input
+              type="tel"
+              name="telefono"
+              id="telefono"
+              placeholder="Teléfono (cod. área + número)"
+              class="celda"
+              required
+            />
+          </div>
+
+          <label for="cuenta">Sobre tu cuenta</label>
+          <div class="datos-box">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="E-mail"
+              class="celda"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Confirmar E-mail"
+              class="celda"
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Contraseña (mín. 6 caracteres con letra y número)"
+              class="celda"
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Confirmar Contraseña"
+              class="celda"
+              required
+            />
+          </div>
+          <button type="submit" class="boton-crear">
+            <a href="/" rel="noopener noreferrer">Crear mi cuenta</a>
+          </button>
+        </section>
+      </div>
+    </main>
+
+    <%- include('./partials/footer') %>
+  </body>
+</html>

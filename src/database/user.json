@@ -1,0 +1,101 @@
+[
+    {
+        "id": 0,
+        "nombre": "Nelson",
+        "apellido": "Bravo",
+        "email": "nelsopon13@gmail.com",
+        "dni": 41480843,
+        "tel": 3844448555,
+        "password": "esotilin",
+        "avatar": "nelson.jpg",
+        "rol": "admin"
+    },
+    {
+        "id": 1,
+        "nombre": "Anabel",
+        "apellido": "Alvarado",
+        "email": "gamergirl54@gmail.com",
+        "dni": 38456216,
+        "tel": 3518524754,
+        "password": "potaxio",
+        "avatar": "anabel.jpg",
+        "rol": "admin"
+    },
+    {
+        "id": 2,
+        "nombre": "Maximiliano",
+        "apellido": "Juarez",
+        "email": "iafan23@gmail.com",
+        "dni": 121235412,
+        "tel": 3855774729,
+        "password": "generatedPassword789",
+        "avatar": "beepbeep.jpg",
+        "rol": "admin"
+    },
+    {
+        "id": 3,
+        "nombre": "Santiago",
+        "apellido": "Giglio",
+        "email": "holachicoscomoestan@gmail.com",
+        "dni": 78921354,
+        "tel": 3854084400,
+        "password": "elpepe",
+        "avatar": "santiago.png",
+        "rol": "admin"
+    },
+    {
+        "id": 4,
+        "nombre": "Ricardo",
+        "apellido": "Fort",
+        "email": "felfort@gmail.com",
+        "dni": 34556872,
+        "tel": 385526647,
+        "password": "asereje",
+        "avatar": "forta.jpg",
+        "rol": "cliente"
+    },
+    {
+        "id": 5,
+        "nombre": "Arturo",
+        "apellido": "Coronado",
+        "email": "doomentio@gmail.com",
+        "dni": 41546237,
+        "tel": 3855922877,
+        "password": "ne0xtian",
+        "avatar": "doom.jpg",
+        "rol": "cliente"
+    },
+    {
+        "id": 6,
+        "nombre": "José",
+        "apellido": "Diaz",
+        "email": "jomsemsimtom@gmail.com",
+        "dni": 43753456,
+        "tel": 3854120641,
+        "password": "eternalbronze",
+        "avatar": "bestie.jpg",
+        "rol": "cliente"
+    },
+    {
+        "id": 7,
+        "nombre": "Cristian",
+        "apellido": "Weston",
+        "email": "sonichu@gmail.com",
+        "dni": 20489345,
+        "tel": 3846666477,
+        "password": "lovequest",
+        "avatar": "chris.jpg",
+        "rol": "cliente"
+    },
+    {
+        "id": 8,
+        "nombre": "Papa",
+        "apellido": "Noel",
+        "email": "jojojo@gmail.com",
+        "dni": 10110423,
+        "tel": 3855874649,
+        "password": "jojojojojo",
+        "avatar": "santa.jpg",
+        "rol": "cliente"
+    }
+]

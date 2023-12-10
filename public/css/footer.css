@@ -1,0 +1,12 @@
+footer {
+  height: 4vh;
+  background-color: #393939;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+footer h4 {
+  color: antiquewhite;
+  text-align: right;
+}

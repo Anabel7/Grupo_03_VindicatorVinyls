@@ -1,0 +1,19 @@
+{
+  "name": "grupo_03_newmen",
+  "version": "1.0.0",
+  "description": "Nuestra página web es una tienda especializada en indumentaria masculina de alta calidad. En la parte superior, encontrarás nuestro elegante logo, una barra de navegación intuitiva y accesos rápidos como el login, el carrito de compras y una pestaña donde podrás guardar tus productos favoritos. También hemos incluido un práctico buscador para que encuentres fácilmente lo que necesitas.\r En el cuerpo de la página, te espera una amplia selección de productos masculinos, desde camisas y remeras hasta pantalones y ropa interior. Trabajamos con reconocidas marcas para garantizar estilo y calidad en cada prenda que ofrecemos.\r En el pie de página, encontrarás enlaces a nuestras redes sociales, donde podrás seguirnos, conocer las últimas novedades y contactarnos para cualquier consulta o sugerencia.",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

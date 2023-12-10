@@ -1,0 +1,66 @@
+[
+  {
+    "id": 0,
+    "nombre": "Remera blanca Simpson",
+    "descripcion": "Remera blanca Simpson de manga corta.",
+    "precio": 11500,
+    "descuento": "10",
+    "imagen": "camisa-rayas.jpg"
+  },
+  {
+    "id": 1,
+    "nombre": "Jeans celeste ajustado",
+    "descripcion": "Jeans ajustados de color azul.",
+    "precio": 15000,
+    "descuento": "15",
+    "imagen": "jean-celeste.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Remera Capitan America",
+    "descripcion": "Remera estampada Capitan america manga corta",
+    "precio": 12000,
+    "descuento": "20",
+    "imagen": "remeracapamer.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Remera gris",
+    "descripcion": "Remera Gris cómoda y elegante.",
+    "precio": 10000,
+    "descuento": "5",
+    "imagen": "remeraGris.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Remera Lisa Gris",
+    "descripcion": "Remera lisa Gris cómoda y elegante.",
+    "precio": 10000,
+    "descuento": "5",
+    "imagen": "remeraGris2.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Remera Negra Star-War",
+    "descripcion": "Remera Negra Star-War estampada mangas cortas",
+    "precio": 16000,
+    "descuento": "5",
+    "imagen": "remeraNegra2.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Remera DeadPool",
+    "descripcion": "Remera DeadPool elegante.",
+    "precio": 16000,
+    "descuento": "5",
+    "imagen": "remeraRoja.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Remera Queen",
+    "descripcion": "Remera de la banda Queen. Cómoda y elegante.",
+    "precio": 16000,
+    "descuento": "5",
+    "imagen": "remeraVerde.jpg"
+  }
+]

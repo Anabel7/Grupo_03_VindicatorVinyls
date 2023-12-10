@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agregar Producto</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/agregarProducto.css" />
+  </head>
+  <body>
+    <%- include('./partials/header') %>
+    <div class="titulo-agregar">
+      <h1>Agregar Producto</h1>
+    </div>
+    <section class="admin-section">
+      
+      <div class="contenedor-form">
+        <div class="imagenesCargadas">
+          <img src="/img/remeraBlanca.jpg" alt="imagenesCargadas" />
+        </div>
+
+        <form class="formCargarDatos" action="" method="post">
+          <label for="titulo">Título:</label><br />
+          <input type="text" id="titulo" name="titulo" /><br />
+          <label for="precio">Precio:</label><br />
+          <input type="number" id="precio" name="precio" /><br />
+          <label for="talles">Talles disponibles:</label><br />
+          <input type="number" id="talles" name="talles" /><br />
+          <label for="descripcion">Descripción:</label><br />
+          <textarea id="descripcion" name="descripcion"></textarea><br />
+          <label for="stock">Stock disponible:</label><br />
+          <input type="number" id="stock" name="stock" /><br />
+          <input type="file" name="imgProductos" id="imgProductos" />
+          <input type="submit" value="Agregar producto" />
+        </form>
+      </div>
+    </section>
+    <div class="contenedor-boton-atras">
+      <a href="/user/admin">
+        <button class="regresar">
+          <i class="fa-solid fa-arrow-left"></i>Volver atrás
+        </button>
+      </a>
+    </div>
+    <%- include('./partials/footer') %>
+  </body>
+</html>

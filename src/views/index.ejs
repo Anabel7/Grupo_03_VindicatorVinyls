@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vindicator Vinyls</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/header') %>
+    <main>
+      <div class="banner-index">
+        <img src="img/tiendita vinilos.png" alt="tienda de vinilos" />
+      </div>
+
+      <section class="categorias">
+        <div class="texto-categorias">
+          <h2>Categorías</h2>
+          <a href="#"><h4>Ver más</h4></a>
+        </div>
+        <div class="links-categorias">
+          <div class="box-categoria">
+            <img src="/img/todo-vinilos.png" alt="Categoría Todo">
+            <a href="#"><h3>Todo</h3></a>
+          </div>
+          <div class="box-categoria">
+            <img src="/img/rock.png" alt="Categoría Todo">
+            <a href="#"><h3>Rock</h3></a>
+          </div>
+          <div class="box-categoria">
+            <img src="/img/pop.png" alt="Categoría Todo">
+            <a href="#"><h3>Pop</h3></a>
+          </div>
+          <div class="box-categoria">
+            <img src="/img/jazz.png" alt="Categoría Todo">
+            <a href="#"><h3>Jazz</h3></a>
+          </div>
+          <div class="box-categoria">
+            <img src="/img/hip-hop.png" alt="Categoría Todo">
+            <a href="#"><h3>Hip Hop</h3></a>
+          </div>
+        </div>
+      </section>
+
+      <div class="barra-busqueda">
+        <input
+          class="buscador1"
+          type="search"
+          name="busqueda"
+          id="busqueda"
+          placeholder="Buscar..."
+        />
+      </div>
+
+      <i class="fa-solid fa-heart"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+      <section>
+        <article class="producto
+        ">
+          <a href="/detalles"
+            ><img class="foto-producto" src="img/products/remeraBlanca.jpg"
+          /></a>
+          <a class="descripcion" href="/detalles">Remera Blanca Simpsons</a>
+          <i class="fa-solid fa-cart-plus"></i>
+          <a class="precio">$11.500,00</a>
+        </article>
+        <article class="producto">
+          <a href="/detalles"
+            ><img class="foto-producto" src="img/products/jean-celeste.jpg"
+          /></a>
+          <a class="descripcion" href="/detalles">Jean Celeste</a>
+          <i class="fa-solid fa-cart-plus"></i>
+          <a class="precio">$15.000,00</a>
+        </article>
+        <article class="producto">
+          <a href="/detalles"
+            ><img class="foto-producto" src="img/products/remeracapamer.jpg"
+          /></a>
+          <a class="descripcion" href="/detalles">Remera Capitán América</a>
+          <i class="fa-solid fa-cart-plus"></i>
+          <a class="precio">$12.000,00</a>
+        </article>
+        <article class="producto">
+          <a href="/detalles"
+            ><img class="foto-producto" src="img/products/remeraGris.jpg"
+          /></a>
+          <a class="descripcion" href="/detalles">Remera Gris</a>
+          <i class="fa-solid fa-cart-plus"></i>
+          <a class="precio">$10.000,00</a>
+        </article>
+        <article class="producto">
+          <a href="/detalles"
+            ><img class="foto-producto" src="img/products/remeraGris2.jpg"
+          /></a>
+          <a class="descripcion" href="/detalles">Remera Lisa Gris</a>
+          <i class="fa-solid fa-cart-plus"></i>
+          <a class="precio">$10.000,00</a>
+        </article>
+        <article class="producto">
+          <a href="/detalles"
+            ><img class="foto-producto" src="img/products/remeraNegra2.jpg"
+          /></a>
+          <a class="descripcion" href="/detalles">Remera Negra Star-War</a>
+          <i class="fa-solid fa-cart-plus"></i>
+          <a class="precio">$16.000,00</a>
+        </article>
+        <article class="producto">
+          <a href="/detalles"
+            ><img class="foto-producto" src="img/products/remeraRoja.jpg"
+          /></a>
+          <a class="descripcion" href="/detallesproducto.html"
+            >Remera DeadPool</a
+          >
+          <i class="fa-solid fa-cart-plus"></i>
+          <a class="precio">$16.000,00</a>
+        </article>
+        <article class="producto">
+          <a href="/detalles"
+            ><img class="foto-producto" src="img/products/remeraVerde.jpg"
+          /></a>
+          <a class="descripcion" href="/detallesproducto">Remera Queen</a>
+          <i class="fa-solid fa-cart-plus"></i>
+          <a class="precio">$16.000,00</a>
+        </article>
+      </section>
+    </main>
+
+    <%- include('./partials/footer') %>
+  </body>
+</html>
