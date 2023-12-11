@@ -1,19 +1,20 @@
-# Grupo_03_NewMen
+# Grupo_03_VindicatorVinyls
 
 
 #Descripción de Productos ofrecidos.
+Nuestra tienda se encarga de la venta de discos de pasta. Este es un medio de almacenamiento analógico de señales sonoras, caracterizado por utilizar como material de soporte un plástico denominado policloruro de vinilo. Por esta razón también se los conoce como discos de vinilo. Presentan una mayor calidad de sonido que los medios digitales, y por eso varias bandas musicales siempre lanzan algunos de sus álbumes en este formato.
+
 #Temática del sitio y público objetivo.
 
-Nuestra página web es una tienda especializada en indumentaria masculina de alta calidad. En la parte superior, encontrarás nuestro elegante logo, una barra de navegación intuitiva y accesos rápidos como el login, el carrito de compras y una pestaña donde podrás guardar tus productos favoritos. También hemos incluido un práctico buscador para que encuentres fácilmente lo que necesitas.
-En el cuerpo de la página, te espera una amplia selección de productos masculinos, desde camisas y remeras hasta pantalones y ropa interior. Trabajamos con reconocidas marcas para garantizar estilo y calidad en cada prenda que ofrecemos.
-En el pie de página, encontrarás enlaces a nuestras redes sociales, donde podrás seguirnos, conocer las últimas novedades y contactarnos para cualquier consulta o sugerencia.
+El sitio web estará orientado a tener una estética algo indie, más no por eso menos elegante o profesional. Nuestro público objetivo serán aquellos melómanos que posean un tocadiscos, o simples coleccionistas que amen demasiado a una banda como para comprar sus vinilos aun sin tener un tocadiscos. Teniendo en cuenta que la colección de discos de vinilo es un lujo, se podría decir que los precios reflejarán eso.
 
 Listado de al menos 5 referentes-
-https://www.dexter.com.ar
-https://www.raidersjeans.com
-https://www.camaronbrujo.com
-https://www.macowens.com.ar
-https://www.soyturemera.com.ar
+https://cyberwax.com.ar
+https://www.lacuevamusical.com.ar
+https://www.plazamusica.ar
+https://www.disqueriamusicshop.com
+https://www.exilesrecords.com
+
 
 Tablero de trabajo:
 https://trello.com/b/Bbqf0Me9/dh-grupo-3
