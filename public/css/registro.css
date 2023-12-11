@@ -1,5 +1,6 @@
 body {
-  background-color: #fff2dd;
+  background: linear-gradient(#23ce6b, black);
+  color: white;
 }
 
 .titulo-registrarme {
@@ -22,7 +23,7 @@ body {
 .registro-opcion {
   width: 50%;
   text-align: center;
-  border-bottom: 2px solid #dd3a01;
+  border-bottom: 2px solid #f7b32b;
 }
 
 .contenedor {
@@ -33,8 +34,11 @@ body {
 
 .section-datos {
   border: white solid 1px;
+  border-radius: 15px;
   width: 70%;
   padding: 2%;
+  margin: 10%;
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
 }
 
 .celda {
@@ -54,8 +58,10 @@ body {
 .boton-crear {
   margin: auto;
   display: block;
-  background-color: #dd3a01;
+  background-color: #124d92;
   color: #fff2dd;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .boton-crear:hover {
