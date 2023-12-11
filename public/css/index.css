@@ -89,18 +89,29 @@ figure img {
   display: flex;
   justify-content: space-around;
 }
-.box-producto figcaption {
-  height: 7vh;
-}
 
 .box-producto {
   display: inline-block;
   width: 45%;
   vertical-align: top;
   background-color: #c63185;
-  border: 1px solid #23ce6b;
-  border-radius: 10px;
+  border: 4px solid #23ce6b;
+  border-radius: 25px;
   padding: 3px;
+}
+
+.box-producto a {
+  text-decoration: none;
+}
+
+.box-producto figcaption {
+  height: 7vh;
+}
+
+.box-producto figcaption span {
+  color: #f7b32b;
+  font-weight: bold;
+  text-shadow: 1px 1px 7px black;
 }
 
 

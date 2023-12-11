@@ -1,0 +1,62 @@
+body {
+  background: black;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  /* height: 100vh; */
+}
+
+/* main {
+    flex-grow: 1;
+  } */
+
+.banner-index img {
+  width: 100%;
+}
+.titulo-carrito {
+    margin: 15px;
+}
+
+.section-carrito {
+}
+
+.productos-carrito {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+li {
+    list-style-type: none;
+  }
+
+.box-producto {
+    margin: auto;
+    width: 90%;
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    padding: 5%;
+    border-bottom: 2px solid #23ce6b;
+    margin-bottom: 2%;
+}
+
+figure img {
+  width: 15%;
+  margin-right: 5vw;
+}
+
+.calculo-carrito {
+    padding: 5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.calculo-carrito span  {
+    display: block;
+    border-bottom: 2px solid #23ce6b;
+}
+
+.calculo-carrito {
+    background-color: #124d92;
+}
