@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vindicator Vinyls</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vindicator Vinyls</title>
 
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/index.css" />
-  </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <body>
-    <%- include('./partials/header') %>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/index.css" />
+</head>
+
+<body>
+  <%- include('./partials/header') %>
     <main>
       <div class="banner-index">
         <img src="img/tiendita vinilos.png" alt="tienda de vinilos" />
@@ -27,7 +24,9 @@
       <section class="section-categorias">
         <div class="texto-categorias">
           <h2>Categorías</h2>
-          <a href="#"><h4>Ver más</h4></a>
+          <a href="#">
+            <h4>Ver más</h4>
+          </a>
         </div>
         <ul class="links-categorias">
           <li>
@@ -64,13 +63,7 @@
       </section>
 
       <div class="barra-busqueda">
-        <input
-          class="barra-busqueda"
-          type="search"
-          name="busqueda"
-          id="busqueda"
-          placeholder="Buscar..."
-        />
+        <input class="barra-busqueda" type="search" name="busqueda" id="busqueda" placeholder="Buscar..." />
       </div>
 
       <!-- <i class="fa-solid fa-heart"></i>
@@ -78,7 +71,9 @@
       <section class="section-destacados">
         <div class="texto-categorias">
           <h2>Destacados</h2>
-          <a href="#"><h4>Ver más</h4></a>
+          <a href="#">
+            <h4>Ver más</h4>
+          </a>
         </div>
         <div class="filtros-destacados">
           <a href="#" class="boton-filtro"><span>Todos</span></a>
@@ -89,11 +84,8 @@
       </section>
       <section class="productos-container">
         <figure class="box-producto">
-          <a href="/detalles">
-            <img
-              src="/img/products/cross by justice.jpg"
-              alt="cross by justice"
-            />
+          <a href="/prod/detalles">
+            <img src="/img/products/cross by justice.jpg" alt="cross by justice" />
             <figcaption>
               <h3>Justice - Cross</h3>
               <span>$35000</span>
@@ -102,11 +94,8 @@
         </figure>
 
         <figure class="box-producto">
-          <a href="/detalles">
-            <img
-              src="/img/products/radiohead-pablohoney.jpg"
-              alt="radiohead-pablohoney"
-            />
+          <a href="/prod/detalles">
+            <img src="/img/products/radiohead-pablohoney.jpg" alt="radiohead-pablohoney" />
             <figcaption>
               <h3>Radiohead - Pablo Honey</h3>
               <span>$38700</span>
@@ -114,8 +103,31 @@
           </a>
         </figure>
       </section>
+
+      <section class="productos-container" id="novasec">
+      <figure class="box-producto">
+        <a href="/prod/detalles">
+          <img src="/img/products/bleach.jpg" alt="Portada álbum Bleach" />
+          <figcaption>
+            <h3>Nirvana - Bleach</h3>
+            <span>$35100</span>
+          </figcaption>
+        </a>
+      </figure>
+
+      <figure class="box-producto" id="Vermas">
+        <a href="/destacados">
+          <img src="/img/vinilos.jpg" alt="Discos de vinilo" />
+          <figcaption>
+            <h3>Ver más</h3>
+          </figcaption>
+        </a>
+      </figure>
+      </section>
+
     </main>
 
     <%- include('./partials/footer') %>
-  </body>
+</body>
+
 </html>

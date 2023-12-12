@@ -13,11 +13,11 @@
       referrerpolicy="no-referrer"
     />
     <!-- <link rel="stylesheet" href="/css/styles.css" /> -->
-    <link rel="stylesheet" href="/css/registro.css" />
+    <link rel="stylesheet" href="../css/registro.css" />
   </head>
 
   <body>
-    <%- include('./partials/header') %>
+    <%- include('../partials/header') %>
 
     <main>
       <div class="titulo-registrarme">
@@ -41,15 +41,15 @@
               type="text"
               name="nombre"
               id="nombre"
-              placeholder="Nombre"
+              placeholder="Nombre completo"
               class="celda"
               required
             />
             <input
               type="text"
-              name="apellido"
-              id="apellido"
-              placeholder="Apellido"
+              name="username"
+              id="username"
+              placeholder="Usuario"
               class="celda"
               required
             />
@@ -118,6 +118,6 @@
       </div>
     </main>
 
-    <%- include('./partials/footer') %>
+    <%- include('../partials/footer') %>
   </body>
 </html>

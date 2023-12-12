@@ -1,12 +1,12 @@
 const controller = {
-    admin: (req, res) => {
-        res.render('admin');
+    registro: (req, res) => {
+        res.render('user/registro');
     },
-    agregarProducto: (req, res) => {
-        res.render('agregarProducto');
+    login: (req, res) => {
+        res.render('user/login');
     },
-    editarProducto: (req,res) => {
-        res.render('editarProducto');
+    carrito: (req, res) => {
+        res.render('user/carrito');
     }
 }
 module.exports = controller;
