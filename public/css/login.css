@@ -78,7 +78,9 @@ a:visited {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  #novasec{
-    display: block;
+  footer{
+    flex-direction: column-reverse;
+    justify-content: flex-start;
   }
+
 }

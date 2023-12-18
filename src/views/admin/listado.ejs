@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Editar Producto</title>
+    <title>Admin - Listado de productos</title>
 
     <link
       rel="stylesheet"
@@ -14,8 +14,19 @@
     />
 
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
   </head>
   <body>
-    <%- include('../partials/header') %> <%- include('../partials/footer') %>
+    <%- include('../partials/header') %>
+    <section class="admin-section">
+      <div class="contenedor-boton-agregar">
+        <a href='/agregarProducto'>
+          <button class="agregar-producto">
+            <i class="fa-solid fa-square-plus"></i>Agregar producto
+          </button>
+        </a>
+      </div>
+    </section>
+    <%- include('../partials/footer') %>
   </body>
 </html>
