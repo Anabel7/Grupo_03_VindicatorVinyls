@@ -12,6 +12,6 @@ app.use('/', mainRoutes);
 app.use('/user', userRoutes);
 app.use('/prod', prodRoutes);
 
-app.listen(4545, () => {
-  console.log('Servidor 4545 funcionando')
+app.listen(3001, () => {
+  console.log('Servidor 3001 funcionando')
 });
