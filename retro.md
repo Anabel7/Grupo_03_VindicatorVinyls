@@ -1,4 +1,15 @@
-#Retrospectiva del sprint
+#Retrospectiva del 4to sprint
+Este sprint nos resultó complicado ya que comenzamos dejando afuera a un compañero porque no respondía en semanas (como el repositorio estaba en su cuenta tuvimos que crear otro), y a mitad de camino abandonaron dos compañeros más, por lo que solo quedamos dos personas en el grupo: Nelson y Anabel.
+Debido a que la idea del proyecto que estábamos realizando no era nuestra, decidimos crear algo que nos guste a los dos y comenzar de cero. Esto nos representó un gran desafío de condensar en poco días, tareas que se realizaron en varias semanas de trabajo. Tratamos de reciclar el código, pero armamos un nuevo repositorio para no modificar el que habíamos trabajado en el antiguo grupo de cuatro personas.
+Para Nelson el mayor impedimento fue ponernos al día con actividades que quedaron pendientes de la conformación del grupo anterior, como creación de wireframes y edición de las vistas en vscode. Para mí también, fue complicado tratar de hacer todo en tan poco tiempo, por lo que calculo que en el próximo sprint terminaremos de acomodarnos con esto. 
+ Tomando la **Dinámica de estrella de mar** , creemos que debemos:
+1- Aumentar: el tiempo de dedicación a las tareas, ya que afrontamos el desafío de rehacer el proyecto y todavía nos queda mucho por realizar.
+2-Conservar: la comunicación efectiva, porque nos permite ser realistas y mantener la confianza en el equipo.
+3-Empezar a hacer: poner fechas límites para las tarjetas en trello, para evitar saturarnos de tareas cerca de la entrega.
+4-Dejar de hacer: atrasarnos en el material teórico porque nos dificulta entender y realizar las activdades del sprint.
+5-Reducir: los tiempos que nos estancamos en una misma tarea, para esto hay que estar al día con el material como menciona el punto anterior.
+
+#Retrospectiva del 2do sprint
 
 Como primera conclusión, destacamos que hicimos mal en no comenzar con mobile first y no cumplir con los wireframes, quedando pendiente mejorar la relación del html con el css.
 
