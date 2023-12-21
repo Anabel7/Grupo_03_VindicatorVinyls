@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin - Listado de productos</title>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
     <link
       rel="stylesheet"
@@ -19,8 +20,31 @@
   <body>
     <%- include('../partials/header') %>
     <section class="admin-section">
+      <article class="col-12" >
+        <table class=" table ">
+            <thead class="text-white bg-primary">
+              <tr>  
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Ver</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Borrar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% discos.forEach(disco => { %>
+              <tr>
+                <td><%= discos.id%> </td>
+                <td><%= discos.nombre%> </td>
+                <td><a href="/admin/<%= discos.id%> "> <ion-icon name="eye-outline"></ion-icon></a></td>
+                <td><a href="/admin/editProducto/<%= discos.id%> "> <ion-icon name="pencil-outline"></ion-icon></a></td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table> 
+        </article>
       <div class="contenedor-boton-agregar">
-        <a href='/agregarProducto'>
+        <a href='/admin/agregarProducto'>
           <button class="agregar-producto">
             <i class="fa-solid fa-square-plus"></i>Agregar producto
           </button>

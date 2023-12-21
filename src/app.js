@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path=require('path')
+const methodOverride = require('method-override');
 
 //Requerir las rutas
 const mainRoutes = require('./routes/mainRoutes');
@@ -16,7 +17,11 @@ app.use('/user', userRoutes);
 app.use('/producto', prodRoutes);
 app.use('/admin', adminRoutes);
 
+//URL encode  - Para que nos pueda llegar la información desde el formulario al req.body
+app.use(express.urlencoded({ extended: false }));
 
+//Middleware de aplicación el cual se encargue de controlar la posibilidad de usar otros métodos diferentes al GET y al POST, en nuestros formularios como PUT - DELETE
+app.use(methodOverride('_method'));
 
 
 app.listen(3001, () => {
