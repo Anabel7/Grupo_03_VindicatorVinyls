@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/agregarProducto.css" />
+
   </head>
   <body>
     <%- include('../partials/header') %>
@@ -28,24 +29,36 @@
           <img src="../img/template.jpg" alt="imagenesCargadas" />
         </div>
 
-        <form class="formCargarDatos" action="" method="post">
-          <label for="titulo">Título del disco:</label><br />
-          <input type="text" id="titulo" name="titulo" /><br />
-          <label for="titulo">Nombre de la banda:</label><br />
-          <input type="text" id="banda" name="banda" /><br />
-          <label for="titulo">Género/s (separar con comas):</label><br />
-          <input type="text" id="generos" name="generos" /><br />
+        <form class="formCargarDatos" action="/admin/agregarProducto" method="POST" enctype="multipart/form-data">
+          <label for="disco">Título del disco:</label><br />
+          <input type="text" id="disco" name="disco" required /><br />
+         
+          <label for="artista">Artista:</label><br />
+          <input type="text" id="artista" name="artista" required /><br />
+         
+          <label for="genero">Género/s (separar con comas):</label><br />
+          <input type="text" id="genero" name="genero" required /><br />
+          
           <label for="precio">Precio:</label><br />
-          <input type="number" id="precio" name="precio" /><br />
-          <label for="talles">Fecha de publicación original:</label><br />
-          <input type="number" id="fecha" name="fecha" /><br />
+          <input type="number" id="precio" name="precio" required /><br />
+         
+          <label for="anio">Fecha de publicación original:</label><br />
+          <input type="date" id="anio" name="anio" required /><br />
+         
           <label for="descripcion">Descripción:</label><br />
           <textarea id="descripcion" name="descripcion"></textarea><br />
+          
           <label for="stock">Stock disponible:</label><br />
-          <input type="number" id="stock" name="stock" /><br />
-          <input type="file" name="imgProductos" id="imgProductos" />
-          <form method="post" 
-          <input type="submit" value="Agregar producto" />
+          <input type="number" id="stock" name="stock" required /><br />
+         
+          <label for="tracklist">Lista de Canciones</label><br />
+          <textarea name="tracklist" id="tracklist" required></textarea><br />
+
+          <label for="discográfica">Discográfica</label><br />
+          <input type="text" id="discográfica" name="discográfica" required><br />
+          <input type="file" name="imagen" id="imagen" required /><br />
+        
+          <input type="submit" value="Agregar producto" /><br />
         </form>
       </div>
     </section>

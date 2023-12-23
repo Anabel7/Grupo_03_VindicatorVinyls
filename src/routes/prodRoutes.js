@@ -4,7 +4,7 @@ const prodController = require('../controllers/prodController');
 const multer = require('multer');
 
 router.get('/detalles/:id', prodController.detalles);
-router.get('/productos', prodController.listadoProductos);
+router.get('/listado', prodController.listadoProductos);
 
 
 module.exports = router;

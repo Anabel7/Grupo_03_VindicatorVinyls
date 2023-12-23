@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalles de productos - Admin</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+
+  <body>
+    <%- include('../partials/header') %>
+    <main>
+      <div class="banner-index">
+        <img src="/img/tiendita vinilos.png" alt="tienda de vinilos" />
+      </div>
+      <section class="productos-container" id="novasec">
+        <% discos.forEach(disco => { %>
+        <figure class="box-producto">
+          <a href="/producto/detalles/<%= disco.id %>">
+            <img
+              src="/img/products/<%= disco.imagen %>"
+              alt="Portada álbum <%= disco.disco %>"
+            />
+            <figcaption>
+              <h3><%= disco.artista %> - <%= disco.disco %></h3>
+              <span>$<%= disco.precio %></span>
+            </figcaption>
+          </a>
+        </figure>
+        <% }); %>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

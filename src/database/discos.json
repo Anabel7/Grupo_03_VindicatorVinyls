@@ -5,12 +5,30 @@
     "artista": "Justice",
     "descripcion": "†, también conocido como Cross, es el primer álbum de estudio del dúo francés de música electro house Justice, publicado en 11 de junio de 2007. Recibió un Platino en el Reino Unido el 13 de marzo de 2009 por la venta de 60,000 copias.",
     "precio": 50000,
-    "genero": ["Electro house"],
+    "genero": [
+      "Electro house"
+    ],
     "stock": 3,
     "anio": 2007,
     "imagen": "cross by justice.jpg",
-    "tracklist": ["Genesis","Let There Be Light","D.A.N.C.E.", "Newjack", "Phantom","Phantom Pt. II","Tthhee Ppaarrttyy","DVNO","Stress","Waters of Nazareth","One Minute to Midnight"],
-    "discográfica": ["Because Music","Ed Banger Records","Vice Records"]
+    "tracklist": [
+      "Genesis",
+      "Let There Be Light",
+      "D.A.N.C.E.",
+      "Newjack",
+      "Phantom",
+      "Phantom Pt. II",
+      "Tthhee Ppaarrttyy",
+      "DVNO",
+      "Stress",
+      "Waters of Nazareth",
+      "One Minute to Midnight"
+    ],
+    "discográfica": [
+      "Because Music",
+      "Ed Banger Records",
+      "Vice Records"
+    ]
   },
   {
     "id": 1,
@@ -18,12 +36,31 @@
     "artista": "Radiohead",
     "descripcion": "Pablo Honey es el nombre del álbum debut de la banda británica de rock alternativo Radiohead. Fue lanzado al mercado por EMI, Parlophone y Capitol Records el 22 de febrero de 1993. Su gran éxito fue el sencillo Creep.",
     "precio": 45000,
-    "genero": ["Rock alternativo"],
+    "genero": [
+      "Rock alternativo"
+    ],
     "stock": 7,
     "anio": 1993,
     "imagen": "radiohead-pablohoney.jpg",
-    "tracklist": ["You","Creep","How Do You?","Stop Whispering","Thinking About You","Anyone Can Play Guitar","Ripcord","Vegetable","Prove Yourself","I Can't","Lurgee","Blow Out"],
-    "discográfica": ["EMI","Parlophone","Capitol Records"]
+    "tracklist": [
+      "You",
+      "Creep",
+      "How Do You?",
+      "Stop Whispering",
+      "Thinking About You",
+      "Anyone Can Play Guitar",
+      "Ripcord",
+      "Vegetable",
+      "Prove Yourself",
+      "I Can't",
+      "Lurgee",
+      "Blow Out"
+    ],
+    "discográfica": [
+      "EMI",
+      "Parlophone",
+      "Capitol Records"
+    ]
   },
   {
     "id": 2,
@@ -31,11 +68,25 @@
     "artista": "Nirvana",
     "descripcion": "Bleach es el álbum debut de la banda de grunge estadounidense Nirvana, lanzado en junio de 1989 a través del sello discográfico independiente Sub Pop. La mayor parte de las sesiones de grabación tuvieron lugar en el estudio Reciprocal Recording de Seattle, Washington entre diciembre de 1988 y enero de 1989. El compositor de Nirvana, Kurt Cobain, se sentía presionado al crear canciones para Bleach que estuvieran dentro del género del grunge, impulsado por esta discográfica y la escena musical de Seattle. El álbum está considerado como bastante negativo y desolador; Cobain afirmó que la mayoría de las letras se escribieron la noche anterior a grabar, cuando se sentía «molesto» y no las tuvo en alta estima.",
     "precio": 35000,
-    "genero": ["Grunge"],
+    "genero": [
+      "Grunge"
+    ],
     "stock": 2,
     "anio": 1989,
     "imagen": "bleach.jpg",
-    "tracklist": ["Blew","Floyd the Barber","About a Girl","School","Love Buzz","Paper Cuts","Negative Creep","Scoff","Swap Meet","Mr. Moustache","Sifting"],
+    "tracklist": [
+      "Blew",
+      "Floyd the Barber",
+      "About a Girl",
+      "School",
+      "Love Buzz",
+      "Paper Cuts",
+      "Negative Creep",
+      "Scoff",
+      "Swap Meet",
+      "Mr. Moustache",
+      "Sifting"
+    ],
     "discográfica": "Sub Pop"
   },
   {
@@ -44,12 +95,31 @@
     "artista": "Oasis",
     "descripcion": "(What's the Story) Morning Glory? es el segundo y más exitoso álbum de estudio de la banda británica de rock alternativo y britpop Oasis, lanzado en octubre de 1995. Este álbum significó un rotundo éxito a nivel mundial, lo que los llevó a posicionarse como uno de los artistas más exitosos de su época. El álbum logró escalar al N.º 1 de las listas musicales de varios países, como la prestigiosa lista Billboard hot 200 de Estados Unidos. Hasta el día de hoy, el álbum ha vendido aproximadamente 30 millones de copias en todo el mundo. Actualmente es el quinto álbum más vendido en la historia musical de Reino Unido.",
     "precio": 58000,
-    "genero": ["Britpop","Rock alternativo"],
+    "genero": [
+      "Britpop",
+      "Rock alternativo"
+    ],
     "stock": 42,
     "anio": 1995,
     "imagen": "morning.jpg",
-    "tracklist": ["Hello","Roll With It","Wonderwall","Don't Look Back In Anger","Hey Now!","Untitled (The Swamp Song - Excerpt 1)","Bonehead's Bank Holiday","Some Might Say","Cast No Shadow","She's Electric","Morning Glory","Untitled (The Swamp Song - Excerpt 2)","Champagne Supernova"],
-    "discográfica": ["Creation Records"]
+    "tracklist": [
+      "Hello",
+      "Roll With It",
+      "Wonderwall",
+      "Don't Look Back In Anger",
+      "Hey Now!",
+      "Untitled (The Swamp Song - Excerpt 1)",
+      "Bonehead's Bank Holiday",
+      "Some Might Say",
+      "Cast No Shadow",
+      "She's Electric",
+      "Morning Glory",
+      "Untitled (The Swamp Song - Excerpt 2)",
+      "Champagne Supernova"
+    ],
+    "discográfica": [
+      "Creation Records"
+    ]
   },
   {
     "id": 4,
@@ -57,12 +127,30 @@
     "artista": "Death Grips",
     "descripcion": "The Money Store es el álbum debut del grupo de hip hop experimental Death Grips, lanzado el 24 de abril de 2012 a través de Epic Records. Fue anunciado junto con el segundo álbum del grupo, No Love Deep Web, publicado en octubre del mismo año.",
     "precio": 44000,
-    "genero": ["Hip hop experimental"],
+    "genero": [
+      "Hip hop experimental"
+    ],
     "stock": 1,
     "anio": 2012,
     "imagen": "moneystore.jpg",
-    "tracklist": ["Get Got","The Fever (Aye Aye)","Lost Boys","Blackjack","Hustle Bones","I've Seen Footage","Double Helix","System Blower","The Cage","Punk Weight","Fuck That","Bitch Please","Hacker"],
-    "discográfica": ["Epic Records"]
+    "tracklist": [
+      "Get Got",
+      "The Fever (Aye Aye)",
+      "Lost Boys",
+      "Blackjack",
+      "Hustle Bones",
+      "I've Seen Footage",
+      "Double Helix",
+      "System Blower",
+      "The Cage",
+      "Punk Weight",
+      "Fuck That",
+      "Bitch Please",
+      "Hacker"
+    ],
+    "discográfica": [
+      "Epic Records"
+    ]
   },
   {
     "id": 5,
@@ -70,12 +158,30 @@
     "artista": "Chichí Peralta",
     "descripcion": "Pa' Otro La'o es el álbum debut de estudio del músico dominicano Chichí Peralta y Son Familia, lanzado el 1 de julio de 1997 por Caiman Music.",
     "precio": 11500,
-    "genero": ["Merengue","Bachata","Pop latino"],
+    "genero": [
+      "Merengue",
+      "Bachata",
+      "Pop latino"
+    ],
     "stock": 4,
     "anio": 1997,
     "imagen": "chichi.jpg",
-    "tracklist": ["Amor narcótico","La ciguapa","Pa' otro la'o","Un día más","Sol de verano","Ella tiene","Procura","Techno son","Me enamore","Limón con sal"],
-    "discográfica": ["Caiman music","Sony music"]
+    "tracklist": [
+      "Amor narcótico",
+      "La ciguapa",
+      "Pa' otro la'o",
+      "Un día más",
+      "Sol de verano",
+      "Ella tiene",
+      "Procura",
+      "Techno son",
+      "Me enamore",
+      "Limón con sal"
+    ],
+    "discográfica": [
+      "Caiman music",
+      "Sony music"
+    ]
   },
   {
     "id": 6,
@@ -83,12 +189,32 @@
     "artista": "Julieta Venegas",
     "descripcion": "Limón y sal es el nombre del cuarto álbum de estudio de la cantante mexico-estadounidense Julieta Venegas. El álbum tuvo alta popularidad en el mercado discográfico de Suiza e Italia posicionándolo en sus tops. A la fecha Limón y sal lleva vendidas más de 8 000 000 de copias a nivel mundial siendo disco de platino en Argentina, España, Uruguay, México, Estados Unidos, y disco de oro en Chile, Italia, Colombia, Venezuela y Centroamérica.",
     "precio": 70000,
-    "genero": ["Pop latino","Pop rock"],
+    "genero": [
+      "Pop latino",
+      "Pop rock"
+    ],
     "stock": 14,
     "anio": 2006,
     "imagen": "limon.jpg",
-    "tracklist": ["Canciones de amor","Me voy","Primer día","Limón y sal","Dulce compañía","De qué me sirve","A donde sea","Mírame bien","No seré","Última vez","Eres para mí","No hace falta","Te voy a mostrar","Sin documentos"],
-    "discográfica": ["Sony BGM Music Entertainment"]
+    "tracklist": [
+      "Canciones de amor",
+      "Me voy",
+      "Primer día",
+      "Limón y sal",
+      "Dulce compañía",
+      "De qué me sirve",
+      "A donde sea",
+      "Mírame bien",
+      "No seré",
+      "Última vez",
+      "Eres para mí",
+      "No hace falta",
+      "Te voy a mostrar",
+      "Sin documentos"
+    ],
+    "discográfica": [
+      "Sony BGM Music Entertainment"
+    ]
   },
   {
     "id": 7,
@@ -96,12 +222,33 @@
     "artista": "My bloody valentine",
     "descripcion": "Loveless (stylized in lowercase) is the second studio album by the Irish-English rock band My Bloody Valentine. It was released on 4 November 1991[a] in the United Kingdom by Creation Records and in the United States by Sire Records. The album was recorded between February 1989 and September 1991, with vocalist and guitarist Kevin Shields leading sessions and experimenting with guitar vibrato, nonstandard tunings, digital samplers, and meticulous production methods. The band recorded at nineteen different studios and hired several engineers during the album's prolonged recording, with its final production cost rumoured to have reached £250,000 (equivalent to £480,000 in 2021).",
     "precio": 75000,
-    "genero": ["Shoegaze","Dream pop", "Noise pop", "Noise rock"],
+    "genero": [
+      "Shoegaze",
+      "Dream pop",
+      "Noise pop",
+      "Noise rock"
+    ],
     "stock": 15,
     "anio": 1991,
     "imagen": "mbv.jpg",
-    "tracklist": ["Only Shallow","Loomer","Touched","To Here Knows When","When You Sleep","I Only Said","Come in Alone","Sometimes","Blown a Wish","What You Want","Soon"],
-    "discográfica": ["Creation Records","Sire Records", "Domino"]
+    "tracklist": [
+      "Only Shallow",
+      "Loomer",
+      "Touched",
+      "To Here Knows When",
+      "When You Sleep",
+      "I Only Said",
+      "Come in Alone",
+      "Sometimes",
+      "Blown a Wish",
+      "What You Want",
+      "Soon"
+    ],
+    "discográfica": [
+      "Creation Records",
+      "Sire Records",
+      "Domino"
+    ]
   },
   {
     "id": 8,
@@ -109,12 +256,29 @@
     "artista": "Masayoshi Takanaka",
     "descripcion": "Brasilian Skies is the fourth studio album by Japanese jazz fusion guitarist Masayoshi Takanaka, released via Kitty Records on July 21, 1978. The album's initial release was distributed in two physical formats: a vinyl record and on a cassette tape. Stylistically, the record unites jazz-fusion with bossa nova, samba, and progressive rock and soul.",
     "precio": 11500,
-    "genero": ["Jazz","Bossa nova","Samba","Rock progresivo","Soul"],
+    "genero": [
+      "Jazz",
+      "Bossa nova",
+      "Samba",
+      "Rock progresivo",
+      "Soul"
+    ],
     "stock": 10,
     "anio": 1978,
-    "imagen":"huehuehue.jpg",
-    "tracklist": ["Beleza Pula","Brasilian Skies","Nights","I Remember Clifford","Star Wars Samba","Disco 'B'","Funky Holo Holo Bird","Izu Amanatsu Nattōuri"],
-    "discográfica": ["Kitty Records"]
+    "imagen": "huehuehue.jpg",
+    "tracklist": [
+      "Beleza Pula",
+      "Brasilian Skies",
+      "Nights",
+      "I Remember Clifford",
+      "Star Wars Samba",
+      "Disco 'B'",
+      "Funky Holo Holo Bird",
+      "Izu Amanatsu Nattōuri"
+    ],
+    "discográfica": [
+      "Kitty Records"
+    ]
   },
   {
     "id": 9,
@@ -122,11 +286,34 @@
     "artista": "MF DOOM",
     "descripcion": "Born Like This is the sixth and final solo studio album by British-American rapper/producer MF DOOM. It was released under the pseudonym 'DOOM' on March 24, 2009 through Lex Records. It debuted at number 52 on the Billboard 200 chart, having sold 10,895 copies as of March 29, 2009.[1] In addition to tracks produced by MF Doom, the album includes production by frequent collaborator Madlib, as well as J Dilla. The album title is borrowed from Charles Bukowski's poem 'Dinosauria, We', which employs it as a cadence. The track 'Cellz' opens with a sampled recording of Bukowski reading the poem.",
     "precio": 62000,
-    "genero": ["Hip hop","Jazz rap"],
+    "genero": [
+      "Hip hop",
+      "Jazz rap"
+    ],
     "stock": 3,
     "anio": 2008,
     "imagen": "bornlikethis.jpg",
-    "tracklist": ["Supervillain Intro","Gazzillion Ear","Ballskin","Yessir!","Absolutely","Rap Ambush","Lightworks"	,"Batty Boyz","Angelz","Cellz","Still Dope","Microwave Mayo","More Rhymin'","That's That","Supervillainz","Bumpy's Message","Thank Yah"],
-    "discográfica": ["Lex Records"]
+    "tracklist": [
+      "Supervillain Intro",
+      "Gazzillion Ear",
+      "Ballskin",
+      "Yessir!",
+      "Absolutely",
+      "Rap Ambush",
+      "Lightworks",
+      "Batty Boyz",
+      "Angelz",
+      "Cellz",
+      "Still Dope",
+      "Microwave Mayo",
+      "More Rhymin'",
+      "That's That",
+      "Supervillainz",
+      "Bumpy's Message",
+      "Thank Yah"
+    ],
+    "discográfica": [
+      "Lex Records"
+    ]
   }
 ]

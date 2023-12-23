@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json')))
+let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json'), 'utf-8'));
 
 const controller = {
     registro: (req, res) => {

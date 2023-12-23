@@ -11,29 +11,26 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Detalles de producto</title>
+    <title><%= disco.artista %> - <%= disco.disco %></title>
   </head>
   <body>
     <%- include('../partials/header') %>
     <section class="productos-container">
       <figure class="box-producto">
         <img
-          src="/img/products/radiohead-pablohoney.jpg"
-          alt="radiohead-pablohoney"
+          src="/img/products/<%= disco.imagen %>"
+          alt="Portada de <%= disco.disco %>"
         />
         <figcaption>
-          <h3>Radiohead - Pablo Honey</h3>
-          <span>$38700</span>
+          <h3><%= disco.artista %> - <%= disco.disco %></h3>
+          <span><%= disco.precio %></span>
           <span
             ><a href="/user/carrito"
               ><i class="fa-solid fa-cart-arrow-down"></i> Agregar al carrito</a
             ></span
           >
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
-            tempore! Voluptate, id dolor incidunt sunt ab exercitationem
-            consequatur impedit ex dolorum unde velit numquam tempore odit animi
-            soluta! Cumque, illo.
+            <%= disco.descripcion %>
           </p>
         </figcaption>
       </figure>

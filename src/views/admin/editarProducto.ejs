@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Editar Producto</title>
+    <title>Agregar Producto</title>
 
     <link
       rel="stylesheet"
@@ -14,6 +14,8 @@
     />
 
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/agregarProducto.css" />
+
   </head>
   <body>
     <%- include('../partials/header') %>
@@ -27,33 +29,46 @@
           <img src="../img/template.jpg" alt="imagenesCargadas" />
         </div>
 
-        <form class="formCargarDatos" action="" method="post">
-          <label for="titulo">Título del disco:</label><br />
-          <input type="text" id="titulo" name="titulo" /><br />
-          <label for="titulo">Nombre de la banda:</label><br />
-          <input type="text" id="banda" name="banda" /><br />
-          <label for="titulo">Género/s (separar con comas):</label><br />
-          <input type="text" id="generos" name="generos" /><br />
+        <form class="formCargarDatos" action="admin/editarProducto/<%=editarProducto.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+          <label for="disco">Título del disco:</label><br />
+          <input type="text" id="disco" name="disco" required value="<%=disco.disco%>"/><br />
+         
+          <label for="artista">Artista:</label><br />
+          <input type="text" id="artista" name="artista" required value="<%=disco.artista%>"/><br />
+         
+          <label for="genero">Género/s (separar con comas):</label><br />
+          <input type="text" id="genero" name="genero" required value="<%=disco.genero%>"/><br />
+          
           <label for="precio">Precio:</label><br />
-          <input type="number" id="precio" name="precio" /><br />
-          <label for="talles">Fecha de publicación original:</label><br />
-          <input type="number" id="fecha" name="fecha" /><br />
+          <input type="number" id="precio" name="precio" required value="<%=disco.precio%>"/><br />
+         
+          <label for="anio">Fecha de publicación original:</label><br />
+          <input type="date" id="anio" name="anio" required value="<%=disco.anio%>"/><br />
+         
           <label for="descripcion">Descripción:</label><br />
-          <textarea id="descripcion" name="descripcion"></textarea><br />
+          <textarea id="descripcion" name="descripcion"><%=disco.descripcion%></textarea><br />
+          
           <label for="stock">Stock disponible:</label><br />
-          <input type="number" id="stock" name="stock" /><br />
-          <input type="file" name="imgProductos" id="imgProductos" />
-          <input type="submit" value="Agregar producto" />
+          <input type="number" id="stock" name="stock" required value="<%=disco.stock%>"/><br />
+         
+          <label for="tracklist">Lista de Canciones</label><br />
+          <textarea name="tracklist" id="tracklist" required><%=disco.tracklist%></textarea><br />
+
+          <label for="discográfica">Discográfica</label><br />
+          <input type="text" id="discográfica" name="discográfica" required value="<%=disco.discográfica%>"><br />
+          <input type="file" name="imagen" id="imagen" required/><br />
+        
+          <input type="submit" value="Actualizar producto" /><br />
         </form>
       </div>
     </section>
     <div class="contenedor-boton-atras">
-      <a href="/user/admin">
+      <a href="/admin">
         <button class="regresar">
           <i class="fa-solid fa-arrow-left"></i>Volver atrás
         </button>
       </a>
     </div>
-    <%- include('../partials/header') %> <%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
   </body>
 </html>

@@ -25,7 +25,8 @@
             <thead class="text-white bg-primary">
               <tr>  
                 <th scope="col">Id</th>
-                <th scope="col">Nombre</th>
+                <th scope="col">Disco</th>
+                <th scope="col">Artista</th>
                 <th scope="col">Ver</th>
                 <th scope="col">Editar</th>
                 <th scope="col">Borrar</th>
@@ -34,10 +35,14 @@
             <tbody>
               <% discos.forEach(disco => { %>
               <tr>
-                <td><%= discos.id%> </td>
-                <td><%= discos.nombre%> </td>
-                <td><a href="/admin/<%= discos.id%> "> <ion-icon name="eye-outline"></ion-icon></a></td>
-                <td><a href="/admin/editProducto/<%= discos.id%> "> <ion-icon name="pencil-outline"></ion-icon></a></td>
+                <td><%= disco.id%> </td>
+                <td><%= disco.disco%> </td>
+                <td><%= disco.artista%> </td>
+                <td><a href="/admin/revisar/<%= disco.id%> "> <ion-icon name="eye-outline"></ion-icon></a></td>
+                <td><a href="/admin/editarProducto/<%= disco.id%> "> <ion-icon name="pencil-outline"></ion-icon></a></td>
+                <td> <form action="/admin/delete/<%= disco.id%>?_method=DELETE" method="post">
+                  <button type="submit"><ion-icon name="trash-outline"></ion-icon></button>
+                </form></td>
               </tr>
               <% }); %>
             </tbody>
