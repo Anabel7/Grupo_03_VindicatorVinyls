@@ -14,7 +14,7 @@
     />
 
     <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/listado.css" />
   </head>
 
   <body>
@@ -23,7 +23,7 @@
       <div class="banner-index">
         <img src="/img/tiendita vinilos.png" alt="tienda de vinilos" />
       </div>
-      <section class="productos-container" id="novasec">
+      <section class="productos-container">
         <% discos.forEach(disco => { %>
         <figure class="box-producto">
           <a href="/producto/detalles/<%= disco.id %>">
