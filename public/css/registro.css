@@ -6,70 +6,74 @@ body {
 .titulo-registrarme {
   display: flex;
   justify-content: center;
+  margin-top: 5%;
   padding: 1%;
-}
-
-.log-o-registro {
-  display: flex;
-  justify-content: center;
-  /* border: #939393  solid 1px; */
-}
-
-.login-opcion {
-  width: 50%;
-  text-align: center;
-}
-
-.registro-opcion {
-  width: 50%;
-  text-align: center;
-  border-bottom: 2px solid #f7b32b;
+  font-size: 10px;
 }
 
 .contenedor {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .section-datos {
-  border: white solid 1px;
+  /* border: white solid 1px; */
   border-radius: 15px;
   width: 70%;
-  padding: 2%;
-  margin: 10%;
-  box-shadow: 0px 0px 10px rgb(255, 255, 255);
+  padding: 3%;
+  margin-top: 5vh;
+  margin-bottom: 7vh;
+  box-shadow: 0px 0px 10px rgb(89, 197, 103);
 }
 
 .celda {
   display: flex;
   flex-wrap: wrap;
-  width: 45%;
+  width: 80%;
   justify-content: center;
+  margin: auto;
+  margin-bottom: 1vh;
+  border-radius: 5px;
+  padding: 5px;
+  /* border-color: #124d92; */
 }
 
-.datos-box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 2vh;
-}
-
-.boton-crear {
+.boton-registrarse {
   margin: auto;
   display: block;
   background-color: #124d92;
   color: #fff2dd;
   border-radius: 5px;
   padding: 5px;
+  width: 80%;
 }
 
-.boton-crear:hover {
+.boton-registrarse:hover {
   box-shadow: 0px 0px 10px rgb(147, 147, 147);
 }
 
 a:visited {
   color: inherit;
+}
+
+.opcion-login {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3vh;
+}
+
+.opcion-login p {
+  margin-right: 2vw;
+}
+
+.logo-disco {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8vh;
+}
+
+.logo-disco img {
+  width: 30%;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -79,7 +83,5 @@ a:visited {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  #novasec{
-    display: block;
-  }
+  
 }

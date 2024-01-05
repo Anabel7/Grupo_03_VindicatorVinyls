@@ -17,34 +17,26 @@
   </head>
 
   <body>
-    <%- include('../partials/header') %>
+    <header><%- include('../partials/header') %></header>
 
     <main>
       <div class="titulo-registrarme">
-        <h1>Registro</h1>
+        <h1>Registrate para comenzar tu aventura musical</h1>
       </div>
-
-      <section class="log-o-registro">
-        <div class="login-opcion">
-          <h2><a href="login">Iniciar sesión</a></h2>
-        </div>
-        <div class="registro-opcion">
-          <h2>Registrarme</h2>
-        </div>
-      </section>
 
       <div class="contenedor">
         <section class="section-datos">
-          <label for="datos-personales">Datos Personales</label>
-          <div class="datos-box">
+          <form action="" method="post">
+            <label for="nombre">Nombre</label>
             <input
               type="text"
               name="nombre"
               id="nombre"
-              placeholder="Nombre completo"
+              placeholder="Nombre"
               class="celda"
               required
             />
+            <label for="username">Usuario</label>
             <input
               type="text"
               name="username"
@@ -53,31 +45,7 @@
               class="celda"
               required
             />
-            <div class="celda">
-              <select name="documento" id="documento">
-                <option value="dni">DNI</option>
-              </select>
-              <input
-                type="number"
-                name="dni"
-                id="dni"
-                placeholder="Número de Documento"
-                class="celda"
-                required
-              />
-            </div>
-            <input
-              type="tel"
-              name="telefono"
-              id="telefono"
-              placeholder="Teléfono (cod. área + número)"
-              class="celda"
-              required
-            />
-          </div>
-
-          <label for="cuenta">Sobre tu cuenta</label>
-          <div class="datos-box">
+            <label for="email">E-mail</label>
             <input
               type="email"
               name="email"
@@ -86,14 +54,7 @@
               class="celda"
               required
             />
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Confirmar E-mail"
-              class="celda"
-              required
-            />
+            <label for="password">Contraseña</label>
             <input
               type="password"
               name="password"
@@ -102,22 +63,32 @@
               class="celda"
               required
             />
+            <label for="confirm_password">Confirmar Contraseña</label>
             <input
               type="password"
-              name="password"
-              id="password"
+              name="confirm_password"
+              id="confirm_password"
               placeholder="Confirmar Contraseña"
               class="celda"
               required
             />
-          </div>
-          <button type="submit" class="boton-crear">
-            <a href="/" rel="noopener noreferrer">Crear mi cuenta</a>
-          </button>
+            
+            <input
+              type="submit"
+              class="boton-registrarse"
+              value="Registrarse"
+            />
+          </form>
         </section>
       </div>
+      <section class="opcion-login">
+        <p>Tienes una cuenta?</p>
+        <a href="login">Iniciar Sesión</a>
+      </section>
+      <div class="logo-disco">
+        <img src="/img/logo-blanco.png" alt="Logo Vindicator Vinyls" />
+      </div>
     </main>
-
-    <%- include('../partials/footer') %>
+    <footer><%- include('../partials/footer') %></footer>
   </body>
 </html>
