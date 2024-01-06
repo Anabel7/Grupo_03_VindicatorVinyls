@@ -1,83 +1,83 @@
 [
-    {
-        "id": 0,
-        "nombre completo": "Nelson Bravo",
-        "usuario": "Lazarus",
-        "email": "nelsopon13@gmail.com",
-        "password": "esotilin",
-        "avatar": "nelson.jpg",
-        "rol": "admin"
-    },
-    {
-        "id": 1,
-        "nombre completo": "Anabel Alvarado",
-        "usuario": "lalagina",
-        "email": "gamergirl54@gmail.com",
-        "password": "potaxio",
-        "avatar": "anabel.jpg",
-        "rol": "admin"
-    },
-    {
-        "id": 2,
-        "nombre completo": "Emiliano Suarez",
-        "usuario": "P-lele",
-        "email": "iafan23@gmail.com",
-        "password": "generatedPassword789",
-        "avatar": "beepbeep.jpg",
-        "rol": "cliente"
-    },
-    {
-        "id": 3,
-        "nombre completo": "Santiago Bergoglio",
-        "usuario": "badmilk",
-        "email": "holachicoscomoestan@gmail.com",
-        "password": "elpepe",
-        "avatar": "santiago.png",
-        "rol": "cliente"
-    },
-    {
-        "id": 4,
-        "nombre completo": "Ricardo Fort",
-        "usuario": "almirantelince",
-        "email": "felfort@gmail.com",
-        "password": "asereje",
-        "avatar": "forta.jpg",
-        "rol": "cliente"
-    },
-    {
-        "id": 5,
-        "nombre completo": "Arturo Coronado",
-        "usuario": "doomentio",
-        "email": "doomentio@gmail.com",
-        "password": "ne0xtian",
-        "avatar": "doom.jpg",
-        "rol": "cliente"
-    },
-    {
-        "id": 6,
-        "nombre completo": "José Diaz",
-        "usuario": "bigpoppa",
-        "email": "jomsemsimtom@gmail.com",
-        "password": "eternalbronze",
-        "avatar": "bestie.jpg",
-        "rol": "cliente"
-    },
-    {
-        "id": 7,
-        "nombre completo": "Cristian Weston Chandler",
-        "usuario": "ChrisChan",
-        "email": "sonichu@gmail.com",
-        "password": "lovequest",
-        "avatar": "chris.jpg",
-        "rol": "cliente"
-    },
-    {
-        "id": 8,
-        "nombre completo": "Papa Noel",
-        "usuario": "notYourDad",
-        "email": "jojojo@gmail.com",
-        "password": "jojojojojo",
-        "avatar": "santa.jpg",
-        "rol": "cliente"
-    }
+  {
+    "id": 0,
+    "nombre": "Nelson Bravo",
+    "usuario": "Lazarus",
+    "email": "nelsopon13@gmail.com",
+    "password": "esotilin",
+    "avatar": "nelson.jpg",
+    "rol": "admin"
+  },
+  {
+    "id": 1,
+    "nombre": "Anabel Alvarado",
+    "usuario": "lalagina",
+    "email": "gamergirl54@gmail.com",
+    "password": "potaxio",
+    "avatar": "anabel.jpg",
+    "rol": "admin"
+  },
+  {
+    "id": 2,
+    "nombre": "Emiliano Suarez",
+    "usuario": "P-lele",
+    "email": "iafan23@gmail.com",
+    "password": "generatedPassword789",
+    "avatar": "beepbeep.jpg",
+    "rol": "cliente"
+  },
+  {
+    "id": 3,
+    "nombre": "Santiago Bergoglio",
+    "usuario": "badmilk",
+    "email": "holachicoscomoestan@gmail.com",
+    "password": "elpepe",
+    "avatar": "santiago.png",
+    "rol": "cliente"
+  },
+  {
+    "id": 4,
+    "nombre": "Ricardo Fort",
+    "usuario": "almirantelince",
+    "email": "felfort@gmail.com",
+    "password": "asereje",
+    "avatar": "forta.jpg",
+    "rol": "cliente"
+  },
+  {
+    "id": 5,
+    "nombre": "Arturo Coronado",
+    "usuario": "doomentio",
+    "email": "doomentio@gmail.com",
+    "password": "ne0xtian",
+    "avatar": "doom.jpg",
+    "rol": "cliente"
+  },
+  {
+    "id": 6,
+    "nombre": "José Diaz",
+    "usuario": "bigpoppa",
+    "email": "jomsemsimtom@gmail.com",
+    "password": "eternalbronze",
+    "avatar": "bestie.jpg",
+    "rol": "cliente"
+  },
+  {
+    "id": 7,
+    "nombre": "Cristian Weston Chandler",
+    "usuario": "ChrisChan",
+    "email": "sonichu@gmail.com",
+    "password": "lovequest",
+    "avatar": "chris.jpg",
+    "rol": "cliente"
+  },
+  {
+    "id": 8,
+    "nombre": "Papa Noel",
+    "usuario": "notYourDad",
+    "email": "jojojo@gmail.com",
+    "password": "jojojojojo",
+    "avatar": "santa.jpg",
+    "rol": "cliente"
+  }
 ]

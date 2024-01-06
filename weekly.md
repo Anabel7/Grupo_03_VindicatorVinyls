@@ -1,3 +1,8 @@
+#Sprint 5
+
+4/1/24: Nos reunimos a la tarde para revisar el trello y dividir las tareas del quinto sprint.
+
+
 #Sprint 4
 
 3/12 Nelson creó las tarjetas con las actividades del 4to spint en el Trello y luego nos reunimos por discord para organizar las actividades. Nos repartimos las tarjetas entre nosotros (Nelson y Anabel) ya que nuestros compañeros tenían actividades pendientes de sprints anteriores.
