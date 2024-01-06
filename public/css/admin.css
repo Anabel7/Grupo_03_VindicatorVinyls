@@ -2,7 +2,10 @@ body {
   background-color: #eaeaea;
 }
 
-.admin-section {
+.agregar{
+  margin-bottom: 5vh;
+}
+.listado-section {
   display: flex;
   justify-content: space-between;
 }

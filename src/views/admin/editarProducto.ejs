@@ -18,7 +18,7 @@
 
   </head>
   <body>
-    <%- include('../partials/header') %>
+    <header><%- include('../partials/header') %></header>
     <div class="titulo-agregar">
       <h1>Editar Producto</h1>
     </div>
@@ -26,10 +26,10 @@
       
       <div class="contenedor-form">
         <div class="imagenesCargadas">
-          <img src="../img/template.jpg" alt="imagenesCargadas" />
+          <img src="/img/products/<%= disco.imagen %>" alt="Portada álbum <%= disco.disco %>" />
         </div>
 
-        <form class="formCargarDatos" action="admin/editarProducto/<%=editarProducto.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form class="formCargarDatos" action="/admin/editarProducto/<%=disco.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
           <label for="disco">Título del disco:</label><br />
           <input type="text" id="disco" name="disco" required value="<%=disco.disco%>"/><br />
          
@@ -69,6 +69,6 @@
         </button>
       </a>
     </div>
-    <%- include('../partials/footer') %>
+    <footer><%- include('../partials/footer') %></footer>
   </body>
 </html>

@@ -31,7 +31,7 @@ const upload = multer({ storage });
 router.get('/registro', userController.registro);
 router.post("/registro", validacionesRegistro, userController.registrar);
 router.get('/login', userController.login);
-router.post('/login', validacionesLogin, userController.logeo);
+router.post('/login', validacionesLogin, userController.loguear);
 router.get('/carrito', userController.carrito);
 
 

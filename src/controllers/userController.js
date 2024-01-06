@@ -36,7 +36,7 @@ const controller = {
     login: (req, res) => {
         res.render('user/login', { usuarios });
     },
-    logeo: (req,res) => {
+    loguear: (req,res) => {
 
     },
     carrito: (req, res) => {

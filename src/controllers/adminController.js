@@ -16,6 +16,15 @@ const controller = {
   dashboard: (req, res) => {
     res.render("admin/dashboard", { discos });
   },
+  detalles: (req, res) => {
+    let id = req.params.id;
+    let discoElegido = discos.find((disco) => {
+      return disco.id == id;
+    });
+    res.render(path.resolve(__dirname, "../views/admin/detalles.ejs"), {
+      disco: discoElegido,
+    });
+  },
   save: (req, res) => {
     console.log(req.body);
     let ultimoDisco = discos.pop();
@@ -64,9 +73,9 @@ const controller = {
     );
     res.redirect("/admin");
   },
-  destroy: (req,res)=>{
+  destroy: (req, res) => {
     let id = parseInt(req.params.id);
-    let discosFinal = discos.filter(disco => disco.id != id);
+    let discosFinal = discos.filter((disco) => disco.id != id);
     //Convertimos el array a json
     let discosGuardarFinal = JSON.stringify(discosFinal, null, 2);
     //Guardamos el archivo
@@ -75,7 +84,7 @@ const controller = {
       discosGuardarFinal
     );
     res.redirect("/admin");
-  }
+  },
 };
 
 module.exports = controller;

@@ -49,6 +49,31 @@ figure img {
   color: white;
 }
 
+/* para el detalles de admin*/
+.contenedor-boton-atras {
+  width: 40vw;
+  margin-top: 5%;
+  margin-left: 3%;
+}
+
+.regresar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #124d92;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  color: #fff2dd;
+  border: none;
+  cursor: pointer;
+}
+.regresar i {
+  margin-right: 10px;
+}
+
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   body{

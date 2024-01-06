@@ -19,7 +19,16 @@
   </head>
   <body>
     <%- include('../partials/header') %>
-    <section class="admin-section">
+    <section class="agregar">
+      <div class="contenedor-boton-agregar">
+        <a href='/admin/agregarProducto'>
+          <button class="agregar-producto">
+            <i class="fa-solid fa-square-plus"></i>Agregar producto
+          </button>
+        </a>
+      </div>
+    </section>
+    <section class="listado-section">
       <article class="col-12" >
         <table class=" table ">
             <thead class="text-white bg-primary">
@@ -38,7 +47,7 @@
                 <td><%= disco.id%> </td>
                 <td><%= disco.disco%> </td>
                 <td><%= disco.artista%> </td>
-                <td><a href="/admin/revisar/<%= disco.id%> "> <ion-icon name="eye-outline"></ion-icon></a></td>
+                <td><a href="/admin/detalles/<%= disco.id%> "> <ion-icon name="eye-outline"></ion-icon></a></td>
                 <td><a href="/admin/editarProducto/<%= disco.id%> "> <ion-icon name="pencil-outline"></ion-icon></a></td>
                 <td> <form action="/admin/delete/<%= disco.id%>?_method=DELETE" method="post">
                   <button type="submit"><ion-icon name="trash-outline"></ion-icon></button>
@@ -48,13 +57,6 @@
             </tbody>
           </table> 
         </article>
-      <div class="contenedor-boton-agregar">
-        <a href='/admin/agregarProducto'>
-          <button class="agregar-producto">
-            <i class="fa-solid fa-square-plus"></i>Agregar producto
-          </button>
-        </a>
-      </div>
     </section>
     <%- include('../partials/footer') %>
   </body>

@@ -4,7 +4,7 @@ const path=require('path')
 const methodOverride = require('method-override');
 
 //URL encode  - Para que nos pueda llegar la información desde el formulario al req.body
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 //Middleware de aplicación el cual se encargue de controlar la posibilidad de usar otros métodos diferentes al GET y al POST, en nuestros formularios como PUT - DELETE
 app.use(methodOverride('_method'));
