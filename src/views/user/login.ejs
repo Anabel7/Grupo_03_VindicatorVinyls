@@ -14,43 +14,49 @@
 <body>
     <%- include('../partials/header') %>
 
-    <main>
-        <h1 class="encabezado">Iniciar sesión</h1>
-        <section class="log-o-registro">
-            <div class="login-opcion">
-                <h2>Iniciar sesión</h2>
-            </div>
-            <div class="registro-opcion">
-                <h2><a href="registro">Registrarme</a></h2>
-            </div>
-        </section>
-
-        <div class="conteiner">
-            <section class="mail">
-                <form action="resultado.html" method="POST">
-                    <label for="mail">Email:</label> <br>
-                    <input type="email" name="mail" id="mail">
-                </form>
+        <main>
+            <h1 class="encabezado">Iniciar sesión</h1>
+            <section class="log-o-registro">
+                <div class="login-opcion">
+                    <h2>Iniciar sesión</h2>
+                </div>
+                <div class="registro-opcion">
+                    <h2><a href="registro">Registrarme</a></h2>
+                </div>
             </section>
-            <section class="contra">
-                <form action="contra.html" method="POST">
-                    <label for="contra">Contraseña:</label> <br>
-                    <input type="password" name="contra" id="contra">
-                </form>
-            </section>
+            <% if(locals.errors) { errors.forEach(error=> { %>
+                <p style="color: red;" class="errores">
+                    <%= error.msg %>
+                </p>
+                <% })} %>
 
-            <section>
-                <input type="checkbox" name="memory" value="y">
-                <label>Recordarme</label>
-            </section>
-            <a href="https://www.mayoclinic.org/es/healthy-lifestyle/healthy-aging/in-depth/memory-loss/art-20046518">¿Olvidaste
-                tu contraseña?</a>
-            <button type="submit">Iniciar sesión</button>
-            <p>¿No tienes cuenta?<a href="registro">Registrate</a></p>
-        </div>
-    </main>
+                    <div class="conteiner">
+                        <section class="mail">
+                            <form action="resultado.html" method="POST">
+                                <label for="mail">Email:</label> <br>
+                                <input type="email" name="email" id="email">
+                            </form>
+                        </section>
+                        <section class="contra">
+                            <form action="contra.html" method="POST">
+                                <label for="contra">Contraseña:</label> <br>
+                                <input type="password" name="contra" id="contra">
+                            </form>
+                        </section>
 
-    <%- include('../partials/footer') %>
+                        <section>
+                            <input type="checkbox" name="memory" value="y">
+                            <label>Recordarme</label>
+                        </section>
+                        <a
+                            href="https://www.mayoclinic.org/es/healthy-lifestyle/healthy-aging/in-depth/memory-loss/art-20046518">¿Olvidaste
+                            tu contraseña?</a>
+                        <button type="submit">Iniciar sesión</button>
+                        <p>¿No tienes cuenta?<a href="registro">Registrate</a></p>
+                    </div>
+        </main>
+
+        <%- include('../partials/footer') %>
 </body>
 
 </html>

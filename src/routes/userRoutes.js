@@ -1,17 +1,20 @@
 const express = require('express');
 const router = express.Router();
+let invitados = require('../../middlewares/sinLoguearMiddleware')
+let usuarioActivo =require('../../middlewares/logueadoMiddleware')
 const userController = require('../controllers/userController');
 const {body} = require('express-validator');
+
 const validacionesRegistro = [
     body('nombre').notEmpty().withMessage('¿Quién sos?'),
     body('usuario').notEmpty(),
     body('email').isEmail().withMessage('Lindo mail, lástima que no sirve'),
-    body('password').notEmpty(),
-    body('confirm_password').notEmpty()
+    body('password').isLength({min: 6}).withMessage("La contraseña es muy corta (Mínimo 8 caracteres)"),
+    body('confirm_password').isLength({min: 6}).withMessage("La contraseña es muy corta (Mínimo 8 caracteres)")
 ]
 const validacionesLogin = [
-    body('mail').notEmpty(),
-    body('contra').notEmpty(),
+    body('email').isEmail(),
+    body('contra').isLength({min: 6}).withMessage("La contraseña es muy corta (Mínimo 8 caracteres)"),
 ]
 const multer = require('multer');
 
@@ -28,11 +31,11 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-router.get('/registro', userController.registro);
+router.get('/registro', invitados,userController.registro);
 router.post("/registro", validacionesRegistro, userController.registrar);
-router.get('/login', userController.login);
+router.get('/login', invitados,userController.login);
 router.post('/login', validacionesLogin, userController.loguear);
-router.get('/carrito', userController.carrito);
+router.get('/carrito', usuarioActivo, userController.carrito);
 
 
 module.exports = router;

@@ -1,6 +1,9 @@
 #Sprint 5
 
 4/1/24: Nos reunimos a la tarde para revisar el trello y dividir las tareas del quinto sprint.
+5/1/24: A la noche nos volvimos a reunir para echar un vistazo a la capacidad de agregar usuarios al JSON de usuarios. Además se hicieron algunos cambios al JSON y nos dividimos las tarjetas del sprint nuevamente.
+
+
 
 
 #Sprint 4

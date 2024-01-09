@@ -1,94 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registro - Vindicator Vinyls</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- <link rel="stylesheet" href="/css/styles.css" /> -->
-    <link rel="stylesheet" href="/css/registro.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro - Vindicator Vinyls</title>
 
-  <body>
-    <header><%- include('../partials/header') %></header>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="/css/styles.css" /> -->
+  <link rel="stylesheet" href="/css/registro.css" />
+</head>
 
-    <main>
-      <div class="titulo-registrarme">
-        <h1>Registrate para comenzar tu aventura musical</h1>
-      </div>
+<body>
+  <header><%- include('../partials/header') %></header>
 
-      <div class="contenedor">
-        <section class="section-datos">
-          <form action="" method="post">
-            <label for="nombre">Nombre</label>
-            <input
-              type="text"
-              name="nombre"
-              id="nombre"
-              placeholder="Nombre"
-              class="celda"
-              required
-            />
-            <label for="username">Usuario</label>
-            <input
-              type="text"
-              name="usuario"
-              id="usuario"
-              placeholder="Usuario"
-              class="celda"
-              required
-            />
-            <label for="email">E-mail</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="E-mail"
-              class="celda"
-              required
-            />
-            <label for="password">Contraseña</label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Contraseña (mín. 6 caracteres con letra y número)"
-              class="celda"
-              required
-            />
-            <label for="confirm_password">Confirmar Contraseña</label>
-            <input
-              type="password"
-              name="confirm_password"
-              id="confirm_password"
-              placeholder="Confirmar Contraseña"
-              class="celda"
-              required
-            />
-            
-            <input
-              type="submit"
-              class="boton-registrarse"
-              value="Registrarse"
-            />
-          </form>
-        </section>
-      </div>
-      <section class="opcion-login">
-        <p>Tienes una cuenta?</p>
-        <a href="login">Iniciar Sesión</a>
+  <main>
+    <div class="titulo-registrarme">
+      <h1>Registrate para comenzar tu aventura musical</h1>
+    </div>
+
+    <div class="contenedor">
+      <section class="section-datos">
+        <% if(locals.errors) {
+          errors.forEach(error => { %>
+            <p class="errores"><%= error.msg %></p>
+          <% })} %>
+            <form action="" method="post">
+              <label for="nombre">Nombre</label>
+              <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="celda"
+              value="<%= locals.old && old.nombre ? old.nombre : '' %>" required />
+              
+              <label for="username">Usuario</label>
+              <input type="text" name="usuario" id="usuario" placeholder="Usuario" class="celda"
+              value="<%= locals.old && old.usuario ? old.usuario : '' %>" required />
+
+              <label for="email">E-mail</label>
+              <input type="email" name="email" id="email" placeholder="E-mail" class="celda"
+              value="<%= locals.old && old.email ? old.email : '' %>" required />
+
+              <label for="password">Contraseña</label>
+              <input type="password" name="password" id="password"
+                placeholder="Contraseña (mín. 6 caracteres con letra y número)" class="celda"
+                value="<%= locals.password && old.password ? old.password : '' %>" required />
+              <label for="confirm_password">Confirmar Contraseña</label>
+              <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmar Contraseña" class="celda"
+              required />
+
+              <label for="avatar">Imagen de perfil</label>
+              <input type="file" id="avatar" name="avatar" /> <br>
+
+              <input type="submit" class="boton-registrarse" value="Registrarse" />
+            </form>
       </section>
-      <div class="logo-disco">
-        <img src="/img/logo-blanco.png" alt="Logo Vindicator Vinyls" />
-      </div>
-    </main>
-    <footer><%- include('../partials/footer') %></footer>
-  </body>
+    </div>
+    <section class="opcion-login">
+      <p>Tienes una cuenta?</p>
+      <a href="login">Iniciar Sesión</a>
+    </section>
+    <div class="logo-disco">
+      <img src="/img/logo-blanco.png" alt="Logo Vindicator Vinyls" />
+    </div>
+  </main>
+  <footer><%- include('../partials/footer') %></footer>
+</body>
+
 </html>
