@@ -5,25 +5,11 @@ let discos = JSON.parse(
 );
 
 const controller = {
-  create: (req, res) => {
-    res.render("admin/agregarProducto", { discos });
-  },
-  edit: (req, res) => {
-    let id = parseInt(req.params.id);
-    let discoElegido = discos.find((disco) => disco.id == id);
-    res.render("admin/editarProducto", { disco: discoElegido });
-  },
   dashboard: (req, res) => {
     res.render("admin/dashboard", { discos });
   },
-  detalles: (req, res) => {
-    let id = req.params.id;
-    let discoElegido = discos.find((disco) => {
-      return disco.id == id;
-    });
-    res.render(path.resolve(__dirname, "../views/admin/detalles.ejs"), {
-      disco: discoElegido,
-    });
+  create: (req, res) => {
+    res.render("admin/agregarProducto", { discos });
   },
   save: (req, res) => {
     console.log(req.body);
@@ -41,7 +27,7 @@ const controller = {
       anio: req.body.anio,
       imagen: req.file.filename,
       tracklist: req.body.tracklist,
-      discográfica: req.body.discográfica,
+      discografica: req.body.discografica,
     };
     console.log(req.file);
     //Agregamos el nuevo disco al array
@@ -51,25 +37,40 @@ const controller = {
     //Guardamos el archivo
     fs.writeFileSync(
       path.resolve(__dirname, "../database/discos.json"),
-      nuevoProductoGuardar
+      nuevoProductoGuardar, 'utf-8'
     );
     res.redirect("/admin");
+  },
+  detalles: (req, res) => {
+    let id = req.params.id;
+    let discoElegido = discos.find((disco) => {
+      return disco.id == id;
+    });
+    res.render(path.resolve(__dirname, "../views/admin/detalles.ejs"), {
+      disco: discoElegido,
+    });
+  },
+  edit: (req, res) => {
+    let id = parseInt(req.params.id);
+    let discoElegido = discos.find((disco) => disco.id == id);
+    res.render("admin/editarProducto", { disco: discoElegido });
   },
   update: (req, res) => {
     let id = parseInt(req.params.id);
     req.body.id = id;
-    let discosActualizar = discos.map((disco) => {
+    req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
+    let discosActualizar = discos.map(disco => {
       if (disco.id == id) {
         return (disco = req.body);
       }
       return disco;
-    });
+    })
     //Convertimos el array a json
-    let discosActualizados = JSON.stringify(discosActualizar, null, 2);
+   let discosActualizados = JSON.stringify(discosActualizar, null, 2);
     //Guardamos el archivo
     fs.writeFileSync(
       path.resolve(__dirname, "../database/discos.json"),
-      discosActualizados
+      discosActualizados, 'utf-8'
     );
     res.redirect("/admin");
   },
@@ -81,7 +82,7 @@ const controller = {
     //Guardamos el archivo
     fs.writeFileSync(
       path.resolve(__dirname, "../database/discos.json"),
-      discosGuardarFinal
+      discosGuardarFinal, 'utf-8'
     );
     res.redirect("/admin");
   },

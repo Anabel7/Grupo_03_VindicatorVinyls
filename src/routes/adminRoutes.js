@@ -20,9 +20,10 @@ const upload = multer({storage});
 router.get("/", adminController.dashboard); //Menu de control del Admin
 router.get("/agregarProducto", adminController.create);
 router.post("/agregarProducto", upload.single('imagen'), adminController.save);
-router.get("/editarProducto/:id", adminController.edit); //edición
-router.put("/editarProducto/:id", adminController.update);
-router.delete("/delete/:id", adminController.destroy);
 router.get('/detalles/:id', adminController.detalles);
+router.get("/editarProducto/:id", adminController.edit); //edición
+router.put("/editarProducto/:id", upload.single('imagen'), adminController.update);
+router.delete("/delete/:id", adminController.destroy);
+
 
 module.exports = router;

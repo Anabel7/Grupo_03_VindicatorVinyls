@@ -54,9 +54,10 @@
           <label for="tracklist">Lista de Canciones</label><br />
           <textarea name="tracklist" id="tracklist" required><%=disco.tracklist%></textarea><br />
 
-          <label for="discográfica">Discográfica</label><br />
-          <input type="text" id="discográfica" name="discográfica" required value="<%=disco.discográfica%>"><br />
-          <input type="file" name="imagen" id="imagen" required/><br />
+          <label for="discografica">Discográfica</label><br />
+          <input type="text" id="discografica" name="discografica" required value="<%=disco.discografica%>"><br />
+          <input type="hidden"  name="oldImagen"  value="<%= disco.imagen%>">
+          <input type="file" name="imagen" id="imagen"/><br />
         
           <input type="submit" value="Actualizar producto" /><br />
         </form>
