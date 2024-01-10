@@ -1,8 +1,11 @@
-const { validationResult } = require('express-validator')
 const path = require('path');
 const fs = require('fs');
-let bcryptjs = require('bcryptjs')
-let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json'), 'utf-8'));
+let usuarios = JSON.parse(
+    fs.readFileSync(path.resolve(__dirname, "../database/usuarios.json"), "utf-8")
+  );
+const bcryptjs = require('bcryptjs');
+const { validationResult } = require('express-validator');
+
 
 
 const controller = {
@@ -10,7 +13,7 @@ const controller = {
         let errors = validationResult(req);
         res.render('user/registro', { usuarios });
     },
-    registrar: (req, res) => {
+    create: (req, res) => {
         console.log(req.body);
         let errors = validationResult(req);
         if (errors.isEmpty()) {
@@ -20,7 +23,7 @@ const controller = {
             let newbie = {
                 id: lastUser.id + 1,
                 nombre: req.body.nombre,
-                usuario: req.body.username,
+                usuario: req.body.usuario,
                 email: req.body.email,
                 password: bcryptjs.hashSync(req.body.password, 5),
                 avatar: req.body.avatar,
