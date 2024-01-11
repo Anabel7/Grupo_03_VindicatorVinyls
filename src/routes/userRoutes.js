@@ -3,14 +3,13 @@ const router = express.Router();
 const fs = require("fs");
 const path = require("path");
 const multer = require("multer");
-const bcrypt = require("bcryptjs");
-
+const bcryptjs = require("bcryptjs");
 const userController = require("../controllers/userController");
-
 const { body } = require("express-validator");
 let usuarios = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, "../database/usuarios.json"), "utf-8")
 );
+
 //Middlewares
 let invitados = require("../../middlewares/sinLoguearMiddleware");
 let usuarioActivo = require("../../middlewares/logueadoMiddleware");
@@ -62,15 +61,15 @@ const validacionesLogin = [
     .withMessage("La contraseña es muy corta (Mínimo 8 caracteres)"),
 ];
 
-router.get("/registro", invitados, userController.registro);
+router.get("/registro", userController.registro);
 router.post(
   "/registro",
   upload.single("avatar"),
   validacionesRegistro,
   userController.create
 );
-router.get("/login", invitados, userController.login);
+router.get("/login", userController.login);
 router.post("/login", validacionesLogin, userController.loguear);
-router.get("/carrito", usuarioActivo, userController.carrito);
+router.get("/carrito", userController.carrito);
 
 module.exports = router;

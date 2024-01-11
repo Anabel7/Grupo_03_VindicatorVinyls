@@ -2,7 +2,9 @@
 
 4/1/24: Nos reunimos a la tarde para revisar el trello y dividir las tareas del quinto sprint.
 5/1/24: A la noche nos volvimos a reunir para echar un vistazo a la capacidad de agregar usuarios al JSON de usuarios. Además se hicieron algunos cambios al JSON y nos dividimos las tarjetas del sprint nuevamente.
-
+9/1/24: Hice un push con una base de código para el login y el registro, y esa noche mi compañera me comunicó haber podido concretar la actividad del CRUD.
+10/1/24: Reconocimos errores dentro del programa, de los cuales no pudimos solucionar todos. El problema se encuentra en el implementamiento de los middlewares que he codificado, y van en relación al uso de session.
+11/1/24: Nos reunimos para hacer la retrospectiva y con eso hecho, subí el archivo quitando a los middlewares de las rutas de login, carrito y registro para que el código sea funcional y se pueda apreciar el funcionamiento del CRUD.
 
 
 
