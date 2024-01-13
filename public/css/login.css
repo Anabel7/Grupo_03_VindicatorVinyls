@@ -1,5 +1,6 @@
 body {
-  background: linear-gradient(#23ce6b, black);
+  background: #575a5e;
+  /* background: linear-gradient(#23ce6b, black); */
   color: white;
 }
 
@@ -14,10 +15,9 @@ body {
 .encabezado {
   display: flex;
   justify-content: center;
-  margin-top: 5%;
   padding: 1%;
   font-size: 20px;
-  margin-bottom: 2vh;
+  margin-bottom: 7vh;
 }
 
 .contenedor {
@@ -32,7 +32,10 @@ body {
   padding: 3%;
   margin-top: 5vh;
   margin-bottom: 7vh;
-  box-shadow: 0px 0px 10px rgb(89, 197, 103);
+  box-shadow: 0px 0px 10px rgb(34, 40, 35);
+  background: #F4F7F5;
+  color: black;
+  /* background: linear-gradient(#23ce6b, black); */
 }
 
 .celda {
@@ -71,7 +74,7 @@ a:visited {
   margin-bottom: 3vh;
 }
 
-.olvido a{
+.olvido a {
   font-weight: 100;
   font-style: italic;
 }
@@ -85,7 +88,7 @@ a:visited {
 .opcion-registro {
   display: flex;
   justify-content: center;
-  margin-bottom: 3vh;
+  padding: 30px;
 }
 
 .opcion-registro p {
@@ -104,8 +107,24 @@ a:visited {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  main {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)),
+      url(/img/background/vinyls-img-black.png);
+    background-repeat: repeat;
+    background-size: 350px;
+    /* background-position: center; */
+  }
+  .section-datos{
+    width: 52%;
+  }
+  .logo-disco img {
+    width: 20%;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  .logo-disco img {
+    width: 15%;
+  }
 }
