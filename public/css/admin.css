@@ -1,29 +1,29 @@
 body {
-  background-color: #eaeaea;
+  background: #575a5e;
+  /* background: linear-gradient(#23ce6b, black); */
+  color: white;
 }
 
-.agregar{
-  margin-bottom: 5vh;
-}
-.listado-section {
-  display: flex;
-  justify-content: space-between;
-}
-
-.contenedor-boton-agregar {
-  width: 40vw;
-  margin: 5% 5% 0 auto;
+.agregar {
+  height: 10vh;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)),
+    url(/img/background/vinyls-img-black.png);
+  background-repeat: repeat;
+  background-size: 200px;
+  position: relative;
 }
 
 .agregar-producto {
+  position: absolute;
+  right: 20px;
+  top:30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #23ce6b;
+  background-color: #124d92;
   border-radius: 10px;
-  padding: 10px;
-  width: 100%;
-  height: 100%;
+  padding: 8px;
+  width: 45%;
   color: #fff2dd;
   border: none;
   cursor: pointer;
@@ -32,6 +32,31 @@ body {
   margin-right: 10px;
 }
 
+.bienvenida{
+  position:absolute;
+  top: 30px;
+  left: 20px;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  background-color: #222823;
+  margin-bottom: 10vh;
+}
+table,
+th,
+td {
+  border-bottom: 1px solid black;
+  padding: 5px;
+  text-align: center;
+}
+th {
+  background-color: #1A9C50;
+  color: white;
+}
+tr:hover {background-color: grey;}
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 /* @media only screen and (min-width: 600px) {
     
@@ -39,10 +64,16 @@ body {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .contenedor-boton-agregar {
-    height: 8vh;
+  .agregar {
+    height: 120px;
+  }
+  .agregar-producto {
+    height: 40px;
     width: 30%;
-    margin: 5% 5% 0 auto;
+    top:50px;
+  }
+  .bienvenida{
+    top: 50px;
   }
 }
 
@@ -50,4 +81,8 @@ body {
   @media only screen and (min-width: 992px) {...}
   
    Extra large devices (large laptops and desktops, 1200px and up) */
-/*  @media only screen and (min-width: 1200px) {...}*/
+@media only screen and (min-width: 1200px) {
+  .agregar {
+    height: 150px;
+  }
+}

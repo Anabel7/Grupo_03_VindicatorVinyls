@@ -3,8 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin - Listado de productos</title>
-    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <title>Admin - Dashboard</title>
+    <!-- Iconos para la tabla <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script> -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"
+    ></script>
 
     <link
       rel="stylesheet"
@@ -17,22 +25,28 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/admin.css" />
   </head>
+
   <body>
-    <%- include('../partials/header') %>
-    <section class="agregar">
-      <div class="contenedor-boton-agregar">
-        <a href='/admin/agregarProducto'>
-          <button class="agregar-producto">
-            <i class="fa-solid fa-square-plus"></i>Agregar producto
-          </button>
-        </a>
-      </div>
-    </section>
-    <section class="listado-section">
-      <article class="col-12" >
-        <table class=" table ">
+    <header><%- include('../partials/header') %></header>
+    <main>
+      <section class="agregar">
+        <div class="bienvenida">
+          <h2>Hola, Admin</h2>
+        </div>
+        <div class="contenedor-boton-agregar">
+          <a href="/admin/agregarProducto">
+            <button class="agregar-producto">
+              <i class="fa-solid fa-square-plus"></i>Agregar producto
+            </button>
+          </a>
+        </div>
+      </section>
+
+      <section class="listado-section">
+        <article class="col-12">
+          <table class="table">
             <thead class="text-white bg-primary">
-              <tr>  
+              <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Disco</th>
                 <th scope="col">Artista</th>
@@ -41,23 +55,40 @@
                 <th scope="col">Borrar</th>
               </tr>
             </thead>
+
             <tbody>
               <% discos.forEach(disco => { %>
               <tr>
-                <td><%= disco.id%> </td>
-                <td><%= disco.disco%> </td>
-                <td><%= disco.artista%> </td>
-                <td><a href="/admin/detalles/<%= disco.id%> "> <ion-icon name="eye-outline"></ion-icon></a></td>
-                <td><a href="/admin/editarProducto/<%= disco.id%> "> <ion-icon name="pencil-outline"></ion-icon></a></td>
-                <td> <form action="/admin/delete/<%= disco.id%>?_method=DELETE" method="post">
-                  <button type="submit"><ion-icon name="trash-outline"></ion-icon></button>
-                </form></td>
+                <td><%= disco.id%></td>
+                <td><%= disco.disco%></td>
+                <td><%= disco.artista%></td>
+                <td>
+                  <a href="/admin/detalles/<%= disco.id%> ">
+                    <ion-icon name="eye-outline"></ion-icon
+                  ></a>
+                </td>
+                <td>
+                  <a href="/admin/editarProducto/<%= disco.id%> ">
+                    <ion-icon name="pencil-outline"></ion-icon
+                  ></a>
+                </td>
+                <td>
+                  <form
+                    action="/admin/delete/<%= disco.id%>?_method=DELETE"
+                    method="post"
+                  >
+                    <button type="submit">
+                      <ion-icon name="trash-outline"></ion-icon>
+                    </button>
+                  </form>
+                </td>
               </tr>
               <% }); %>
             </tbody>
-          </table> 
+          </table>
         </article>
-    </section>
-    <%- include('../partials/footer') %>
+      </section>
+    </main>
+    <footer><%- include('../partials/footer') %></footer>
   </body>
 </html>
