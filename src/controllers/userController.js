@@ -26,7 +26,7 @@ const controller = {
                 usuario: req.body.usuario,
                 email: req.body.email,
                 password: bcryptjs.hashSync(req.body.password, 5),
-                avatar: req.body.avatar,
+                avatar: req.file.filename,
                 rol: 'cliente'
             };
             console.log(req.file);
@@ -50,7 +50,7 @@ const controller = {
     loguear: (req, res) => {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
-            let userjson = fs.readFileSync('users.json');
+            let userjson = fs.readFileSync(path.resolve(__dirname, "../database/usuarios.json"), "utf-8");
             let users = JSON.parse(userjson);
             let usuarioX;
             for (let i=0; i < users.length; i++){
@@ -62,15 +62,15 @@ const controller = {
                 }
             }
             if(usuarioX == undefined){
-                return res.render('login', { errors: [
+                return res.render('user/login', { errors: [
                     {msg: 'Credenciales inválidas'}
                 ] });
             }
             req.session.usuarioLogueado = usuarioX;
-            res.render('/')
+            res.redirect('/')
 
         } else {
-            return res.render('login', { errors: errors.errors });
+            return res.render('user/login', { errors: errors.errors });
         }
     },
     carrito: (req, res) => {

@@ -27,7 +27,8 @@
           errors.forEach(error => { %>
             <p class="errores"><%= error.msg %></p>
           <% })} %>
-            <form action="" method="post">
+          
+            <form action="/user/registro" method="post" enctype="multipart/form-data">
               <label for="nombre">Nombre</label>
               <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="celda"
               value="<%= locals.old && old.nombre ? old.nombre : '' %>" required />

@@ -10,6 +10,15 @@ app.use(express.urlencoded({ extended: true }));
 
 //Middleware de aplicación el cual se encargue de controlar la posibilidad de usar otros métodos diferentes al GET y al POST, en nuestros formularios como PUT - DELETE
 app.use(methodOverride("_method"));
+app.use(
+  session({
+    secret: "Vinny",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+app.use(cookieParser());
+
 var logMid = require("../middlewares/logueadoMiddleware");
 var loglessMid = require("../middlewares/sinLoguearMiddleware");
 
@@ -26,14 +35,7 @@ app.use("/", mainRoutes);
 app.use("/user", userRoutes);
 app.use("/producto", prodRoutes);
 app.use("/admin", adminRoutes);
-app.use(
-  session({
-    secret: "Vinny",
-    resave: false,
-    saveUninitialized: false,
-  })
-);
-app.use(cookieParser());
+
 // app.use(logMid);
 app.use(loglessMid);
 

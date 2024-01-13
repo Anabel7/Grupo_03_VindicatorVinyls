@@ -28,9 +28,9 @@ const upload = multer({ storage });
 
 
 const validacionesRegistro = [
-  body("nombre").isLength({ min: 4 }).notEmpty().withMessage("¿Quién sos?"),
-  body("usuario").isLength({ min: 4 }).notEmpty(),
-  body("email").isEmail().withMessage("Lindo mail, lástima que no sirve"),
+  body("nombre").notEmpty().isLength({ min: 4 }).withMessage("Escribe tu nombre"),
+  body("usuario").notEmpty().isLength({ min: 4 }).withMessage("Tu usuario debe tener mínimo 4 caracteres"),
+  body("email").isEmail().withMessage("Lindo mail, lástima que no está completo"),
   body("password")
     .isLength({ min: 6 })
     .withMessage("La contraseña es muy corta (Mínimo 8 caracteres)"),
@@ -44,7 +44,7 @@ const validacionesRegistro = [
     })
     .withMessage("Las contraseñas deben ser iguales"),
   body("avatar")
-    .custom((vale, { req }) => {
+    .custom((value, { req }) => {
       if (req.file != undefined) {
         return true;
       } else {
