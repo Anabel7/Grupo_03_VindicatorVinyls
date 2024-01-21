@@ -77,7 +77,11 @@ figure img {
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     .box-producto{
-        width: 25%;
+        width: 23%;
+        margin: 5px;
+    }
+    .banner-index img{
+      height: 26vh;
     }
 }
 
@@ -88,8 +92,20 @@ figure img {
     }
 }
 
-/* Large devices (laptops/desktops, 992px and up)
-    @media only screen and (min-width: 992px) {...}
+/* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+      .box-producto {
+        width: 20%;
+      }
+    }
     
-     Extra large devices (large laptops and desktops, 1200px and up) 
-    @media only screen and (min-width: 1200px) {...} */
+/*Extra large devices (large laptops and desktops, 1200px and up)*/ 
+    @media only screen and (min-width: 1200px) {
+      .box-producto {
+        width: 15%;
+        margin: 10px;
+      }
+      .banner-index img{
+        height: 30vh;
+    } 
+  }

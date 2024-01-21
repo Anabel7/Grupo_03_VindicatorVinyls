@@ -15,9 +15,9 @@ body {
 }
 
 section {
-  /* display: flex;
+  display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; */
+  justify-content: space-around;
   padding: 2%;
   margin-bottom: 5%;
 }
@@ -71,7 +71,7 @@ figure img {
   color: white;
   text-align: center;
   font-size: 0.7em;
-  border: 1px solid rgba(255,255,255,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 15px;
   padding: 2%;
   text-decoration: none;
@@ -98,6 +98,7 @@ figure img {
   border: 4px solid #23ce6b;
   border-radius: 25px;
   padding: 3px;
+  margin: 2%;
 }
 
 .box-producto a {
@@ -114,31 +115,65 @@ figure img {
   text-shadow: 1px 1px 7px black;
 }
 
-#VerMas{
+#VerMas {
   display: flex;
   justify-content: flex-end;
   color: black;
   padding-top: 10px;
 }
 
-#novasec{
+#novasec {
   display: none;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
- 
+  .box-producto {
+    width: 23%;
+    margin: 5px;
+  }
+  .banner-index img{
+    height: 26vh;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  #novasec{
-    display: block;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  section {
+    margin-bottom: 2%;
+  }
+  .texto-categorias{
+    width: 90%;
+    margin: 0;
+  }
+  figure{
+    width: 90%;
+    font-size: 1em
+  }
+  .barra-busqueda{
+    width: 40vw;
+  }
+  .box-producto {
+    width: 20%;
+  }
+  .links-categorias {
+    width: 85%;
+  }
+  .filtros-destacados {
+    width: 85%;
   }
 }
 
-/* Large devices (laptops/desktops, 992px and up)
-  @media only screen and (min-width: 992px) {...}
-  
-   Extra large devices (large laptops and desktops, 1200px and up) 
-  @media only screen and (min-width: 1200px) {...} */
+/*Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .box-producto {
+    width: 15%;
+  }
+  .banner-index img{
+    height: 30vh;
+}
+}
