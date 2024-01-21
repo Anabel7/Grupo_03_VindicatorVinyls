@@ -76,7 +76,9 @@ tr:hover {background-color: grey;}
     top: 50px;
   }
 }
-
+ion-icon{
+  color:black;
+}
 /* Large devices (laptops/desktops, 992px and up)
   @media only screen and (min-width: 992px) {...}
   

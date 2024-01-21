@@ -13,7 +13,7 @@
     "nombre": "Anabel Alvarado",
     "usuario": "lalagina",
     "email": "gamergirl54@gmail.com",
-    "password": "potaxio",
+    "password": "potaxios",
     "avatar": "anabel.jpg",
     "rol": "admin"
   },
@@ -78,6 +78,15 @@
     "email": "jojojo@gmail.com",
     "password": "jojojojojo",
     "avatar": "santa.jpg",
+    "rol": "cliente"
+  },
+  {
+    "id": 9,
+    "nombre": "Ceci",
+    "usuario": "laceci",
+    "email": "cecic@gmail.com",
+    "password": "$2a$10$KgIdlFGM2rmgFjcFVl9ixOyx8NA4D2i0LDXnHNsuuVuRSuh143T7y",
+    "avatar": "1705867348370_img_.gif",
     "rol": "cliente"
   }
 ]

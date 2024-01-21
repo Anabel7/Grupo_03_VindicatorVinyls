@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const methodOverride = require("method-override");
+//Requiero los paquetes para trabajar con session y cookies
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 
@@ -17,6 +18,8 @@ app.use(
     saveUninitialized: false,
   })
 );
+
+//Middleware para activar lo referido a cookies
 app.use(cookieParser());
 
 var logMid = require("../middlewares/logueadoMiddleware");

@@ -1,14 +1,24 @@
 <!-- views/partials/header.ejs -->
 <header>
   <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/header.css" />
   <nav class="nav-bar">
     <i class="fa-solid fa-bars"></i>
     <div class="logo">
       <a href="/"><img src="/img/vv-blanco.png" alt="Vindicator Vinyls" /></a>
     </div>
+    <% if (locals.usuarioLogueado) { %> 
+      <% if (locals.usuarioLogueado.rol == 'admin') { %>
+    <a href="/dashboard">Administrar</a>
+    <% } %>
+    <div class="nav-iconos">
+      <a href="user/logout">Cerrar Sesión</a>
+      <i class="fa-solid fa-right-from-bracket"></i>
+    </div>
+    <% } else { %>
     <div class="nav-iconos">
       <a href="/user/login"><i class="fa-regular fa-user"></i></a>
     </div>
+    <% } %>
   </nav>
 </header>
