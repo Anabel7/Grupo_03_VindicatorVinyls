@@ -4,7 +4,8 @@ let discos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/dis
 
 const controller = {
     index: (req, res) => {
-        res.render('index', {discos});
+        let usuarioLogueado = req.session.usuarioLogueado
+        res.render('index', {discos, usuarioLogueado});
     }
 }
 module.exports = controller;

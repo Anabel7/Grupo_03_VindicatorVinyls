@@ -6,7 +6,7 @@ let discos = JSON.parse(
 
 const controller = {
   dashboard: (req, res) => {
-    res.render("admin/dashboard", { discos });
+    res.render("admin/dashboard", { discos});
   },
   create: (req, res) => {
     res.render("admin/agregarProducto", { discos });

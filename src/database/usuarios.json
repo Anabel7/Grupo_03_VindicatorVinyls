@@ -88,5 +88,14 @@
     "password": "$2a$10$KgIdlFGM2rmgFjcFVl9ixOyx8NA4D2i0LDXnHNsuuVuRSuh143T7y",
     "avatar": "1705867348370_img_.gif",
     "rol": "cliente"
+  },
+  {
+    "id": 10,
+    "nombre": "Ludwing",
+    "usuario": "beetho",
+    "email": "notadog@gmail.com",
+    "password": "$2a$10$USw1fOZ4vuzaGwvr2TFgAOpoZ7I5TivRDAbKnOl0NmqZJpoL3.gde",
+    "avatar": "1705958347913_img_.png",
+    "rol": "admin"
   }
 ]
