@@ -22,8 +22,9 @@ app.use(
 //Middleware para activar lo referido a cookies
 app.use(cookieParser());
 
-var logMid = require("../middlewares/logueadoMiddleware");
-var loglessMid = require("../middlewares/sinLoguearMiddleware");
+//var logMid = require("../middlewares/logueadoMiddleware");
+//var loglessMid = require("../middlewares/sinLoguearMiddleware");
+const adminMiddleware = require('../middlewares/adminMiddleware')
 
 //Requerir las rutas
 const mainRoutes = require("./routes/mainRoutes");
@@ -40,7 +41,8 @@ app.use("/producto", prodRoutes);
 app.use("/admin", adminRoutes);
 
 // app.use(logMid);
-app.use(loglessMid);
+//app.use(loglessMid);
+app.use(adminMiddleware);
 
 app.listen(3001, () => {
   console.log("Servidor 3001 funcionando");
