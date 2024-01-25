@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const multer = require("multer");
 
+
 const userController = require("../controllers/userController");
 const { body } = require("express-validator");
 
@@ -12,8 +13,8 @@ let usuarios = JSON.parse(
 );
 
 //Middlewares
-let invitados = require("../../middlewares/sinLoguearMiddleware");
-let usuarioActivo = require("../../middlewares/logueadoMiddleware");
+const logMid = require("../../middlewares/logueadoMiddleware");
+const loglessMid = require("../../middlewares/sinLoguearMiddleware");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -64,7 +65,7 @@ const validacionesLogin = [
     .withMessage("La contraseña es muy corta (Mínimo 8 caracteres)")
 ];
 
-router.get("/registro", userController.registro);
+router.get("/registro", loglessMid, userController.registro);
 //Ruta que envia al controlador el avatar de usuario y las validaciones
 router.post(
   "/registro",
@@ -72,9 +73,9 @@ router.post(
   validacionesRegistro,
   userController.create
 );
-router.get("/login", userController.login);
+router.get("/login", loglessMid, userController.login);
 router.post("/login", validacionesLogin, userController.ingresar);
-router.get("/carrito", userController.carrito);
+router.get("/carrito", logMid, userController.carrito);
 router.get('/logout', userController.logout);
 
 module.exports = router;

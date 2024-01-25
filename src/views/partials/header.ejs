@@ -7,19 +7,19 @@
     <div class="logo">
       <a href="/"><img src="/img/vv-blanco.png" alt="Vindicator Vinyls" /></a>
     </div>
-    <% if (locals.usuarioLogueado) { %> <% if (locals.usuarioLogueado.rol ==
-    'admin') { %>
-    <a href="../admin">Administrar</a>
-    <% } %>
-    <div class="nav-iconos">
-      <p>Hola, <%=usuarioLogueado.nombre %>!</p>
-      <a href="user/logout">Cerrar Sesión</a>
-      <i class="fa-solid fa-right-from-bracket"></i>
-    </div>
-    <% } else { %>
-    <div class="nav-iconos">
-      <a href="/user/login"><i class="fa-regular fa-user"></i></a>
-    </div>
-    <% } %>
+    <% if (locals.usuarioLogueado) { %>
+      <% if (locals.usuarioLogueado.rol=='admin' ) { %>
+        <a href="../admin">Administrar</a>
+        <% } %>
+          <div class="nav-iconos">
+            <p>Hola, <%=usuarioLogueado.nombre %>!</p>
+            <a href="user/logout">Cerrar Sesión</a>
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </div>
+          <% } else { %>
+            <div class="nav-iconos">
+              <a href="/user/login"><i class="fa-regular fa-user"></i></a>
+            </div>
+            <% } %>
   </nav>
 </header>

@@ -22,8 +22,8 @@ app.use(
 //Middleware para activar lo referido a cookies
 app.use(cookieParser());
 
-//var logMid = require("../middlewares/logueadoMiddleware");
-//var loglessMid = require("../middlewares/sinLoguearMiddleware");
+const logMid = require("../middlewares/logueadoMiddleware");
+const loglessMid = require("../middlewares/sinLoguearMiddleware");
 const adminMiddleware = require('../middlewares/adminMiddleware')
 
 //Requerir las rutas
@@ -40,8 +40,11 @@ app.use("/user", userRoutes);
 app.use("/producto", prodRoutes);
 app.use("/admin", adminRoutes);
 
-// app.use(logMid);
-//app.use(loglessMid);
+//usuarios
+//nelsopon13@gmail.com esotilin
+
+app.use(logMid);
+app.use(loglessMid);
 app.use(adminMiddleware);
 
 app.listen(3001, () => {

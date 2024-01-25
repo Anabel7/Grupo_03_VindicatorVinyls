@@ -1,11 +1,11 @@
 [
   {
     "id": 0,
-    "nombre": "Nelson Bravo",
+    "nombre": "Nelson",
     "usuario": "Lazarus",
     "email": "nelsopon13@gmail.com",
-    "password": "esotilin",
-    "avatar": "nelson.jpg",
+    "password": "$2a$10$.IWf7e6WGT/alzlkJ0m5y.fWDoYmsX76T8du.Lxc8n7q7tkb0klry",
+    "avatar": "1706223305843_img_.jpg",
     "rol": "admin"
   },
   {
