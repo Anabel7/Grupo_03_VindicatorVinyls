@@ -7,68 +7,68 @@
     "password": "$2a$10$.IWf7e6WGT/alzlkJ0m5y.fWDoYmsX76T8du.Lxc8n7q7tkb0klry",
     "avatar": "1706223305843_img_.jpg",
     "rol": "admin"
-  },
+  }, 
   {
     "id": 1,
-    "nombre": "Anabel Alvarado",
+    "nombre": "Anabel",
     "usuario": "lalagina",
     "email": "gamergirl54@gmail.com",
-    "password": "potaxios",
-    "avatar": "anabel.jpg",
-    "rol": "admin"
+    "password": "$2a$10$mQIR74Nu9j5Oc7JwboJLU.9cj3XnKxxMuGxHksBL6IXEygCRq0Kmi",
+    "avatar": "1706225042262_img_.jpg",
+    "rol": "cliente"
   },
   {
     "id": 2,
-    "nombre": "Emiliano Suarez",
+    "nombre": "Emiliano",
     "usuario": "P-lele",
     "email": "iafan23@gmail.com",
-    "password": "generatedPassword789",
-    "avatar": "beepbeep.jpg",
+    "password": "$2a$10$SQQQWeM/soros/M5vZ/OXO/iaTnU44t06Bt1wwi0q5Cs3kCyIxfNW",
+    "avatar": "1706225111479_img_.jpg",
     "rol": "cliente"
   },
   {
     "id": 3,
-    "nombre": "Santiago Bergoglio",
+    "nombre": "Santiago",
     "usuario": "badmilk",
     "email": "holachicoscomoestan@gmail.com",
-    "password": "elpepe",
-    "avatar": "santiago.png",
+    "password": "$2a$10$NxKzJpTo1VpsJhht1Fjax.L23P2nmQqpbQ3vU78Hk6I/Zr4JeTp4C",
+    "avatar": "1706225189638_img_.jpg",
     "rol": "cliente"
   },
   {
     "id": 4,
-    "nombre": "Ricardo Fort",
-    "usuario": "almirantelince",
+    "nombre": "Ricardo",
+    "usuario": "almiranteFort",
     "email": "felfort@gmail.com",
-    "password": "asereje",
-    "avatar": "forta.jpg",
+    "password": "$2a$10$rNsceKSQ/dyMBeWff4K4mOo6NeaL3dBF5ldAOWbtuP0N7jurZm/da",
+    "avatar": "1706225273585_img_.jpg",
     "rol": "cliente"
   },
   {
     "id": 5,
-    "nombre": "Arturo Coronado",
+    "nombre": "Arturo",
     "usuario": "doomentio",
     "email": "doomentio@gmail.com",
-    "password": "ne0xtian",
-    "avatar": "doom.jpg",
+    "password": "$2a$10$mZ4sU0u95ro7tXDeYHLU.uPbOKs/zUFMjNEA/snfdEhC.EperLhWO",
+    "avatar": "1706225332169_img_.jpg",
     "rol": "cliente"
   },
   {
     "id": 6,
-    "nombre": "José Diaz",
+    "nombre": "José",
     "usuario": "bigpoppa",
     "email": "jomsemsimtom@gmail.com",
-    "password": "eternalbronze",
-    "avatar": "bestie.jpg",
+    "password": "$2a$10$6lLHIg.rMwPmPsXBiQ/xzed6QVxLQo6mVy7TnJHM8gOITN/G6yLy6",
+    "avatar": "1706225388440_img_.jpg",
     "rol": "cliente"
   },
   {
     "id": 7,
-    "nombre": "Cristian Weston Chandler",
+    "nombre": "Cristian",
     "usuario": "ChrisChan",
     "email": "sonichu@gmail.com",
-    "password": "lovequest",
-    "avatar": "chris.jpg",
+    "password": "$2a$10$IKMj0rKKfsmyrOUAzM/m/OMnd7qp7qwK2Ytdq2m8hE.ZZEsHNDsAC",
+    "avatar": "1706225439141_img_.jpg",
     "rol": "cliente"
   },
   {
@@ -76,8 +76,8 @@
     "nombre": "Papa Noel",
     "usuario": "notYourDad",
     "email": "jojojo@gmail.com",
-    "password": "jojojojojo",
-    "avatar": "santa.jpg",
+    "password": "$2a$10$C./i2390s0M2PMHy1GHc0OHgOu2ELDhOB5npCtUu35x067VxhSooO",
+    "avatar": "1706225493913_img_.jpg",
     "rol": "cliente"
   },
   {
