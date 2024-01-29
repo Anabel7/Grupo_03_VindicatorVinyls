@@ -3,6 +3,9 @@ const fs = require("fs");
 let usuarios = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, "../database/usuarios.json"), "utf-8")
 );
+let discos = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, "../database/discos.json"), "utf-8")
+);
 const bcryptjs = require("bcryptjs");
 //Requiero la función que trae los errores desde la ruta, si existen
 const { validationResult } = require("express-validator");
@@ -81,7 +84,14 @@ const controller = {
     }
   },
   carrito: (req, res) => {
-    res.render("user/carrito", { usuarios });
+    let usuarioLogueado = req.session.usuarioLogueado
+    let id = req.params.id;
+    let discoElegido = discos.find((disco) => {
+      return disco.id == id;
+    });
+    res.render(path.resolve(__dirname, "../views/user/carrito.ejs"), {
+      disco: discoElegido, usuarioLogueado
+    });
   },
   logout: (req, res) => {
     req.session.destroy();

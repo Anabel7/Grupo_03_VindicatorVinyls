@@ -9,9 +9,10 @@
     </div>
     <% if (locals.usuarioLogueado) { %>
       <% if (locals.usuarioLogueado.rol=='admin' ) { %>
-        <a href="../admin">Administrar</a>
-        <% } %>
+        
           <div class="nav-iconos">
+            <a href="../admin">Administrar</a>
+        <% } %>
             <p>Hola, <%=usuarioLogueado.nombre %>!</p>
             <a href="user/logout">Cerrar Sesión</a>
             <i class="fa-solid fa-right-from-bracket"></i>

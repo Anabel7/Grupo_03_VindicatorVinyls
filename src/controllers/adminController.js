@@ -6,10 +6,12 @@ let discos = JSON.parse(
 
 const controller = {
   dashboard: (req, res) => {
-    res.render("admin/dashboard", { discos});
+    let usuarioLogueado = req.session.usuarioLogueado
+    res.render("admin/dashboard", { discos, usuarioLogueado});
   },
   create: (req, res) => {
-    res.render("admin/agregarProducto", { discos });
+    let usuarioLogueado = req.session.usuarioLogueado
+    res.render("admin/agregarProducto", { discos, usuarioLogueado});
   },
   save: (req, res) => {
     console.log(req.body);
@@ -42,18 +44,20 @@ const controller = {
     res.redirect("/admin");
   },
   detalles: (req, res) => {
+    let usuarioLogueado = req.session.usuarioLogueado
     let id = req.params.id;
     let discoElegido = discos.find((disco) => {
       return disco.id == id;
     });
     res.render(path.resolve(__dirname, "../views/admin/detalles.ejs"), {
-      disco: discoElegido,
-    });
+      disco: discoElegido, usuarioLogueado 
+       });
   },
   edit: (req, res) => {
+    let usuarioLogueado = req.session.usuarioLogueado
     let id = parseInt(req.params.id);
     let discoElegido = discos.find((disco) => disco.id == id);
-    res.render("admin/editarProducto", { disco: discoElegido });
+    res.render("admin/editarProducto", { disco: discoElegido, usuarioLogueado });
   },
   update: (req, res) => {
     let id = parseInt(req.params.id);
