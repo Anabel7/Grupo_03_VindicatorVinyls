@@ -38,6 +38,9 @@ body {
   left: 20px;
 }
 
+.bienvenida img {
+  display: none;
+}
 table {
   width: 80%;
   border-collapse: collapse;
@@ -73,7 +76,15 @@ tr:hover {background-color: grey;}
     top:50px;
   }
   .bienvenida{
-    top: 50px;
+    top: 3vh;
+  }
+  .bienvenida h2{
+    display: inline-block;
+  }
+  .bienvenida img {
+    display: inline-block;
+    width: 15%;
+    border-radius: 30px;
   }
 }
 ion-icon{
@@ -86,5 +97,11 @@ ion-icon{
 @media only screen and (min-width: 1200px) {
   .agregar {
     height: 150px;
+  }
+  .bienvenida{
+    top: 4vh;
+  }
+  .bienvenida img {
+    width: 18%;
   }
 }
