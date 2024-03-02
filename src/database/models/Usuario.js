@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = "Usuarios";
+    let alias = "user";
 
     let cols = {
         "id": {
@@ -7,10 +7,10 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        "nombre": {
+        "name": {
             type: DataTypes.STRING
         },
-        "usuario": {
+        "user": {
             type: DataTypes.STRING
         },
         "email": {
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         "password": {
             type: DataTypes.STRING
         },
-        "avatar": {
+        "avatar_url": {
             type: DataTypes.STRING
         },
         "rol": {
@@ -28,11 +28,11 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     let config = {
-        tableName: "users",
+        tableName: "user",
         timestamps: false
     }
 
-    const Usuario = sequelize.define(alias, cols, config);
+    const usuario = sequelize.define(alias, cols, config);
 
-    return Usuario
+    return usuario;
 }

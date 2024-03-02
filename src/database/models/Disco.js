@@ -1,25 +1,25 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = "Discos";
+    let alias = "product";
 
     let cols = {
-        "id": {
+        "product_id": {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        "disco": {
+        "product_title": {
             type: DataTypes.STRING
         },
-        "artista": {
+        "artist_id": {
             type: DataTypes.TINYSTRING
         },
-        "descripcion": {
+        "product_info": {
             type: DataTypes.MEDIUMTEXT
         },
-        "precio": {
+        "price": {
             type: DataTypes.FLOAT
         },
-        "genero": {
+        "genre_id": {
             type: DataTypes.TINYSTRING
         },
         "stock": {
@@ -34,13 +34,13 @@ module.exports = (sequelize, DataTypes) => {
         "tracklist": {
             type: DataTypes.STRING
         },
-        "discografica": {
+        "label_id": {
             type: DataTypes.STRING
         }
     }
 
 let config = {
-    tableName: "vynils",
+    tableName: "product",
     timestamps: false
 }
 
