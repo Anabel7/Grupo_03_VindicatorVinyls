@@ -46,5 +46,26 @@ let config = {
 
 const Disco = sequelize.define(alias, cols, config);
 
+Disco.associate = function(models){
+    Disco.belongsTo(models.Generos,{
+        as: "genero",
+        foreignKey: "genre_id"
+    })
+}
+
+Disco.associate = function(models){
+    Disco.belongsTo(models.Artistas,{
+        as: "artista",
+        foreignKey: "artist_id"
+    })
+}
+
+Disco.associate = function(models){
+    Disco.belongsTo(models.Disqueras,{
+        as: "disquera",
+        foreignKey: "label_id"
+    })
+}
+
 return Disco
 }
