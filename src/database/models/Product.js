@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         "price": {
-            type: DataTypes.DECIMAL(10,2).UNSIGNED,
+            type: DataTypes.DECIMAL(10, 2).UNSIGNED,
             allowNull: false
         },
         "tracklist": {
@@ -49,34 +49,39 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
 
-let config = {
-    tableName: "product",
-    timestamps: true,
-    underscored: true
-}
+    let config = {
+        tableName: "product",
+        timestamps: true,
+        underscored: true
+    }
 
-const Product = sequelize.define(alias, cols, config);
+    const Product = sequelize.define(alias, cols, config);
 
-Product.associate = function(models){
-    Product.belongsTo(models.Genres,{
-        as: "genero",
-        foreignKey: "genre_id"
-    })
-}
+    Product.associate = function (models) {
+        Product.belongsTo(models.Genres, {
+            as: "genero",
+            foreignKey: "genre_id"
+        })
 
-Product.associate = function(models){
-    Product.belongsTo(models.Artists,{
-        as: "artista",
-        foreignKey: "artist_id"
-    })
-}
+        Product.belongsTo(models.Artists, {
+            as: "artista",
+            foreignKey: "artist_id"
+        })
 
-Product.associate = function(models){
-    Product.belongsTo(models.Labels,{
-        as: "disquera",
-        foreignKey: "label_id"
-    })
-}
+        Product.belongsTo(models.Labels, {
+            as: "disquera",
+            foreignKey: "label_id"
+        })
 
-return Product
+        Product.belongsToMany(models.Users, {
+            as: "usuarios",
+            through: "carrito",
+            foreignKey: "product_id",
+            otherKey: "user_id",
+            timestamps: false
+        })
+    }
+
+
+    return Product
 }
