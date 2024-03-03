@@ -26,5 +26,13 @@ let config = {
 
 const Label = sequelize.define(alias, cols, config);
 
+Label.associate = function (models) {
+    Label.hasMany(models.Products, {
+        as: "discos",
+        foreignKey: "label_id"
+    })
+}
+
+
 return Label;
 }

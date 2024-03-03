@@ -26,5 +26,12 @@ let config = {
 
 const Genre = sequelize.define(alias, cols, config);
 
+Genre.associate = function (models) {
+    Genre.hasMany(models.Products, {
+        as: "discos",
+        foreignKey: "genre_id"
+    })
+}
+
 return Genre;
 }

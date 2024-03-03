@@ -26,5 +26,12 @@ let config = {
 
 const Artist = sequelize.define(alias, cols, config);
 
+Artist.associate = function (models) {
+    Artist.hasMany(models.Products, {
+        as: "discos",
+        foreignKey: "artist_id"
+    })
+}
+
 return Artist;
 }
