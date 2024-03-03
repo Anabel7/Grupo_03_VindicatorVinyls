@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         "product_info": {
-            type: DataTypes.MEDIUMTEXT,
+            type: DataTypes.TEXT,
             allowNull: false
         },
         "price": {
