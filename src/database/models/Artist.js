@@ -1,37 +1,41 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = "Artist";
+  let alias = "Artist";
 
-    let cols = {
-        "artist_id": {
-            type: DataTypes.SMALLINT.UNSIGNED,
-            primaryKey: true,
-            allowNull: false,
-            autoIncrement: true
-        },
-        "artist_name": {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        "artist_info": {
-            type: DataTypes.STRING,
-            allowNull: false
-        }
-    }
+  let cols = {
+    artist_id: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
+    },
+    artist_name: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+    },
+    artist_info: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    artist_path: {
+      type: DataTypes.STRING(255),
+      allowNull: false,
+    },
+  };
 
-let config = {
-    tableName: "artist",
+  let config = {
+    tableName: "artists",
     timestamps: true,
-    underscored: true
-}
+    underscored: true,
+  };
 
-const Artist = sequelize.define(alias, cols, config);
+  const Artist = sequelize.define(alias, cols, config);
 
-Artist.associate = function (models) {
-    Artist.hasMany(models.Products, {
-        as: "discos",
-        foreignKey: "artist_id"
-    })
-}
+  Artist.associate = function (models) {
+    Artist.hasMany(models.Product, {
+      as: "products",
+      foreignKey: "artist_id",
+    });
+  };
 
-return Artist;
-}
+  return Artist;
+};

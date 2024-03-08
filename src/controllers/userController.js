@@ -1,36 +1,33 @@
 const path = require("path");
 const fs = require("fs");
-let usuarios = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, "../database/usuarios.json"), "utf-8")
-);
-let discos = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, "../database/discos.json"), "utf-8")
-);
+
 const bcryptjs = require("bcryptjs");
 //Requiero la función que trae los errores desde la ruta, si existen
 const { validationResult } = require("express-validator");
 
+// const db = require("../database/models");
+const {User, Product} = require("../database/models");
+const {error} = require('console');
+
 const controller = {
   registro: (req, res) => {
     let errors = validationResult(req);
-    res.render("user/registro", { usuarios });
+    res.render("user/registro", { User });
   },
-  create: (req, res) => {
+  create: async (req, res) => {
     console.log(req.body);
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      let lastUser = usuarios.pop();
-      usuarios.push(lastUser);
+      try{
       //Preparar los datos nuevos
-      let newbie = {
-        id: lastUser.id + 1,
+      let newbie =  await User.create({
         nombre: req.body.nombre,
         usuario: req.body.usuario,
         email: req.body.email,
         password: bcryptjs.hashSync(req.body.password, 10),
         avatar: req.file.filename,
         rol: "cliente",
-      };
+      });
       console.log(req.file);
       //Agregamos el nuevo usuario al array
       usuarios.push(newbie);
@@ -42,6 +39,11 @@ const controller = {
         newbieGuardar
       );
       res.redirect("/user/login");
+      }
+      catch(error){
+        console.log("Ha ocurrido un error" + error.message); 
+        res.render("user/registro", { errors: errors.array(), old: req.body });
+      }
     } else {
       res.render("user/registro", { errors: errors.array(), old: req.body });
     }

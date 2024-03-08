@@ -24,16 +24,16 @@
         <img src="/img/tiendita vinilos.png" alt="tienda de vinilos" />
       </div>
       <section class="productos-container">
-        <% discos.forEach(disco => { %>
+        <% products.forEach(product => { %>
         <figure class="box-producto">
-          <a href="/producto/detalles/<%= disco.id %>">
+          <a href="/producto/detalles/<%= product.product_id %>">
             <img
-              src="/img/products/<%= disco.imagen %>"
-              alt="Portada álbum <%= disco.disco %>"
+              src="/img/products/<%= product.cover_path %>"
+              alt="Portada álbum <%= product.product_title %>"
             />
             <figcaption>
-              <h3><%= disco.artista %> - <%= disco.disco %></h3>
-              <span>$<%= disco.precio %></span>
+              <h3><%= product.artist.artist_name %> - <%= product.product_title %></h3>
+              <span>$<%= product.price %></span>
             </figcaption>
           </a>
         </figure>

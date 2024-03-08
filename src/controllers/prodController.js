@@ -1,29 +1,34 @@
-const path = require('path');
-const fs = require('fs');
-let discos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/discos.json'), 'utf-8'));
+const path = require("path");
+const fs = require("fs");
 
-const db = require('../database/models');
+const db = require("../database/models");
 
 const controller = {
-    detalles: (req, res) => {
-        let usuarioLogueado = req.session.usuarioLogueado
-        let id = req.params.id;
-        let discoElegido = discos.find(disco => {
-            return disco.id== id
-        })
-        res.render(path.resolve(__dirname, '../views/producto/detalles.ejs'), {disco: discoElegido, usuarioLogueado});
-    },
-    listadoProductos : async (req,res) => {
-        try{
-            const products = await db.Product.findAll()
-            res.render('listado', {products}) 
-        } catch(error){
-            console.log('Ha ocurrido un error'+ error.message);
-        }
-        // let usuarioLogueado = req.session.usuarioLogueado
-        // res.render(path.resolve(__dirname, '../views/producto/listado.ejs'), {discos: discos, usuarioLogueado});
+  detalles: async (req, res) => {
+    try {
+      let usuarioLogueado = req.session.usuarioLogueado;
+      const product = await db.Product.findByPk(req.params.id, {
+        include: [
+          { model: db.Artist, as: "artist" },
+          { model: db.Label, as: "label" },
+          { model: db.Genre, as: "genre" },
+        ],
+      });
+      res.render("producto/detalles", { product });
+    } catch (error) {
+      console.log("Ha ocurrido un error" + error.message); 
     }
-}
-
+  },
+  listadoProductos: async (req, res) => {
+    try {
+      const products = await db.Product.findAll({
+        include: [{ model: db.Artist, as: "artist" }],
+      });
+      res.render("producto/listado", { products });
+    } catch (error) {
+      console.log("Ha ocurrido un error" + error.message);
+    }
+  },
+};
 
 module.exports = controller;

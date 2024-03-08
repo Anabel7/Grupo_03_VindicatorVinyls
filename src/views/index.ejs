@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vindicator Vinyls</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vindicator Vinyls</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
 
-  <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="stylesheet" href="/css/index.css" />
-</head>
-
-<body>
-  <%- include('./partials/header') %>
+  <body>
+    <%- include('./partials/header') %>
     <main>
       <div class="banner-index">
         <img src="img/tiendita vinilos.png" alt="tienda de vinilos" />
@@ -63,7 +66,13 @@
       </section>
 
       <div class="barra-busqueda">
-        <input class="barra-busqueda" type="search" name="busqueda" id="busqueda" placeholder="Buscar..." />
+        <input
+          class="barra-busqueda"
+          type="search"
+          name="busqueda"
+          id="busqueda"
+          placeholder="Buscar..."
+        />
       </div>
 
       <!-- <i class="fa-solid fa-heart"></i>
@@ -76,23 +85,27 @@
           </a>
         </div>
         <div class="filtros-destacados">
-          <a href="/producto/listado" class="boton-filtro"><span>Todos</span></a>
+          <a href="/producto/listado" class="boton-filtro"
+            ><span>Todos</span></a
+          >
           <a href="#" class="boton-filtro"><span>Novedades</span></a>
           <a href="#" class="boton-filtro"><span>Más vendidos</span></a>
           <a href="#" class="boton-filtro"><span>Ofertas</span></a>
         </div>
       </section>
       <section class="productos-container">
-        <% discos.slice(0,8).forEach(disco => { %>
+        <% products.slice(0,8).forEach(product=> { %>
         <figure class="box-producto">
-          <a href="/producto/detalles/<%= disco.id %>">
+          <a href="/producto/detalles/<%= product.product_id %>">
             <img
-              src="/img/products/<%= disco.imagen %>"
-              alt="Portada álbum <%= disco.disco %>"
+              src="/img/products/<%= product.cover_path %>"
+              alt="Portada álbum <%= product.product_title %>"
             />
             <figcaption>
-              <h3><%= disco.artista %> - <%= disco.disco %></h3>
-              <span>$<%= disco.precio %></span>
+              <h3>
+                <%= product.artist.artist_name %> - <%= product.product_title %>
+              </h3>
+              <span>$<%= product.price %></span>
             </figcaption>
           </a>
         </figure>
@@ -101,6 +114,5 @@
     </main>
 
     <%- include('./partials/footer') %>
-</body>
-
+  </body>
 </html>

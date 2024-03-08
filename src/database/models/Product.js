@@ -1,87 +1,87 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = "Product";
+  let alias = "Product";
 
-    let cols = {
-        "product_id": {
-            type: DataTypes.SMALLINT.UNSIGNED,
-            primaryKey: true,
-            allowNull: false,
-            autoIncrement: true
-        },
-        "artist_id": {
-            type: DataTypes.SMALLINT.UNSIGNED,
-            allowNull: false
-        },
-        "genre_id": {
-            type: DataTypes.SMALLINT.UNSIGNED,
-            allowNull: false
-        },
-        "product_title": {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        "product_info": {
-            type: DataTypes.TEXT,
-            allowNull: false
-        },
-        "price": {
-            type: DataTypes.DECIMAL(10, 2).UNSIGNED,
-            allowNull: false
-        },
-        "tracklist": {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        "stock": {
-            type: DataTypes.TINYINT.UNSIGNED,
-            allowNull: false
-        },
-        "anio": {
-            type: DataTypes.DATE,
-            allowNull: false
-        },
-        "imagen": {
-            type: DataTypes.STRING
-        },
-        "label_id": {
-            type: DataTypes.TINYINT.UNSIGNED,
-            allowNull: false
-        }
-    }
+  let cols = {
+    product_id: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
+    },
+    artist_id: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+    },
+    genre_id: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+    },
+    product_title: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+    },
+    product_info: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    price: {
+      type: DataTypes.DECIMAL(10, 2).UNSIGNED,
+      allowNull: false,
+    },
+    tracklist: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    stock: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+    },
+    release_date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    label_id: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+    },
+    cover_path: {
+      type: DataTypes.STRING(255),
+      allowNull: false,
+    },
+  };
 
-    let config = {
-        tableName: "product",
-        timestamps: true,
-        underscored: true
-    }
+  let config = {
+    tableName: "products",
+    timestamps: true,
+    underscored: true,
+  };
 
-    const Product = sequelize.define(alias, cols, config);
+  const Product = sequelize.define(alias, cols, config);
 
-    Product.associate = function (models) {
-        Product.belongsTo(models.Genres, {
-            as: "genero",
-            foreignKey: "genre_id"
-        })
+  Product.associate = function (models) {
+    Product.belongsTo(models.Genre, {
+      as: "genre",
+      foreignKey: "genre_id",
+    });
 
-        Product.belongsTo(models.Artists, {
-            as: "artista",
-            foreignKey: "artist_id"
-        })
+    Product.belongsTo(models.Artist, {
+      as: "artist",
+      foreignKey: "artist_id",
+    });
 
-        Product.belongsTo(models.Labels, {
-            as: "disquera",
-            foreignKey: "label_id"
-        })
+    Product.belongsTo(models.Label, {
+      as: "label",
+      foreignKey: "label_id",
+    });
 
-        Product.belongsToMany(models.Users, {
-            as: "usuarios",
-            through: "carrito",
-            foreignKey: "product_id",
-            otherKey: "user_id",
-            timestamps: false
-        })
-    }
+    Product.belongsToMany(models.User, {
+      as: "user",
+      through: "carrito",
+      foreignKey: "product_id",
+      otherKey: "user_id",
+      timestamps: false,
+    });
+  };
 
-
-    return Product
-}
+  return Product;
+};

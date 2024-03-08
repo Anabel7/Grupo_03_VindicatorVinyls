@@ -14,31 +14,31 @@
     <link rel="stylesheet" href="/css/styles.css"/>
     <link rel="stylesheet" href="/css/detalles.css"/>
 
-    <title><%= disco.artista %> - <%= disco.disco %></title>
+    <title><%= product.artist.artist_name %> - <%= product.product_title %></title>
   </head>
   <body>
     <%- include('../partials/header') %>
     <section class="productos-container">
       <figure class="box-producto">
         <img
-          src="/img/products/<%= disco.imagen %>"
-          alt="Portada de <%= disco.disco %>"
-        />
+              src="/img/products/<%= product.cover_path %>"
+              alt="Portada álbum <%= product.product_title %>"
+            />
         <figcaption>
-          <h3><%= disco.artista %> - <%= disco.disco %></h3>
-          <span>$ <%= disco.precio %></span>
+          <h3><%= product.artist.artist_name %> - <%= product.product_title %></h3>
+          <span>$<%= product.price %></span>
           <span
             ><a href="/user/carrito/"
               ><i class="fa-solid fa-cart-arrow-down"></i> Agregar al carrito</a
             ></span
           >
           <p>
-            <%= disco.descripcion %>
+            <%= product.product_info %>
           </p>
-          <p>Discográfica: <br /><%=disco.discografica%></p>
-          <p>Fecha de lanzamiento <br><%=disco.anio%></p>
-          <p>Género <br><%=disco.genero%></p>
-          <p>Tracklist: <br><%=disco.tracklist%></p>
+          <p>Discográfica: <br /><%=product.label.label_name%></p>
+          <p>Fecha de lanzamiento <br><%=product.release_date%></p>
+          <p>Género <br><%=product.genre.genre_name%></p>
+          <p>Tracklist: <br><%=product.tracklist%></p>
 
         </figcaption>
       </figure>
