@@ -21,10 +21,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     password: {
-      type: DataTypes.STRING(20),
+      type: DataTypes.STRING(100),
       allowNull: false,
     },
-    avatar_url: {
+    avatar_path: {
       type: DataTypes.STRING(255),
       allowNull: false,
     },
@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
 
   let config = {
     tableName: "users",
-    timestamps: false,
+    timestamps: true,
     underscored: true,
   };
 

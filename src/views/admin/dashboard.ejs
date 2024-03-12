@@ -60,22 +60,22 @@
             <tbody>
               <% discos.forEach(disco => { %>
               <tr>
-                <td><%= disco.id%></td>
-                <td><%= disco.disco%></td>
-                <td><%= disco.artista%></td>
+                <td><%= product.product_id %></td>
+                <td><%= product.product_title %></td>
+                <td><%= product.artist.artist_name %></td>
                 <td>
-                  <a href="/admin/detalles/<%= disco.id%> ">
+                  <a href="/admin/detalles/<%= product.product_id%> ">
                     <ion-icon name="eye-outline"></ion-icon
                   ></a>
                 </td>
                 <td>
-                  <a href="/admin/editarProducto/<%= disco.id%> ">
+                  <a href="/admin/editarProducto/<%= product.product_id%> ">
                     <ion-icon name="pencil-outline"></ion-icon
                   ></a>
                 </td>
                 <td>
                   <form
-                    action="/admin/delete/<%= disco.id%>?_method=DELETE"
+                    action="/admin/delete/<%= product.product_id%>?_method=DELETE"
                     method="post"
                   >
                     <button type="submit">

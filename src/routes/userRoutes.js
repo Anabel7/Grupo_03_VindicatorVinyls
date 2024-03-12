@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const fs = require("fs");
+// const fs = require("fs");
 const path = require("path");
 const multer = require("multer");
 
@@ -8,9 +8,9 @@ const multer = require("multer");
 const userController = require("../controllers/userController");
 const { body } = require("express-validator");
 
-let usuarios = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, "../database/usuarios.json"), "utf-8")
-);
+// let usuarios = JSON.parse(
+//   fs.readFileSync(path.resolve(__dirname, "../database/usuarios.json"), "utf-8")
+// );
 
 //Middlewares
 const logMid = require("../../middlewares/logueadoMiddleware");
@@ -30,8 +30,8 @@ const upload = multer({ storage });
 
 
 const validacionesRegistro = [
-  body("nombre").isLength({ min: 4 }).withMessage("Escribe tu nombre (mínimo 4 caracteres)"),
-  body("usuario").isLength({ min: 4 }).withMessage("Tu usuario debe tener mínimo 4 caracteres"),
+  body("name").isLength({ min: 4 }).withMessage("Escribe tu nombre (mínimo 4 caracteres)"),
+  body("user").isLength({ min: 4 }).withMessage("Tu usuario debe tener mínimo 4 caracteres"),
   body("email").isEmail().withMessage("Agregá un e-mail válido"),
   body("password")
     .isLength({ min: 8 })
@@ -45,7 +45,7 @@ const validacionesRegistro = [
       }
     })
     .withMessage("Las contraseñas deben ser iguales"),
-  body("avatar")
+  body("avatar_path")
     .custom((value, { req }) => {
       let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
       if (req.file != undefined) {
@@ -60,7 +60,7 @@ const validacionesRegistro = [
 
 const validacionesLogin = [
   body("email").isEmail().withMessage('Agrega un e-mail válido'),
-  body("contra")
+  body("password")
     .isLength({ min: 8 })
     .withMessage("La contraseña es muy corta (Mínimo 8 caracteres)")
 ];
@@ -69,7 +69,7 @@ router.get("/registro", loglessMid, userController.registro);
 //Ruta que envia al controlador el avatar de usuario y las validaciones
 router.post(
   "/registro",
-  upload.single("avatar"),
+  upload.single("avatar_path"),
   validacionesRegistro,
   userController.create
 );

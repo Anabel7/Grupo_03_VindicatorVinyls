@@ -79,7 +79,7 @@ module.exports = (sequelize, DataTypes) => {
       through: "carrito",
       foreignKey: "product_id",
       otherKey: "user_id",
-      timestamps: false,
+      timestamps: true,
     });
   };
 
