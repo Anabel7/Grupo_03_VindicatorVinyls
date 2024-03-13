@@ -8,7 +8,7 @@ module.exports = {
         user: "ejemplo1",
         email: "ejemplo1@example.com",
         password: await bcrypt.hash("password1", 10), // Hashea la contraseña
-        avatar_path: "avatar1.jpg",
+        avatar_path: "../../public/img/users/ej1.jpg",
         rol: "cliente",
       },
       {
@@ -16,10 +16,10 @@ module.exports = {
         user: "ejemplo2",
         email: "ejemplo2@example.com",
         password: await bcrypt.hash("password2", 10), // Hashea la contraseña
-        avatar_path: "avatar2.jpg",
+        avatar_path: "../../public/img/users/ej2.jpg",
         rol: "admin",
       },
-      // Agrega más usuarios si es necesario
+      // Agregar más usuarios si es necesario
     ];
 
     // Inserta los datos en la base de datos

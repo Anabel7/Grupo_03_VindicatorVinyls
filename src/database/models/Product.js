@@ -69,9 +69,12 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "artist_id",
     });
 
-    Product.belongsTo(models.Label, {
+    Product.belongsToMany(models.Label, {
       as: "label",
-      foreignKey: "label_id",
+      through: "label-products",
+      foreignKey: "product_id",
+      otherKey: "label_id",
+      timestamps: true,
     });
 
     Product.belongsToMany(models.User, {
