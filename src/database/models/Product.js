@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     release_date: {
-      type: DataTypes.DATE,
+      type: DataTypes.YEAR,
       allowNull: false,
     },
     label_id: {
