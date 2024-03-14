@@ -5,59 +5,49 @@ const fs = require("fs");
 // );
 const db = require("../database/models");
 
+
 const controller = {
-  dashboard: (req, res) => {
-    async (req, res) => {
+  dashboard: async (req, res) => {
       try {
-        let usuarioLogueado = req.session.usuarioLogueado;
+        let user = req.session.usuario;
         const products = await db.Product.findAll({
           include: [{ model: db.Artist, as: "artist" }],
         });
-        res.render("admin/dashboard", { products });
+        res.render("admin/dashboard", { products, user });
       } catch (error) {
         console.log("Ha ocurrido un error" + error.message);
       }
-    };
   },
   create: (req, res) => {
-    let usuarioLogueado = req.session.usuarioLogueado;
-    res.render("admin/agregarProducto", { User });
+    let user = req.session.usuario;
+    res.render("admin/agregarProducto", { user });
   },
-  save: (req, res) => {
+  save: async (req, res) => {
     console.log(req.body);
-    let ultimoDisco = discos.pop();
-    discos.push(ultimoDisco);
-    //Preparar los datos nuevos
-    let nuevoProducto = {
-      id: ultimoDisco.id + 1,
-      disco: req.body.disco,
-      artista: req.body.artista,
-      descripcion: req.body.descripcion,
-      precio: req.body.precio,
-      genero: req.body.genero,
-      stock: req.body.stock,
-      anio: req.body.anio,
-      imagen: req.file.filename,
-      tracklist: req.body.tracklist,
-      discografica: req.body.discografica,
-    };
-    console.log(req.file);
-    //Agregamos el nuevo disco al array
-    discos.push(nuevoProducto);
-    //Convertimos el array a json
-    let nuevoProductoGuardar = JSON.stringify(discos, null, 2);
-    //Guardamos el archivo
-    fs.writeFileSync(
-      path.resolve(__dirname, "../database/discos.json"),
-      nuevoProductoGuardar,
-      "utf-8"
-    );
-    res.redirect("/admin");
+    try {
+      let nuevoProducto = await Product.create({
+        product_title: req.body.product_title,
+        artist_name: req.body.artist_name,
+        descripcion: req.body.product_info,
+        precio: req.body.precio,
+        genero: req.body.genre_name,
+        stock: req.body.stock,
+        release_date: req.body.release_date,
+        cover_path: req.file.filename,
+        tracklist: req.body.tracklist,
+        label_name: req.body.label_name,
+      });
+      // console.log(req.file);
+      res.redirect("/admin");
+    } catch (error) {
+      console.log("Ha ocurrido un error" + error.message);
+      res.status(500).send("Ha ocurrido un error al crear el producto");
+    }
   },
   detalles: (req, res) => {
     async (req, res) => {
       try {
-        let usuarioLogueado = req.session.usuarioLogueado;
+        const user = req.session.usuario;
         const product = await db.Product.findByPk(req.params.id, {
           include: [
             { model: db.Artist, as: "artist" },
@@ -72,7 +62,7 @@ const controller = {
     };
   },
   edit: (req, res) => {
-    let usuarioLogueado = req.session.usuarioLogueado;
+    const user = req.session.usuario;
     let id = parseInt(req.params.id);
     let discoElegido = discos.find((disco) => disco.id == id);
     res.render("admin/editarProducto", {

@@ -9,8 +9,9 @@ const { error } = require("console");
 
 const controller = {
   registro: (req, res) => {
+    const user = req.session.usuario;
     let errors = validationResult(req);
-    res.render("user/registro", { User });
+    res.render("user/registro", { user });
   },
   create: async (req, res) => {
     console.log(req.body);
@@ -36,7 +37,7 @@ const controller = {
     }
   },
   login: (req, res) => {
-    res.render("user/login", { User });
+    res.render("user/login", { user: req.session.usuario });
   },
   ingresar: async (req, res) => {
     let errors = validationResult(req);
@@ -48,7 +49,7 @@ const controller = {
           },
         });
         if (user && bcryptjs.compareSync(req.body.password, user.password)) {
-          req.session.usuarioLogueado = user;
+          req.session.usuario = user;
           if (req.body.recordarme) {
             res.cookie("email", user.email, { maxAge: 1000 * 60 * 60 * 24 });
           }
@@ -68,19 +69,19 @@ const controller = {
     }
   },
   carrito: (req, res) => {
-    let usuarioLogueado = req.session.usuarioLogueado;
+    const user = req.session.usuario;
     let id = req.params.id;
-    let discoElegido = discos.find((disco) => {
+    let products = discos.find((disco) => {
       return disco.id == id;
     });
     res.render(path.resolve(__dirname, "../views/user/carrito.ejs"), {
-      disco: discoElegido,
-      usuarioLogueado,
+      products,
+      user
     });
   },
   logout: (req, res) => {
     req.session.destroy();
-    res.cookie("email", null, { maxAge: -1 });
+    res.clearCookie("email");
     res.redirect("/");
   },
 };

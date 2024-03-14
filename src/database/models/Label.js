@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
   Label.associate = function (models) {
     Label.belongsToMany(models.Product, {
       as: "products",
-      through: "label-products",
+      through: "label_products",
       foreignKey: "label_id",
       otherKey: "user_id",
       timestamps: true

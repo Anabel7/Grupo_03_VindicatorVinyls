@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
-router.get("/", adminMiddleware, adminController.dashboard); //Menu de control del Admin
+router.get("/", adminController.dashboard); //Menu de control del Admin
 router.get("/agregarProducto", adminMiddleware, adminController.create);
 router.post("/agregarProducto", upload.single('imagen'), adminController.save);
 router.get('/detalles/:id', adminMiddleware, adminController.detalles);
