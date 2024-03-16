@@ -14,9 +14,21 @@ const controller = {
       console.log("Ha ocurrido un error" + error.message);
     }
   },
-  create: (req, res) => {
-    let user = req.session.usuario;
-    res.render("admin/agregarProducto", { user });
+  create: async (req, res) => {
+    try {
+      let user = req.session.usuario;
+      const products = await db.Product.findAll({
+        include: [
+          { model: db.Artist, as: "artist" },
+          { model: db.Label, as: "label" },
+          { model: db.Genre, as: "genre" },
+        ],
+      });
+      const genres = await db.Genre.findAll();
+      res.render("admin/agregarProducto", { products, user, genres });
+    } catch (error) {
+      console.log("Ha ocurrido un error" + error.message);
+    }
   },
   save: async (req, res) => {
     console.log(req.body);

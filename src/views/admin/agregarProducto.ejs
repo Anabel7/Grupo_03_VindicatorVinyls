@@ -34,28 +34,34 @@
           enctype="multipart/form-data"
         >
           <label for="disco">Título del disco:</label><br />
-          <input type="text" id="disco" name="product_title" required /><br />
+          <input type="text" id="disco" name="product_title" /><br />
 
           <label for="artista">Artista:</label><br />
-          <input type="text" id="artista" name="artist_name" required /><br />
+          <input type="text" id="artista" name="artist_name" /><br />
 
-          <label for="genero">Género/s (separar con comas):</label><br />
-          <input type="text" id="genero" name="genre_name" required /><br />
+          <label for="genero">Género:</label><br />
+          <select name="genre_id" id="genero">
+            <% genres.forEach(genre => { %>
+            <option value="<%= genre.id %>"><%= genre.genre_name %></option>
+            <% }); %>
+            <option value="otro">Otro</option>
+          </select><br />
+          <input type="text" id="generoNuevo" name="genre_name" style="display: none;" placeholder="Ingrese otro género"/><br />
 
           <label for="precio">Precio:</label><br />
-          <input type="number" id="precio" name="price" required /><br />
+          <input type="number" id="precio" name="price" /><br />
 
           <label for="anio">Fecha de publicación original:</label><br />
-          <input type="date" id="anio" name="release_date" required /><br />
+          <input type="date" id="anio" name="release_date" /><br />
 
           <label for="descripcion">Descripción:</label><br />
           <textarea id="descripcion" name="product_info"></textarea><br />
 
           <label for="stock">Stock disponible:</label><br />
-          <input type="number" id="stock" name="stock" required /><br />
+          <input type="number" id="stock" name="stock" /><br />
 
           <label for="tracklist">Lista de Canciones</label><br />
-          <textarea name="tracklist" id="tracklist" required></textarea><br />
+          <textarea name="tracklist" id="tracklist"></textarea><br />
 
           <label for="discografica">Discográfica</label><br />
           <input
@@ -64,7 +70,7 @@
             name="label_name"
             required
           /><br />
-          <input type="file" name="cover_path" id="imagen" required /><br />
+          <input type="file" name="cover_path" id="imagen" /><br />
 
           <input type="submit" value="Agregar producto" /><br />
         </form>
