@@ -30,10 +30,15 @@
           <p class="errores"><%= error.msg %></p>
           <% })} %>
 
+            <div class="errores2" style="color: red;">
+              <ul></ul>
+            </div>
+
           <form
             action="/user/registro"
             method="post"
             enctype="multipart/form-data"
+            class="register"
           >
             <label for="nombre">Nombre</label>
             <input
