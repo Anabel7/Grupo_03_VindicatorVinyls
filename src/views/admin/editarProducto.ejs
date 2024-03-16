@@ -15,7 +15,6 @@
 
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/agregarProducto.css" />
-
   </head>
   <body>
     <header><%- include('../partials/header') %></header>
@@ -23,42 +22,99 @@
       <h1>Editar Producto</h1>
     </div>
     <section class="admin-section">
-      
       <div class="contenedor-form">
         <div class="imagenesCargadas">
-          <img src="/img/products/<%= disco.imagen %>" alt="Portada álbum <%= disco.disco %>" />
+          <img
+            src="/img/products/<%= product.cover_path %>"
+            alt="Portada álbum <%= product.product_title %>"
+          />
         </div>
 
-        <form class="formCargarDatos" action="/admin/editarProducto/<%=disco.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form
+          class="formCargarDatos"
+          action="/admin/editarProducto/<%=product.product_id%>?_method=PUT"
+          method="POST"
+          enctype="multipart/form-data"
+        >
           <label for="disco">Título del disco:</label><br />
-          <input type="text" id="disco" name="disco" required value="<%=disco.disco%>"/><br />
-         
+          <input
+            type="text"
+            id="disco"
+            name="product_title"
+            required
+            value="<%=product.product_title%>"
+          /><br />
+
           <label for="artista">Artista:</label><br />
-          <input type="text" id="artista" name="artista" required value="<%=disco.artista%>"/><br />
-         
+          <input
+            type="text"
+            id="artista"
+            name="artist.artist_name"
+            required
+            value="<%=product.artist.artist_name%>"
+          /><br />
+
           <label for="genero">Género/s (separar con comas):</label><br />
-          <input type="text" id="genero" name="genero" required value="<%=disco.genero%>"/><br />
-          
+          <input
+            type="text"
+            id="genero"
+            name="genre.genre_name"
+            required
+            value="<%=product.genre.genre_name%>"
+          /><br />
+
           <label for="precio">Precio:</label><br />
-          <input type="number" id="precio" name="precio" required value="<%=disco.precio%>"/><br />
-         
+          <input
+            type="number"
+            id="precio"
+            name="price"
+            required
+            value="<%=product.price%>"
+          /><br />
+
           <label for="anio">Fecha de publicación original:</label><br />
-          <input type="date" id="anio" name="anio" required value="<%=disco.anio%>"/><br />
-         
+          <input
+            type="date"
+            id="anio"
+            name="release_date"
+            required
+            value="<%=product.release_date%>"
+          /><br />
+
           <label for="descripcion">Descripción:</label><br />
-          <textarea id="descripcion" name="descripcion"><%=disco.descripcion%></textarea><br />
-          
+          <textarea id="descripcion" name="product_info">
+ <%= product.product_info %> </textarea
+          ><br />
+
           <label for="stock">Stock disponible:</label><br />
-          <input type="number" id="stock" name="stock" required value="<%=disco.stock%>"/><br />
-         
+          <input
+            type="number"
+            id="stock"
+            name="stock"
+            required
+            value="<%=product.stock%>"
+          /><br />
+
           <label for="tracklist">Lista de Canciones</label><br />
-          <textarea name="tracklist" id="tracklist" required><%=disco.tracklist%></textarea><br />
+          <textarea name="tracklist" id="tracklist" required>
+<%=product.tracklist%></textarea
+          ><br />
 
           <label for="discografica">Discográfica</label><br />
-          <input type="text" id="discografica" name="discografica" required value="<%=disco.discografica%>"><br />
-          <input type="hidden"  name="oldImagen"  value="<%= disco.imagen%>">
-          <input type="file" name="imagen" id="imagen"/><br />
-        
+          <input
+            type="text"
+            id="discografica"
+            name="label.label_name"
+            required
+            value="<%=product.label.label_name%>"
+          /><br />
+          <input
+            type="hidden"
+            name="OldImagen"
+            value="<%= product.cover_path%>"
+          />
+          <input type="file" name="cover_path" id="imagen" /><br />
+
           <input type="submit" value="Actualizar producto" /><br />
         </form>
       </div>

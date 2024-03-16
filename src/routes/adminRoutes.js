@@ -18,12 +18,12 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
-router.get("/", adminController.dashboard); //Menu de control del Admin
+router.get("/", adminMiddleware, adminController.dashboard); //Menu de control del Admin
 router.get("/agregarProducto", adminMiddleware, adminController.create);
-router.post("/agregarProducto", upload.single('imagen'), adminController.save);
+router.post("/agregarProducto", upload.single('cover_path'), adminController.save);
 router.get('/detalles/:id', adminMiddleware, adminController.detalles);
 router.get("/editarProducto/:id", adminMiddleware, adminController.edit); //edición
-router.put("/editarProducto/:id", upload.single('imagen'), adminController.update);
+router.put("/editarProducto/:id", upload.single('cover_path'), adminController.update);
 router.delete("/delete/:id", adminController.destroy);
 
 
