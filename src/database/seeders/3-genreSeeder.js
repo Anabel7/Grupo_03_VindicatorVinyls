@@ -74,7 +74,7 @@ module.exports = {
         ], {});
     },
 
-    down: async (queryInterface, Sequelize) => {
-        await queryInterface.bulkDelete('genres', null, {});
-    }
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.bulkDelete("genres", null, {});
+  },
 };

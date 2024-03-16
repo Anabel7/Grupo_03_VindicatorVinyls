@@ -1,8 +1,9 @@
-function adminMiddleware(req, res, next) {
-  if (req.session.usuario.rol == "admin") {
-    next();
+const adminMiddleware = (req, res, next) => {
+  if (!req.session.usuario.rol || req.session.usuario.rol !== 'admin') {
+      return res.redirect('/login');
   } else {
-    res.send("Esta página es solo para administradores");
+    next();
   }
-}
+};
+
 module.exports = adminMiddleware;
