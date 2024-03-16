@@ -1,5 +1,5 @@
 function logueadoMiddleware(req, res, next) {
-  if (req.session.usuarioLogueado != null) {
+  if (req.session.usuario != null) {
     next();
   } else {
     res.redirect("/user/login");

@@ -32,7 +32,7 @@
       <section class="agregar">
         <div class="bienvenida">
           <h2>Hola, admin </h2>
-          <img src="/img/users/<%=usuarioLogueado.avatar%>" alt="avatar de admin">
+          <img src="/img/users/<%=user.avatar_path%>" alt="avatar de admin">
         </div>
         <div class="contenedor-boton-agregar">
           <a href="/admin/agregarProducto">
@@ -58,7 +58,7 @@
             </thead>
 
             <tbody>
-              <% discos.forEach(disco => { %>
+              <% products.forEach(product => { %>
               <tr>
                 <td><%= product.product_id %></td>
                 <td><%= product.product_title %></td>

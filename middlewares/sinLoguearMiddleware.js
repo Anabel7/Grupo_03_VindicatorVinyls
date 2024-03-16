@@ -1,5 +1,5 @@
 function sinLoguearMiddleware(req,res,next){
-    if(req.session.usuarioLogueado == null){
+    if(req.session.usuario == null){
         next();
     } else {
         res.send('Ya has iniciado sesión');

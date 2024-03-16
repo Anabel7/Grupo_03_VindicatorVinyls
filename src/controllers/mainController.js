@@ -6,13 +6,13 @@ const db = require("../database/models");
 const controller = {
   index: async (req, res) => {
     try {
-      const usuarioLogueado = req.session.usuarioLogueado;
+      const user = req.session.usuario;
       const products = await db.Product.findAll({
         include: [{ model: db.Artist, as: "artist" }],
       });
       res.render("index", {
         products: products,
-        usuarioLogueado: usuarioLogueado,
+        user,
       });
     } catch (error) {
       console.log(`Ha ocurrido un error ${error.message}`);

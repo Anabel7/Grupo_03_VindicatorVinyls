@@ -71,7 +71,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Product.belongsToMany(models.Label, {
       as: "label",
-      through: "label-products",
+      through: "label_products",
       foreignKey: "product_id",
       otherKey: "label_id",
       timestamps: true,
