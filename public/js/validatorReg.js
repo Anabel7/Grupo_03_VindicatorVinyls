@@ -1,6 +1,6 @@
 window.addEventListener("load", function () {
     let formularioRegistro = document.querySelector("form.register");
-    const Usuario = require("../../database/models/User")
+    const Usuario = require("../../src/database/models/User")
     formularioRegistro.addEventListener("submit", function (e) {
 
         let errores = [];
