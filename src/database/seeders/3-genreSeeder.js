@@ -51,9 +51,23 @@ module.exports = {
                 updated_at: new Date()
             },
             {
+                genre_name: 'Ritmos latinos',
+                genre_info: 'La música latina es un género musical que se originó en América Latina y se caracteriza por su diversidad de estilos y ritmos, así como por su influencia cultural y emocional. La música latina abarca una amplia gama de estilos y géneros, que incluyen la salsa, el merengue, la bachata, el reggaetón, la cumbia, el tango, la bossa nova y muchos más.',
+                genre_path: '../../public/img/genres/latinx.jpg',
+                created_at: new Date(),
+                updated_at: new Date()
+            },
+            {
                 genre_name: 'Experimental/Indie',
                 genre_info: 'La música experimental es un género musical que se caracteriza por su enfoque en la exploración sonora y la innovación creativa. A diferencia de otros géneros más convencionales, la música experimental se centra menos en la estructura y más en la experimentación con diferentes técnicas, sonidos y conceptos musicales. Aquí están reunidos los álbumes que no terminan de encajar dentro de ninguna de nuestras otras categorías.',
                 genre_path: '../../public/img/genres/indie.jpg',
+                created_at: new Date(),
+                updated_at: new Date()
+            },
+            {
+                genre_name: 'Otro',
+                genre_info: 'En vista de que la música tiene potencial ilimitado, es posible producir canciones que no puedan ser encasilladas en ningún género musical conocido. Música noise, vaporwave, seapunk, shoegaze, future funk... en esta sección encontrarás música que podría gustarte o no, pero que al menos tienen una visión más artística que comercial.',
+                genre_path: '../../public/img/genres/otros.jpg',
                 created_at: new Date(),
                 updated_at: new Date()
             }
