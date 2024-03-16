@@ -24,7 +24,7 @@ CREATE TABLE `products` (
    `price` DECIMAL(10,2) NOT NULL,
    `tracklist` MEDIUMTEXT NOT NULL,
    `stock` INT NOT NULL,
-   `release_date` YEAR NOT NULL,
+   `release_date` DATE NOT NULL,
    `label_id` INT UNSIGNED NOT NULL,
    `cover_path` VARCHAR(255) NOT NULL,
    `created_at` DATETIME,
