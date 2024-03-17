@@ -25,30 +25,67 @@ const controller = {
         ],
       });
       const genres = await db.Genre.findAll();
-      res.render("admin/agregarProducto", { products, user, genres });
+      const artists = await db.Artist.findAll();
+      const labels = await db.Label.findAll();
+      // console.log(genres, products);
+      res.render("admin/agregarProducto", { products, user, genres, artists, labels });
     } catch (error) {
       console.log("Ha ocurrido un error" + error.message);
     }
   },
   save: async (req, res) => {
-    console.log(req.body);
+    let user = req.session.usuario;
     try {
+      const {
+        product_title,
+        artist_name,
+        genre_name,
+        label_name,
+        product_info,
+        price,
+        stock,
+        release_date,
+        tracklist,
+      } = req.body;
+
+      console.log(req.body);
+      // Buscar el artista por su nombre
+      const artist = await db.Artist.findOne({ where: { artist_name } });
+      // console.log('artista encontrado: ', artist);
+      // Buscar el género por su nombre
+      const genre = await db.Genre.findOne({ where: { genre_name } });
+      // console.log('genero encontrado: ', genre);
+      // Buscar la discográfica por su nombre
+      const label = await db.Label.findOne({ where: { label_name } });
+      // console.log('label encontrado: ', label);
+      // Verificar si se encontraron todos los registros necesarios
+      if (!artist) {
+        throw new Error("No se encontró el artista");
+      }
+      if (!genre) {
+        throw new Error("No se encontraron todos los datos necesarios.");
+      }
+      if (!label) {
+        throw new Error("No se encontraron todos los datos necesarios.");
+      }
+      // console.log(artist.artist_id);
+      // Crear el producto con los IDs encontrados
       await db.Product.create({
-        product_title: req.body.product_title,
-        artist_name: req.body.artist_name,
-        product_info: req.body.product_info,
-        price: req.body.price,
-        genre: req.body.genre_name,
-        stock: req.body.stock,
-        release_date: req.body.release_date,
+        product_title,
+        artist_id: artist.artist_id,
+        genre_id: genre.genre_id,
+        label_id: label.label_id,
+        product_info,
+        price,
+        stock,
+        release_date,
+        tracklist,
         cover_path: req.file.filename,
-        tracklist: req.body.tracklist,
-        label_name: req.body.label_name,
       });
-      // console.log(req.file);
+
       res.redirect("/admin");
     } catch (error) {
-      console.log("Ha ocurrido un error" + error.message);
+      console.log("Ha ocurrido un error: " + error.message);
       res.status(500).send("Ha ocurrido un error al crear el producto");
     }
   },
@@ -77,7 +114,10 @@ const controller = {
           { model: db.Genre, as: "genre" },
         ],
       });
-      res.render("admin/editarProducto", { product, user });
+      const genres = await db.Genre.findAll();
+      const artists = await db.Artist.findAll();
+      const labels = await db.Label.findAll();
+      res.render("admin/editarProducto", {  product, user, genres, artists, labels });
     } catch (error) {
       console.log("Ha ocurrido un error" + error.message);
     }
@@ -98,7 +138,7 @@ const controller = {
           cover_path: req.file ? req.file.filename : req.body.oldImagen,
         },
         {
-          where: { id: req.params.id },
+          where: { product_id: req.params.id },
         }
       );
       res.redirect("/admin");

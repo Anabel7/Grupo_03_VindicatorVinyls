@@ -5,7 +5,7 @@ const { validationResult } = require("express-validator");
 
 // const db = require("../database/models");
 const { User, Product } = require("../database/models");
-const { error } = require("console");
+const { error, log } = require("console");
 
 const controller = {
   registro: (req, res) => {
@@ -49,6 +49,7 @@ const controller = {
           },
         });
         if (user && bcryptjs.compareSync(req.body.password, user.password)) {
+          console.log('usercontroller', user);
           req.session.usuario = user;
           if (req.body.recordarme) {
             res.cookie("email", user.email, { maxAge: 1000 * 60 * 60 * 24 });

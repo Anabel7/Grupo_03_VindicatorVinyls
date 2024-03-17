@@ -37,16 +37,18 @@
           <input type="text" id="disco" name="product_title" /><br />
 
           <label for="artista">Artista:</label><br />
-          <input type="text" id="artista" name="artist_name" /><br />
+          <select name="artist_name" id="artista">
+            <% artists.forEach(artist => { %>
+              <option value="<%= artist.artist_name %>"><%= artist.artist_name %></option>
+              <% }); %>
+          </select><br />
 
           <label for="genero">Género:</label><br />
-          <select name="genre_id" id="genero">
+          <select name="genre_name" id="genero">
             <% genres.forEach(genre => { %>
-            <option value="<%= genre.id %>"><%= genre.genre_name %></option>
+            <option value="<%= genre.genre_name %>"><%= genre.genre_name %></option>
             <% }); %>
-            <option value="otro">Otro</option>
           </select><br />
-          <input type="text" id="generoNuevo" name="genre_name" style="display: none;" placeholder="Ingrese otro género"/><br />
 
           <label for="precio">Precio:</label><br />
           <input type="number" id="precio" name="price" /><br />
@@ -64,12 +66,12 @@
           <textarea name="tracklist" id="tracklist"></textarea><br />
 
           <label for="discografica">Discográfica</label><br />
-          <input
-            type="text"
-            id="discografica"
-            name="label_name"
-            required
-          /><br />
+          <select name="label_name" id="discografica">
+            <% labels.forEach(label => { %>
+              <option value="<%= label.label_name %>"><%= label.label_name %></option>
+              <% }); %>
+          </select><br />
+          
           <input type="file" name="cover_path" id="imagen" /><br />
 
           <input type="submit" value="Agregar producto" /><br />

@@ -46,29 +46,28 @@
           /><br />
 
           <label for="artista">Artista:</label><br />
-          <input
-            type="text"
-            id="artista"
-            name="artist.artist_name"
-            required
-            value="<%=product.artist.artist_name%>"
-          /><br />
+          <select name="artist_name" id="artista">
+            <% artists.forEach(artist => { %>
+            <option value="<%= artist.artist_name %>">
+              <%= artist.artist_name %>
+            </option>
+            <% }); %></select
+          ><br />
 
-          <label for="genero">Género/s (separar con comas):</label><br />
-          <input
-            type="text"
-            id="genero"
-            name="genre.genre_name"
-            required
-            value="<%=product.genre.genre_name%>"
-          /><br />
+          <label for="genero">Género:</label><br />
+          <select name="genre_name" id="genero">
+            <% genres.forEach(genre => { %>
+            <option value="<%= genre.genre_name %>">
+              <%= genre.genre_name %>
+            </option>
+            <% }); %></select
+          ><br />
 
           <label for="precio">Precio:</label><br />
           <input
             type="number"
             id="precio"
             name="price"
-            required
             value="<%=product.price%>"
           /><br />
 
@@ -91,23 +90,22 @@
             type="number"
             id="stock"
             name="stock"
-            required
             value="<%=product.stock%>"
           /><br />
 
-          <label for="tracklist">Lista de Canciones</label><br />
-          <textarea name="tracklist" id="tracklist" required>
-<%=product.tracklist%></textarea
+          <label for="tracklist">Lista de Canciones: </label><br />
+          <textarea name="tracklist" id="tracklist">
+ <%= product.tracklist %></textarea
           ><br />
 
           <label for="discografica">Discográfica</label><br />
-          <input
-            type="text"
-            id="discografica"
-            name="label.label_name"
-            required
-            value="<%=product.label.label_name%>"
-          /><br />
+          <select name="label_name" id="discografica">
+            <% labels.forEach(label => { %>
+            <option value="<%= label.label_name %>">
+              <%= label.label_name %>
+            </option>
+            <% }); %></select
+          ><br />
           <input
             type="hidden"
             name="OldImagen"
