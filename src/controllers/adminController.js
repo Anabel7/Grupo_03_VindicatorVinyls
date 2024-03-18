@@ -28,7 +28,13 @@ const controller = {
       const artists = await db.Artist.findAll();
       const labels = await db.Label.findAll();
       // console.log(genres, products);
-      res.render("admin/agregarProducto", { products, user, genres, artists, labels });
+      res.render("admin/agregarProducto", {
+        products,
+        user,
+        genres,
+        artists,
+        labels,
+      });
     } catch (error) {
       console.log("Ha ocurrido un error" + error.message);
     }
@@ -63,10 +69,10 @@ const controller = {
         throw new Error("No se encontró el artista");
       }
       if (!genre) {
-        throw new Error("No se encontraron todos los datos necesarios.");
+        throw new Error("No se encontró el género.");
       }
       if (!label) {
-        throw new Error("No se encontraron todos los datos necesarios.");
+        throw new Error("No se encontró la discográfica.");
       }
       // console.log(artist.artist_id);
       // Crear el producto con los IDs encontrados
@@ -117,40 +123,78 @@ const controller = {
       const genres = await db.Genre.findAll();
       const artists = await db.Artist.findAll();
       const labels = await db.Label.findAll();
-      res.render("admin/editarProducto", {  product, user, genres, artists, labels });
+      res.render("admin/editarProducto", {
+        product,
+        user,
+        genres,
+        artists,
+        labels,
+      });
     } catch (error) {
       console.log("Ha ocurrido un error" + error.message);
     }
   },
   update: async (req, res) => {
     try {
+      const {
+        product_title,
+        artist_name,
+        product_info,
+        price,
+        genre_name,
+        stock,
+        release_date,
+        tracklist,
+        label_name,
+      } = req.body;
+
+      // Buscar el artista por su nombre
+      const artist = await db.Artist.findOne({ where: { artist_name } });
+      if (!artist) {
+        throw new Error("No se encontró el artista");
+      }
+
+      // Buscar el género por su nombre
+      const genre = await db.Genre.findOne({ where: { genre_name } });
+      if (!genre) {
+        throw new Error("No se encontró el género");
+      }
+
+      // Buscar la discográfica por su nombre
+      const label = await db.Label.findOne({ where: { label_name } });
+      if (!label) {
+        throw new Error("No se encontró la discográfica");
+      }
+
+      // Actualizar el producto
       await db.Product.update(
         {
-          product_title: req.body.product_title,
-          artist_name: req.body.artist_name,
-          product_info: req.body.product_info,
-          price: req.body.price,
-          genre: req.body.genre_name,
-          stock: req.body.stock,
-          release_date: req.body.release_date,
-          tracklist: req.body.tracklist,
-          label_name: req.body.label_name,
+          product_title,
+          artist_id: artist.artist_id,
+          genre_id: genre.genre_id,
+          product_info,
+          price,
+          stock,
+          release_date,
+          tracklist,
+          label_id: label.label_id,
           cover_path: req.file ? req.file.filename : req.body.oldImagen,
         },
         {
           where: { product_id: req.params.id },
         }
       );
+
       res.redirect("/admin");
     } catch (error) {
-      console.log("Ha ocurrido un error" + error.message);
-      res.status(500).send("Ha ocurrido un error al crear el producto");
+      console.log("Ha ocurrido un error: " + error.message);
+      res.status(500).send("Ha ocurrido un error al actualizar el producto");
     }
   },
   destroy: (req, res) => {
     db.Product.destroy({
       where: {
-        id: req.params.id,
+        product_id: req.params.id,
       },
     })
       .then(() => {

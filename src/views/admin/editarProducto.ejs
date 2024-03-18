@@ -73,10 +73,11 @@
 
           <label for="anio">Fecha de publicación original:</label><br />
           <input
-            type="date"
+            type="number"
             id="anio"
+            min ="1800"
+            max="2026"
             name="release_date"
-            required
             value="<%=product.release_date%>"
           /><br />
 

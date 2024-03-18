@@ -51,9 +51,12 @@ figure img {
 
 /* para el detalles de admin*/
 .contenedor-boton-atras {
-  width: 40vw;
-  margin-top: 5%;
-  margin-left: 3%;
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+  margin-top: 1%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .regresar {
@@ -72,7 +75,23 @@ figure img {
 .regresar i {
   margin-right: 10px;
 }
+.editar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #124d92;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  color: #fff2dd;
+  border: none;
+  cursor: pointer;
+}
 
+.editar i {
+  margin-left: 10px;
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -88,5 +107,18 @@ figure img {
   }
   body{
     background-color: black;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .box-producto{
+    width: 75%;
+  }
+}
+
+/*Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .box-producto{
+    width: 60%;
   }
 }
