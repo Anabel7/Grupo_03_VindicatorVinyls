@@ -1,123 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agregar Producto</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agregar Producto</title>
 
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/agregarProducto.css" />
-  </head>
-  <body>
-    <%- include('../partials/header') %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/agregarProducto.css" />
+</head>
+
+<body>
+  <%- include('../partials/header') %>
     <div class="titulo-agregar">
       <h1>Agregar Producto</h1>
     </div>
     <section class="admin-section">
       <div class="contenedor-form">
-        <% if (errors && errors.length > 0) { %>
-        <div style="color: red">
-          <ul class="errores">
-            <% errors.forEach(error => { %>
-            <li><%= error.msg %></li>
-            <% }); %>
-          </ul>
-        </div>
-        <% } %>
+        <% if (errors && errors.length> 0) { %>
+          <div style="color: red">
+            <ul class="errores">
+              <% errors.forEach(error=> { %>
+                <li>
+                  <%= error.msg %>
+                </li>
+                <% }); %>
+            </ul>
+          </div>
+          <% } %>
 
-        <div class="imagenesCargadas">
-          <img src="/img/template.jpg" alt="imagenesCargadas" />
-        </div>
+            <div class="imagenesCargadas">
+              <img src="/img/template.jpg" alt="imagenesCargadas" />
+            </div>
 
-        <form
-          class="formCargarDatos"
-          action="/admin/agregarProducto"
-          method="POST"
-          enctype="multipart/form-data"
-        >
-          <label for="disco">Título del disco:</label><br />
-          <input
-            type="text"
-            id="disco"
-            name="product_title"
-            value="<%= locals.old && old.product_title ? old.product_title : '' %>"
-          /><br />
+            <form class="formCargarDatos" action="/admin/agregarProducto" method="POST" enctype="multipart/form-data">
+              <label for="disco">Título del disco:</label><br />
+              <input type="text" id="disco" name="product_title"
+                value="<%= locals.old && old.product_title ? old.product_title : '' %>" /><br />
 
-          <label for="artista">Artista:</label><br />
-          <select name="artist_name" id="artista">
-            <% artists.forEach(artist => { %>
-            <option value="<%= artist.artist_name %>">
-              <%= artist.artist_name %>
-            </option>
-            <% }); %></select
-          ><br />
+              <label for="artista">Artista:</label><br />
+              <select name="artist_name" id="artista">
+                <% artists.forEach(artist=> { %>
+                  <option value="<%= artist.artist_name %>">
+                    <%= artist.artist_name %>
+                  </option>
+                  <% }); %>
+              </select><br />
 
-          <label for="genero">Género:</label><br />
-          <select name="genre_name" id="genero">
-            <% genres.forEach(genre => { %>
-            <option value="<%= genre.genre_name %>">
-              <%= genre.genre_name %>
-            </option>
-            <% }); %></select
-          ><br />
+              <label for="genero">Género:</label><br />
+              <select name="genre_name" id="genero">
+                <% genres.forEach(genre=> { %>
+                  <option value="<%= genre.genre_name %>">
+                    <%= genre.genre_name %>
+                  </option>
+                  <% }); %>
+              </select><br />
 
-          <label for="precio">Precio:</label><br />
-          <input
-            type="number"
-            id="precio"
-            name="price"
-            value="<%= locals.old && old.price ? old.price : '' %>"
-          /><br />
+              <label for="precio">Precio:</label><br />
+              <input type="number" id="precio" name="price"
+                value="<%= locals.old && old.price ? old.price : '' %>" /><br />
 
-          <label for="anio">Fecha de publicación original:</label><br />
-          <input
-            type="number"
-            id="anio"
-            min="1800"
-            max="2026"
-            name="release_date"
-            value="<%= locals.old && old.release_date ? old.release_date : '' %>"
-          /><br />
+              <label for="anio">Fecha de publicación original:</label><br />
+              <input type="number" id="anio" min="1800" max="2026" name="release_date"
+                value="<%= locals.old && old.release_date ? old.release_date : '' %>" /><br />
 
-          <label for="descripcion">Descripción:</label><br />
-          <textarea id="descripcion" name="product_info">
-<%= locals.old && old.product_info ? old.product_info : '' %> </textarea
-          ><br />
+              <label for="descripcion">Descripción:</label><br />
+              <textarea id="descripcion" name="product_info">
+<%= locals.old && old.product_info ? old.product_info : '' %> </textarea><br />
 
-          <label for="stock">Stock disponible:</label><br />
-          <input
-            type="number"
-            id="stock"
-            name="stock"
-            value="<%= locals.old && old.stock ? old.stock : '' %>"
-          /><br />
+              <label for="stock">Stock disponible:</label><br />
+              <input type="number" id="stock" name="stock"
+                value="<%= locals.old && old.stock ? old.stock : '' %>" /><br />
 
-          <label for="tracklist">Lista de Canciones</label><br />
-          <textarea name="tracklist" id="tracklist">
-<%= locals.old && old.tracklist ? old.tracklist : '' %></textarea
-          ><br />
+              <label for="tracklist">Lista de Canciones</label><br />
+              <textarea name="tracklist" id="tracklist">
+<%= locals.old && old.tracklist ? old.tracklist : '' %></textarea><br />
 
-          <label for="discografica">Discográfica</label><br />
-          <select name="label_name" id="discografica">
-            <% labels.forEach(label => { %>
-            <option value="<%= label.label_name %>">
-              <%= label.label_name %>
-            </option>
-            <% }); %></select
-          ><br />
+              <label for="discografica">Discográfica</label><br />
+              <select name="label_name" id="discografica">
+                <% labels.forEach(label=> { %>
+                  <option value="<%= label.label_name %>">
+                    <%= label.label_name %>
+                  </option>
+                  <% }); %>
+              </select><br />
 
-          <input type="file" name="cover_path" id="imagen" /><br />
+              <input type="file" name="cover_path" id="imagen" /><br />
 
-          <input type="submit" value="Agregar producto" /><br />
-        </form>
+              <input type="submit" value="Agregar producto" /><br />
+            </form>
       </div>
     </section>
     <div class="contenedor-boton-atras">
@@ -127,7 +102,8 @@
         </button>
       </a>
     </div>
-    <script src="/public/js/validatorPro.js"></script>
     <%- include('../partials/footer') %>
-  </body>
+      <script src="/public/js/validatorPro.js"></script>
+</body>
+
 </html>

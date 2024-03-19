@@ -6,7 +6,7 @@ window.addEventListener("load", function () {
         let campoMail = document.querySelector("#email");
         let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         let correito = campoMail.value;
-        if (campoMail.value = "") {
+        if (campoMail.value == "") {
             errores.push("Debes ingresar un correo electrónico")
         } else if (!emailRegex.test(campoMail.value)) {
             errores.push("Por favor, ingresa una dirección de correo electrónico válida.");
@@ -19,7 +19,7 @@ window.addEventListener("load", function () {
         });
 
         let campoPW = document.querySelector("#contra");
-        if (campoPW.value = "") {
+        if (campoPW.value == "") {
             errores.push("¿Te olvidaste de colocar una contraseña?")
         } else if (campoPW.value.length < 8) {
             errores.push("Ninguna contraseña tiene tan pocos caracteres")
@@ -33,7 +33,7 @@ window.addEventListener("load", function () {
         });
 
 
-        if (errores.length < 0) {
+        if (errores.length > 0) {
             e.preventDefault();
             let ulErrores = document.querySelector("div.errores2 ul");
             for (let i = 0; i < errores.length; i++) {
