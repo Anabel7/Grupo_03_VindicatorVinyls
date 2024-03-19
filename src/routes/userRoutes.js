@@ -4,13 +4,9 @@ const router = express.Router();
 const path = require("path");
 const multer = require("multer");
 
-
 const userController = require("../controllers/userController");
 const { body } = require("express-validator");
 
-// let usuarios = JSON.parse(
-//   fs.readFileSync(path.resolve(__dirname, "../database/usuarios.json"), "utf-8")
-// );
 
 //Middlewares
 const logMid = require("../../middlewares/logueadoMiddleware");

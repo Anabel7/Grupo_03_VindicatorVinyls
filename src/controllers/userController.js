@@ -14,7 +14,7 @@ const controller = {
     res.render("user/registro", { user });
   },
   create: async (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     let errors = validationResult(req);
     if (errors.isEmpty()) {
       try {
@@ -81,8 +81,8 @@ const controller = {
     });
   },
   logout: (req, res) => {
-    req.session.destroy();
     res.clearCookie("email");
+    req.session.destroy();
     res.redirect("/");
   },
 };

@@ -8,11 +8,7 @@ const controller = {
     try {
       const user = req.session.usuario;
       const product = await db.Product.findByPk(req.params.id, {
-        include: [
-          { model: db.Artist, as: "artist" },
-          { model: db.Label, as: "label" },
-          { model: db.Genre, as: "genre" },
-        ],
+        include:  ['artist', 'genre', 'label'],
       });
       res.render("producto/detalles", { product, user });
     } catch (error) {
