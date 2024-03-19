@@ -6,6 +6,7 @@ const multer = require("multer");
 
 const userController = require("../controllers/userController");
 const { body } = require("express-validator");
+const { User } = require("../database/models");
 
 
 //Middlewares
@@ -28,7 +29,18 @@ const upload = multer({ storage });
 const validacionesRegistro = [
   body("name").isLength({ min: 4 }).withMessage("Escribe tu nombre (mínimo 4 caracteres)"),
   body("user").isLength({ min: 4 }).withMessage("Tu usuario debe tener mínimo 4 caracteres"),
-  body("email").isEmail().withMessage("Agregá un e-mail válido"),
+  body("email").isEmail().withMessage("Agregá un e-mail válido")
+  .custom(async(value)=>{
+    const userRegistrado = await User.findOne({
+      where: {
+        email: value
+      }
+    });
+    if(userRegistrado){
+      throw new Error("El correo electrónico ya está registrado");
+      }
+      return true;
+  }),
   body("password")
     .isLength({ min: 8 })
     .withMessage("La contraseña es muy corta (Mínimo 8 caracteres)"),

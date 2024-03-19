@@ -23,6 +23,16 @@
     </div>
     <section class="admin-section">
       <div class="contenedor-form">
+        <% if (errors && errors.length > 0) { %>
+        <div style="color: red">
+          <ul class="errores">
+            <% errors.forEach(error => { %>
+            <li><%= error.msg %></li>
+            <% }); %>
+          </ul>
+        </div>
+        <% } %>
+
         <div class="imagenesCargadas">
           <img src="/img/template.jpg" alt="imagenesCargadas" />
         </div>
@@ -34,44 +44,76 @@
           enctype="multipart/form-data"
         >
           <label for="disco">Título del disco:</label><br />
-          <input type="text" id="disco" name="product_title" /><br />
+          <input
+            type="text"
+            id="disco"
+            name="product_title"
+            value="<%= locals.old && old.product_title ? old.product_title : '' %>"
+          /><br />
 
           <label for="artista">Artista:</label><br />
           <select name="artist_name" id="artista">
             <% artists.forEach(artist => { %>
-              <option value="<%= artist.artist_name %>"><%= artist.artist_name %></option>
-              <% }); %>
-          </select><br />
+            <option value="<%= artist.artist_name %>">
+              <%= artist.artist_name %>
+            </option>
+            <% }); %></select
+          ><br />
 
           <label for="genero">Género:</label><br />
           <select name="genre_name" id="genero">
             <% genres.forEach(genre => { %>
-            <option value="<%= genre.genre_name %>"><%= genre.genre_name %></option>
-            <% }); %>
-          </select><br />
+            <option value="<%= genre.genre_name %>">
+              <%= genre.genre_name %>
+            </option>
+            <% }); %></select
+          ><br />
 
           <label for="precio">Precio:</label><br />
-          <input type="number" id="precio" name="price" /><br />
+          <input
+            type="number"
+            id="precio"
+            name="price"
+            value="<%= locals.old && old.price ? old.price : '' %>"
+          /><br />
 
           <label for="anio">Fecha de publicación original:</label><br />
-          <input type="number" id="anio" min ="1800" max="2026"name="release_date" /><br />
+          <input
+            type="number"
+            id="anio"
+            min="1800"
+            max="2026"
+            name="release_date"
+            value="<%= locals.old && old.release_date ? old.release_date : '' %>"
+          /><br />
 
           <label for="descripcion">Descripción:</label><br />
-          <textarea id="descripcion" name="product_info"></textarea><br />
+          <textarea id="descripcion" name="product_info">
+<%= locals.old && old.product_info ? old.product_info : '' %> </textarea
+          ><br />
 
           <label for="stock">Stock disponible:</label><br />
-          <input type="number" id="stock" name="stock" /><br />
+          <input
+            type="number"
+            id="stock"
+            name="stock"
+            value="<%= locals.old && old.stock ? old.stock : '' %>"
+          /><br />
 
           <label for="tracklist">Lista de Canciones</label><br />
-          <textarea name="tracklist" id="tracklist"></textarea><br />
+          <textarea name="tracklist" id="tracklist">
+<%= locals.old && old.tracklist ? old.tracklist : '' %></textarea
+          ><br />
 
           <label for="discografica">Discográfica</label><br />
           <select name="label_name" id="discografica">
             <% labels.forEach(label => { %>
-              <option value="<%= label.label_name %>"><%= label.label_name %></option>
-              <% }); %>
-          </select><br />
-          
+            <option value="<%= label.label_name %>">
+              <%= label.label_name %>
+            </option>
+            <% }); %></select
+          ><br />
+
           <input type="file" name="cover_path" id="imagen" /><br />
 
           <input type="submit" value="Agregar producto" /><br />
