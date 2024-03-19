@@ -16,7 +16,7 @@ CREATE TABLE `users` (
 );
 
 CREATE TABLE `products` (
-   `product_id` INT UNSIGNED NOT NULL,
+   `product_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
    `artist_id` INT UNSIGNED NOT NULL,
    `genre_id` INT UNSIGNED NOT NULL,
    `product_title` VARCHAR(50) NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE `products` (
 );
 
 CREATE TABLE `genres` (
-   `genre_id` INT  UNSIGNED NOT NULL,
+   `genre_id` INT  UNSIGNED NOT NULL auto_increment,
    `genre_name` VARCHAR(50) NOT NULL,
    `genre_info` MEDIUMTEXT NOT NULL,
    `genre_path` VARCHAR(255) NOT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE `user_products` (
 );
 
 CREATE TABLE `labels` (
-   `label_id` INT UNSIGNED NOT NULL,
+   `label_id` INT UNSIGNED NOT NULL auto_increment,
    `label_name` VARCHAR(50) NOT NULL,
    `label_info` MEDIUMTEXT NOT NULL,
    `label_path` VARCHAR(255),
@@ -71,7 +71,7 @@ CREATE TABLE `label_products` (
 );
 
 CREATE TABLE `artists` (
-   `artist_id` INT UNSIGNED NOT NULL,
+   `artist_id` INT UNSIGNED NOT NULL auto_increment,
    `artist_name` VARCHAR(50) NOT NULL,
    `artist_info` MEDIUMTEXT NOT NULL,
    `artist_path` VARCHAR(255) NOT NULL,
