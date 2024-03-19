@@ -11,10 +11,11 @@ const controller = {
   registro: (req, res) => {
     const user = req.session.usuario;
     let errors = validationResult(req);
-    res.render("user/registro", { user });
+    res.render("user/registro", { errors: errors.array(), old: req.body, user });
   },
   create: async (req, res) => {
     // console.log(req.body);
+    const user = req.session.usuario;
     let errors = validationResult(req);
     if (errors.isEmpty()) {
       try {
@@ -30,45 +31,55 @@ const controller = {
         res.redirect("/user/login");
       } catch (error) {
         console.log("Ha ocurrido un error" + error.message);
-        res.render("user/registro", { errors: errors.array(), old: req.body });
+        res.render("user/registro", { errors: errors.array(), old: req.body, user: req.session.usuario });
       }
     } else {
-      res.render("user/registro", { errors: errors.array(), old: req.body });
+      res.render("user/registro", { errors: errors.array(), old: req.body, user: req.session.usuario });
     }
   },
   login: (req, res) => {
+    const user = req.session.usuario;
     res.render("user/login", { user: req.session.usuario });
   },
   ingresar: async (req, res) => {
+    const user = req.session.usuario; // Definir la variable user en el alcance del controlador
     let errors = validationResult(req);
     if (errors.isEmpty()) {
       try {
-        const user = await User.findOne({
+        const foundUser = await User.findOne({
           where: {
             email: req.body.email,
           },
         });
-        if (user && bcryptjs.compareSync(req.body.password, user.password)) {
-          console.log('usercontroller', user);
-          req.session.usuario = user;
+        if (foundUser && bcryptjs.compareSync(req.body.password, foundUser.password)) {
+          req.session.usuario = foundUser;
           if (req.body.recordarme) {
-            res.cookie("email", user.email, { maxAge: 1000 * 60 * 60 * 24 });
+            res.cookie("email", foundUser.email, { maxAge: 1000 * 60 * 60 * 24 });
           }
-          // Redirecciona
           return res.redirect("/");
         } else {
           return res.render("user/login", {
             errors: [{ msg: "Credenciales inválidas" }],
+            old: req.body,
+            user
           });
         }
       } catch (error) {
         console.log(error);
         return res.render("user/login", {
-          errors: [{ msg: "Error al iniciar sesión" }],
+          errors: errors.array(),
+          old: req.body,
+          user
         });
       }
+    } else {
+      return res.render("user/login", {
+        errors: errors.array(),
+        old: req.body,
+        user
+      });
     }
-  },
+  },  
   carrito: (req, res) => {
     const user = req.session.usuario;
     let id = req.params.id;
@@ -77,7 +88,7 @@ const controller = {
     });
     res.render(path.resolve(__dirname, "../views/user/carrito.ejs"), {
       products,
-      user
+      user,
     });
   },
   logout: (req, res) => {

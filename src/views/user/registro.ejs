@@ -17,10 +17,10 @@
   </head>
 
   <body>
-    <header><%- include('../partials/header') %></header>
+    <%- include('../partials/header') %>
 
     <main>
-      <script src="/public/js/validatorReg.js"></script>
+      <script src="/js/validatorReg.js"></script>
       <div class="titulo-registrarme">
         <h1>Registrate para comenzar tu aventura musical</h1>
       </div>
@@ -31,9 +31,9 @@
           <p class="errores"><%= error.msg %></p>
           <% })} %>
 
-            <div class="errores2" style="color: red;">
-              <ul></ul>
-            </div>
+          <div class="errores2" style="color: red">
+            <ul></ul>
+          </div>
 
           <form
             action="/user/registro"
@@ -48,7 +48,7 @@
               id="nombre"
               placeholder="Nombre"
               class="celda"
-              value="<%= locals.old && old.nombre ? old.nombre : '' %>"
+              value="<%= locals.old && old.name ? old.name : '' %>"
             />
 
             <label for="usuario">Usuario</label>
@@ -58,7 +58,7 @@
               id="usuario"
               placeholder="Usuario"
               class="celda"
-              value="<%= locals.old && old.usuario ? old.usuario : '' %>"
+              value="<%= locals.old && old.user ? old.user : '' %>"
             />
 
             <label for="email">E-mail</label>
@@ -89,7 +89,7 @@
             />
 
             <label for="avatar">Imagen de perfil</label>
-            <input type="file" id="avatar" name="avatar_path" /> <br />
+            <input type="file" id="avatar" name="avatar_path"/><br />
 
             <input
               type="submit"

@@ -1,4 +1,5 @@
 const path = require("path");
+const { validationResult } = require("express-validator");
 
 const db = require("../database/models");
 
@@ -7,7 +8,7 @@ const controller = {
     try {
       let user = req.session.usuario;
       const products = await db.Product.findAll({
-        include: [{ model: db.Artist, as: "artist" }],
+        include: ["artist"],
       });
       res.render("admin/dashboard", { products, user });
     } catch (error) {
@@ -15,20 +16,20 @@ const controller = {
     }
   },
   create: async (req, res) => {
+    const user = req.session.usuario;
+    let errors = validationResult(req);
     try {
       let user = req.session.usuario;
       const products = await db.Product.findAll({
-        include: [
-          { model: db.Artist, as: "artist" },
-          { model: db.Label, as: "label" },
-          { model: db.Genre, as: "genre" },
-        ],
+        include: ["artist", "genre", "label"],
       });
       const genres = await db.Genre.findAll();
       const artists = await db.Artist.findAll();
       const labels = await db.Label.findAll();
-      // console.log(genres, products);
+    
       res.render("admin/agregarProducto", {
+        errors: errors.array(),
+        old: req.body,
         products,
         user,
         genres,
@@ -40,7 +41,8 @@ const controller = {
     }
   },
   save: async (req, res) => {
-    let user = req.session.usuario;
+    const user = req.session.usuario;
+    let errors = validationResult(req);
     try {
       const {
         product_title,
@@ -53,28 +55,22 @@ const controller = {
         release_date,
         tracklist,
       } = req.body;
-
-      console.log(req.body);
+  
       // Buscar el artista por su nombre
       const artist = await db.Artist.findOne({ where: { artist_name } });
-      // console.log('artista encontrado: ', artist);
-      // Buscar el género por su nombre
-      const genre = await db.Genre.findOne({ where: { genre_name } });
-      // console.log('genero encontrado: ', genre);
-      // Buscar la discográfica por su nombre
-      const label = await db.Label.findOne({ where: { label_name } });
-      // console.log('label encontrado: ', label);
-      // Verificar si se encontraron todos los registros necesarios
       if (!artist) {
         throw new Error("No se encontró el artista");
       }
+      // Buscar el género por su nombre
+      const genre = await db.Genre.findOne({ where: { genre_name } });
       if (!genre) {
-        throw new Error("No se encontró el género.");
+        throw new Error("No se encontró el género");
       }
+      // Buscar la discográfica por su nombre
+      const label = await db.Label.findOne({ where: { label_name } });
       if (!label) {
-        throw new Error("No se encontró la discográfica.");
+        throw new Error("No se encontró la discográfica");
       }
-      // console.log(artist.artist_id);
       // Crear el producto con los IDs encontrados
       await db.Product.create({
         product_title,
@@ -86,24 +82,30 @@ const controller = {
         stock,
         release_date,
         tracklist,
-        cover_path: req.file.filename,
+        cover_path: req.file ? req.file.filename : null, // Verificar si hay un archivo adjunto
       });
-
+  
       res.redirect("/admin");
     } catch (error) {
       console.log("Ha ocurrido un error: " + error.message);
-      res.status(500).send("Ha ocurrido un error al crear el producto");
+      const genres = await db.Genre.findAll(); // Mover la obtención de genres dentro del catch para asegurarse de que se ejecute en caso de error
+      const artists = await db.Artist.findAll(); // Mover la obtención de artists dentro del catch para asegurarse de que se ejecute en caso de error
+      const labels = await db.Label.findAll(); // Mover la obtención de labels dentro del catch para asegurarse de que se ejecute en caso de error
+      res.render("admin/agregarProducto", {
+        errors: errors.array(),
+        old: req.body,
+        user: req.session.usuario,
+        artists,
+        genres,
+        labels,
+      });
     }
   },
   detalles: async (req, res) => {
     try {
       const user = req.session.usuario;
       const product = await db.Product.findByPk(req.params.id, {
-        include: [
-          { model: db.Artist, as: "artist" },
-          { model: db.Label, as: "label" },
-          { model: db.Genre, as: "genre" },
-        ],
+        include: ["artist", "label", "genre"],
       });
       res.render("admin/detalles", { product, user });
     } catch (error) {
@@ -114,11 +116,7 @@ const controller = {
     try {
       const user = req.session.usuario;
       const product = await db.Product.findByPk(req.params.id, {
-        include: [
-          { model: db.Artist, as: "artist" },
-          { model: db.Label, as: "label" },
-          { model: db.Genre, as: "genre" },
-        ],
+        include: ["artist", "label", "genre"],
       });
       const genres = await db.Genre.findAll();
       const artists = await db.Artist.findAll();
