@@ -1,6 +1,7 @@
 window.addEventListener("load", function () {
     let formularioRegistro = document.querySelector("form.register");
-    const Usuario = require("../../src/database/models/User")
+    console.log(formularioRegistro);
+ //   const db = require("../../src/database/models") USAR FETCH 
     formularioRegistro.addEventListener("submit", function (e) {
 
         let errores = [];
@@ -26,12 +27,12 @@ window.addEventListener("load", function () {
         } else if (!emailRegex.test(campoMail.value)) {
             errores.push("Por favor, ingresa una dirección de correo electrónico válida.");
         }
-        Usuario.findOne({where: {email: correito}});
-            then(usuario => {
+ //       db.User.findOne({where: {email: correito}});
+ /*           then(usuario => {
                 if (usuario) {
                     errores.push("Este correo electrónico ya está registrado en nuestra base de datos.");
                 }
-            });
+            }); */
 
             let campoPW = document.querySelector("#password");
             if(campoPW.value == ""){
@@ -43,7 +44,8 @@ window.addEventListener("load", function () {
 
         if (errores.length>0){
             e.preventDefault();
-            let ulErrores = document.querySelectorAll("div.errores2 ul");
+            let ulErrores = document.querySelector("div.errores2 ul");
+            console.log(ulErrores)
             for (let i=0; i < errores.length; i++){
                 ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
             }
