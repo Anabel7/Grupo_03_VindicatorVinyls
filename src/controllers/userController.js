@@ -81,8 +81,8 @@ const controller = {
     });
   },
   logout: (req, res) => {
-    req.session.destroy();
     res.clearCookie("email");
+    req.session.destroy();
     res.redirect("/");
   },
 };

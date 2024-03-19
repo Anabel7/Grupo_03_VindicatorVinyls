@@ -8,10 +8,10 @@ const controller = {
     try {
       const user = req.session.usuario;
       const products = await db.Product.findAll({
-        include: [{ model: db.Artist, as: "artist" }],
+        include:  ['artist', 'genre']
       });
       res.render("index", {
-        products: products,
+        products,
         user,
       });
     } catch (error) {

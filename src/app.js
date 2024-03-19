@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const methodOverride = require("method-override");
+const port = 3001;
 //Requiero los paquetes para trabajar con session y cookies
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
@@ -47,6 +48,6 @@ app.use(logMid);
 app.use(loglessMid);
 app.use(adminMiddleware);
 
-app.listen(3001, () => {
-  console.log("Servidor 3001 funcionando");
+app.listen(port, () => {
+  console.log("Servidor levantado en el puerto http://localhost:" + port);
 });
