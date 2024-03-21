@@ -17,7 +17,7 @@ window.addEventListener("load", function () {
             errores.push("El nombre debe superar los 5 caracteres")
         }
 
-        let campoPrecio = document.querySelector("#artista");
+        let campoPrecio = document.querySelector("#precio");
         if (campoPrecio.value == null) {
             errores.push("Nada es gratis")
         }

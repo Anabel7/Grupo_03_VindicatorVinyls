@@ -44,7 +44,7 @@ module.exports = {
                 updated_at: new Date()
             },
             {
-                genre_name: 'Música clásica',
+                genre_name: 'Música clásica/Sinfónica',
                 genre_info: 'La música clásica es un género musical que se originó en Europa occidental alrededor del siglo IX y se desarrolló hasta el siglo XX. Se caracteriza por su composición formal y estructurada, con obras que suelen ser escritas para instrumentos orquestales y grupos de cámara. Incluimos en este género también los álbumes sinfónicos y orquestales de tiempos modernos y contemporáneos.',
                 genre_path: '../../public/img/genres/clasica.jpg',
                 created_at: new Date(),
