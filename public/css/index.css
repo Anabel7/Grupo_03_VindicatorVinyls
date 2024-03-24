@@ -105,9 +105,9 @@ figure img {
   text-decoration: none;
 }
 
-.box-producto figcaption {
+/* .box-producto figcaption {
   height: 7vh;
-}
+} */
 
 .box-producto figcaption span {
   color: #f7b32b;

@@ -25,13 +25,17 @@ app.use(cookieParser());
 
 const logMid = require("../middlewares/logueadoMiddleware");
 const loglessMid = require("../middlewares/sinLoguearMiddleware");
-const adminMiddleware = require('../middlewares/adminMiddleware')
+const adminMiddleware = require("../middlewares/adminMiddleware");
 
 //Requerir las rutas
 const mainRoutes = require("./routes/mainRoutes");
 const userRoutes = require("./routes/userRoutes");
 const prodRoutes = require("./routes/prodRoutes");
 const adminRoutes = require("./routes/adminRoutes");
+
+//api routes
+const productsApiR = require("./routes/api/productsApiR");
+const usersApiR = require("./routes/api/usersApiR");
 
 app.use(express.static(path.resolve(__dirname, "../public")));
 app.set("view engine", "ejs");
@@ -41,9 +45,11 @@ app.use("/user", userRoutes);
 app.use("/producto", prodRoutes);
 app.use("/admin", adminRoutes);
 
-//usuarios
-//nelsopon13@gmail.com esotilin
+//api use
+app.use("/api/products", productsApiR);
+app.use("/api/users", usersApiR);
 
+//middlewares de sesiones
 app.use(logMid);
 app.use(loglessMid);
 app.use(adminMiddleware);

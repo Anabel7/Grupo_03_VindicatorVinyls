@@ -4,7 +4,10 @@
   "description": "Tienda de vinilos",
   "main": "src/app.js",
   "scripts": {
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon src/app.js",
+    "create-db": "sequelize-cli db:create",
+    "seed-db": "sequelize-cli db:seed:all",
+    "crear-db": "sequelize-cli db:create && sequelize-cli db:migrate && sequelize-cli db:seed:all"
   },
   "keywords": [],
   "author": "",
