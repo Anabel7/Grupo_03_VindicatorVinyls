@@ -22,19 +22,19 @@ module.exports = {
         });
         //creamos el array para los detalles de los productos
         const products = discos.map((product) => {
-          let labels = [];
-          if (product.label_id && product.label.length > 0) {
-            labels = product.label.map(
-              (discografica) => discografica.label_name
-            );
-          } else {
-            labels = [product.label_name];
-          }
+          // let labels = [];
+          // if (product.label_id && product.label.length > 0) {
+          //   labels = product.label.map(
+          //     (discografica) => discografica.label_name
+          //   );
+          // } else {
+          //   labels = [product.label_name];
+          // }
           return {
             id: product.product_id,
             name: product.product_title,
             description: product.product_info,
-            labels: labels,
+            labels: product.label_name,
             detail: `/api/products/${product.product_id}`,
           };
         });

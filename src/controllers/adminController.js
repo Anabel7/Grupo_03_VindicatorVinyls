@@ -107,6 +107,7 @@ const controller = {
       const product = await db.Product.findByPk(req.params.id, {
         include: ["artist", "label", "genre"],
       });
+      console.log('producto: ', product.label);
       res.render("admin/detalles", { product, user });
     } catch (error) {
       console.log("Ha ocurrido un error" + error.message);
@@ -182,7 +183,6 @@ const controller = {
           where: { product_id: req.params.id },
         }
       );
-
       res.redirect("/admin");
     } catch (error) {
       console.log("Ha ocurrido un error: " + error.message);

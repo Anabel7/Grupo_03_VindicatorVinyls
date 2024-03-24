@@ -51,7 +51,7 @@
           <label for="artista">Artista:</label><br />
           <select name="artist_name" id="artista">
             <% artists.forEach(artist => { %>
-            <option value="<%= artist.artist_name %>">
+            <option <%= artist.artist_id === product.artist_id ? 'selected' : '' %>  value="<%= artist.artist_name %>">
               <%= artist.artist_name %>
             </option>
             <% }); %></select
@@ -60,7 +60,7 @@
           <label for="genero">Género:</label><br />
           <select name="genre_name" id="genero">
             <% genres.forEach(genre => { %>
-            <option value="<%= genre.genre_name %>">
+            <option <%= genre.genre_id === product.genre_id ? 'selected' : '' %> value="<%= genre.genre_name %>">
               <%= genre.genre_name %>
             </option>
             <% }); %></select
@@ -105,7 +105,7 @@
           <label for="discografica">Discográfica</label><br />
           <select name="label_name" id="discografica">
             <% labels.forEach(label => { %>
-            <option value="<%= label.label_name %>">
+            <option <%= label.label_id === product.label_id ? 'selected' : '' %> value="<%= label.label_name %>">
               <%= label.label_name %>
             </option>
             <% }); %></select
