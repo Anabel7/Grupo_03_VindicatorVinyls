@@ -122,8 +122,15 @@ figure img {
   padding-top: 10px;
 }
 
-#novasec {
-  display: none;
+.pfp {
+  display: inline-block;
+  width: 45%;
+  vertical-align: top;
+  background-color: #c63185;
+  border: 4px solid #23ce6b;
+  border-radius: 25px;
+  padding: 3px;
+  margin: 2%;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
