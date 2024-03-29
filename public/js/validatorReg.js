@@ -40,6 +40,7 @@ window.addEventListener("load", function () {
     } else if (campoPW.value.length < 8) {
       errores.push("Tu contraseña debe tener un mínimo de 8 caracteres");
     }
+    
     if (errores.length > 0) {
       e.preventDefault();
       let ulErrores = document.querySelector("div.errores2 ul");
