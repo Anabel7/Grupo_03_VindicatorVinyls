@@ -85,5 +85,6 @@ router.get("/login", loglessMid, userController.login);
 router.post("/login", validacionesLogin, userController.ingresar);
 router.get("/carrito", logMid, userController.carrito);
 router.get('/logout', userController.logout);
+router.get("/perfil", logMid, userController.perfil)
 
 module.exports = router;

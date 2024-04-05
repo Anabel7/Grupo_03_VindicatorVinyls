@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi perfil - VindyVinyls</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+</head>
+
+<body>
+    <header><%- include('../partials/header') %></header>
+
+    <main>
+        <section>
+            <figure class="box-user">
+                <img src="/img/users/<%= user.avatar_path %>" class="pfp" alt="Foto de perfil de <%= user.name %>" />
+                <figcaption>
+                    <h1 style="color: black; padding-bottom: 50px;">
+                        Bienvenido al perfil de <%= user.user %>
+                    </h1>
+
+                </figcaption>
+            </figure>
+            <img src="/img/momo.jpg">
+        </section>
+
+
+
+
+    </main>
+    <footer><%- include('../partials/footer') %></footer>
+</body>
+
+</html>

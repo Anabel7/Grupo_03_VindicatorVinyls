@@ -20,7 +20,7 @@
     <div class="contenedor">
       <section class="section-datos">
         <% if(locals.errors) { errors.forEach(error=> { %>
-          <p style="color: red" class="errores">
+          <p style="color: blue" class="errores">
             <%= error.msg %>
           </p>
           <% })} %>
@@ -49,7 +49,7 @@
             </form>
       </section>
     </div>
-    
+
     <section class="opcion-registro">
       <p>¿No tienes cuenta?</p>
       <a href="registro">Registrate</a>
@@ -63,7 +63,7 @@
       <a href="https://www.mayoclinic.org/es/healthy-lifestyle/healthy-aging/in-depth/memory-loss/art-20046518">¿Olvidaste
         tu contraseña?</a>
     </section>
-   
+
   </main>
 
   <footer><%- include('../partials/footer') %></footer>

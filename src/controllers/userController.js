@@ -96,5 +96,8 @@ const controller = {
     req.session.destroy();
     res.redirect("/");
   },
+  perfil: (req,res) => {
+    res.render("user/perfil", { user: req.session.usuario })
+  }
 };
 module.exports = controller;
