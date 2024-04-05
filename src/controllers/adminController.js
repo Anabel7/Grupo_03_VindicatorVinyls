@@ -16,7 +16,7 @@ const controller = {
     }
   },
   create: async (req, res) => {
-    const user = req.session.usuario;
+    // const user = req.session.usuario;
     let errors = validationResult(req);
     try {
       let user = req.session.usuario;
@@ -29,9 +29,9 @@ const controller = {
     
       res.render("admin/agregarProducto", {
         errors: errors.array(),
+        user,
         old: req.body,
         products,
-        user,
         genres,
         artists,
         labels,
@@ -107,7 +107,6 @@ const controller = {
       const product = await db.Product.findByPk(req.params.id, {
         include: ["artist", "label", "genre"],
       });
-      console.log('producto: ', product.label);
       res.render("admin/detalles", { product, user });
     } catch (error) {
       console.log("Ha ocurrido un error" + error.message);
