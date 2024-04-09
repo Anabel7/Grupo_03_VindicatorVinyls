@@ -40,7 +40,7 @@ module.exports = {
           username: usuario.user,
           email: usuario.email,
           rol: usuario.rol,
-          avatar: `/img/users/${usuario.avatar_path}`,
+          avatar: `http://localhost:3001/img/users/${usuario.avatar_path}`,
         };
         res.status(200).json({
           data: dataUser,

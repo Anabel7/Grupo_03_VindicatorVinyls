@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const methodOverride = require("method-override");
 const port = 3001;
+const cors = require('cors');
 //Requiero los paquetes para trabajar con session y cookies
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
@@ -19,6 +20,12 @@ app.use(
     saveUninitialized: false,
   })
 );
+//Middleware de CORS
+app.use(cors({
+  origin: 'http://localhost:5173', // Permitir solicitudes solo desde este origen (incluyendo el puerto)
+  methods: ['GET', 'POST'], // Permitir solo estos métodos HTTP
+  allowedHeaders: ['Content-Type', 'Authorization'], // Permitir solo estos encabezados
+}));
 
 //Middleware para activar lo referido a cookies
 app.use(cookieParser());

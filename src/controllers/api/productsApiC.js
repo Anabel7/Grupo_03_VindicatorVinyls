@@ -12,13 +12,15 @@ module.exports = {
         //creamos el objeto para contar los productos por categoría
         const countByCategory = {};
 
+ // Inicializar todas las categorías con un recuento de 0
+        db.Genre.findAll().then((genres) => {
+          genres.forEach((genre) => {
+            countByCategory[genre.genre_name] = 0;
+          });
+
         discos.forEach((product) => {
           let genero = product.genre.genre_name;
-          if (countByCategory[genero]) {
-            countByCategory[genero]++;
-          } else {
-            countByCategory[genero] = 1;
-          }
+          countByCategory[genero]++;
         });
         //creamos el array para los detalles de los productos
         const products = discos.map((product) => {
@@ -34,8 +36,8 @@ module.exports = {
             id: product.product_id,
             name: product.product_title,
             description: product.product_info,
-            labels: product.label_name,
-            detail: `/api/products/${product.product_id}`,
+            labels: product.label.label_name,
+            detail: `http://localhost:3001/api/products/${product.product_id}`,
           };
         });
 
@@ -44,6 +46,7 @@ module.exports = {
           countByCategory: countByCategory,
           products: products,
           status: 200,
+        });
         });
       })
       .catch((error) => {
@@ -66,7 +69,7 @@ module.exports = {
         tracklist: disco.tracklist,
         stock: disco.stock,
         release_date: disco.release_date,
-        cover_path: `/img/products/${disco.cover_path}`,
+        cover_path: `http://localhost:3001/img/products/${disco.cover_path}`,
         artist: disco.artist.artist_name,
         genre: disco.genre.genre_name,
         labels:
@@ -90,13 +93,4 @@ module.exports = {
     });
     return res.status(200).json("No encontramos resultados");
   },
-  //   store: (req, res) => {
-  //     db.Product.create(req.body).then((disco) => {
-  //       return res.status(200).json({
-  //         data: disco,
-  //         status: 200,
-  //         created: 'ok'
-  //       });
-  //     });
-  //   },
 };
