@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vindicator Vynyls - Géneros</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+
+        <main>
+            <div class="banner-index">
+                <img src="img/tiendita vinilos.png" alt="tienda de vinilos" />
+            </div>
+
+            <section class="section-categorias">
+                <div class="texto-categorias">
+                    <h1>Categorías</h1>
+                </div>
+
+                <ul class="links-categorias">
+                    <li>
+                        <figure>
+                            <img src="/img/rock.png" alt="Categoría Rock" />
+                            <figcaption><a href="/generos/rock">Rock</a></figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="/img/pop.png" alt="Categoría Pop" />
+                            <figcaption><a href="/generos/pop">Pop</a></figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="/img/jazz.png" alt="Categoría Jazz" />
+                            <figcaption><a href="/generos/jazz">Jazz</a></figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="/img/hip-hop.png" alt="Categoría Hip Hop" />
+                            <figcaption><a href="/generos/hiphop">Hip Hop</a></figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="/img/electronica.png" alt="Categoría Electrónica" />
+                            <figcaption><a href="/generos/electronica">Electrónica</a></figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="/img/metal.png" alt="Categoría Metal" />
+                            <figcaption><a href="/generos/metal">Metal</a></figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="/img/clasica.png" alt="Categoría Clásica" />
+                            <figcaption><a href="/generos/clasica">Música clásica/Sinfónica</a></figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="/img/ritmoslatinos.png" alt="Categoría latinos" />
+                            <figcaption><a href="/generos/ritmoslatinos">Ritmos Latinos</a></figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="/img/experimental.png" alt="Categoría Indie" />
+                            <figcaption><a href="/generos/indie">Música Experimental / Indie</a></figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="/img/otros.png" alt="Categoría extra" />
+                            <figcaption><a href="/generos/otros">Otros</a></figcaption>
+                        </figure>
+                    </li>
+                </ul>
+            </section>
+
+            <div class="barra-busqueda">
+                <input class="barra-busqueda" type="search" name="busqueda" id="busqueda" placeholder="Buscar..." />
+            </div>
+
+        </main>
+
+        <%- include('./partials/footer') %>
+
+</body>
+
+</html>

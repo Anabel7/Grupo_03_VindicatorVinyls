@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Música rawk lml</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+
+        <main>
+            <div class="banner-index">
+                <img src="/img/rockbands.jpg" alt="bandas de rawk" />
+            </div>
+
+            <section class="section-categorias">
+                <div class="texto-categorias">
+                    <h1>Vinilos de Rock</h1>
+                </div>
+            </section>
+
+            <section class="productos-container">
+                <% products.forEach(product=> { %>
+                    <% if (product.genre_id===1) { %>
+                        <figure class="box-producto">
+                            <a href="/producto/detalles/<%= product.product_id %>">
+                                <img src="/img/products/<%= product.cover_path %>"
+                                    alt="Portada álbum <%= product.product_title %>" />
+                                <figcaption>
+                                    <h3>
+                                        <%= product.artist.artist_name %> - <%= product.product_title %>
+                                    </h3>
+                                    <span>$<%= product.price %></span>
+                                </figcaption>
+                            </a>
+                        </figure>
+                        <% } %>
+                            <% }); %>
+            </section>
+
+            <div class="barra-busqueda">
+                <input class="barra-busqueda" type="search" name="busqueda" id="busqueda" placeholder="Buscar..." />
+            </div>
+
+        </main>
+
+        <%- include('./partials/footer') %>
+
+</body>
+
+</html>

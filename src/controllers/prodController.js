@@ -19,7 +19,7 @@ const controller = {
     try {
       const user = req.session.usuario;
       const products = await db.Product.findAll({
-        include: [{ model: db.Artist, as: "artist" }],
+        include: ["artist"],
       });
       res.render("producto/listado", { products, user });
     } catch (error) {

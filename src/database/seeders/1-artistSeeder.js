@@ -70,6 +70,27 @@ module.exports = {
                 artist_path: 'mfdoom.jpg',
                 created_at: new Date(),
                 updated_at: new Date()
+            },
+            {
+                artist_name: 'Gustavo Cerati',
+                artist_info: "Gustavo Adrián Cerati, conocido como Gustavo Cerati, fue un músico, cantautor y productor discográfico argentino que obtuvo reconocimiento internacional por haber sido el líder, vocalista, compositor y guitarrista de la banda de rock Soda Stereo. Parte de la prensa especializada y músicos lo consideran como uno de los artistas más influyentes del rock latinoamericano.",
+                artist_path: 'cerati.jpg',
+                created_at: new Date(),
+                updated_at: new Date()
+            },
+            {
+                artist_name: 'BTS',
+                artist_info: "BTS (en hangul, 방탄소년단; romanización revisada del coreano, Bangtan Sonyeondan; literalmente, «Bulletproof Boy Scouts»), también conocido como Bangtan Boys, es un grupo surcoreano formado en 2010. Está compuesto por siete integrantes: Jin, Suga, J-Hope, RM, Jimin, V y Jungkook. A pesar de haber sido creado con un estilo principalmente hip hop, ha llegado a incorporar una gran variedad de géneros en su repertorio musical.",
+                artist_path: 'bts.jpg',
+                created_at: new Date(),
+                updated_at: new Date()
+            },
+            {
+                artist_name: 'Deafheaven',
+                artist_info: 'Deafheaven es una banda estadounidense formada en el 2010 en San Francisco, California. El grupo es caracterizado por sus presentaciones en vivo. Aunque el grupo definió en una entrevista, que ellos no se catalogan como un grupo puramente de "black metal", pero si conservando los sonidos del metal y el rock. También el grupo pertenecía a la llamada escena musical del blackgaze, aunque más recientemente con la salida de su último álbum titulado "Infinite Granite" han dado un giro musical para volcarse concretamente en el dream pop y shoegazing.',
+                artist_path: 'bts.jpg',
+                created_at: new Date(),
+                updated_at: new Date()
             }
         ], {});
     },

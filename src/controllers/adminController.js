@@ -16,7 +16,7 @@ const controller = {
     }
   },
   create: async (req, res) => {
-    const user = req.session.usuario;
+    // const user = req.session.usuario;
     let errors = validationResult(req);
     try {
       let user = req.session.usuario;
@@ -29,9 +29,9 @@ const controller = {
     
       res.render("admin/agregarProducto", {
         errors: errors.array(),
+        user,
         old: req.body,
         products,
-        user,
         genres,
         artists,
         labels,
@@ -182,7 +182,6 @@ const controller = {
           where: { product_id: req.params.id },
         }
       );
-
       res.redirect("/admin");
     } catch (error) {
       console.log("Ha ocurrido un error: " + error.message);

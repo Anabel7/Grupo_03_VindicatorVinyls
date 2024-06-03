@@ -1,6 +1,7 @@
 window.addEventListener("load", function () {
-    let formularioRegistro = document.querySelector("form.formCargarDatos");
-    formularioRegistro.addEventListener("submit", function (e) {
+    let formularioProducto = document.querySelector("form.formCargarDatos");
+    formularioProducto.addEventListener("submit", function (e) {
+        e.preventDefault();
 
         let errores = [];
         let campoDisk = document.querySelector("#disco");
@@ -17,7 +18,7 @@ window.addEventListener("load", function () {
             errores.push("El nombre debe superar los 5 caracteres")
         }
 
-        let campoPrecio = document.querySelector("#artista");
+        let campoPrecio = document.querySelector("#precio");
         if (campoPrecio.value == null) {
             errores.push("Nada es gratis")
         }
@@ -57,11 +58,41 @@ window.addEventListener("load", function () {
     });
 
 
-    if (errores.length < 0) {
+    if (errores.length > 0) {
         e.preventDefault();
         let ulErrores = document.querySelector("div.errores2 ul");
+        ulErrores.innerHTML = "";
         for (let i = 0; i < errores.length; i++) {
             ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
         }
+    }
+    else {
+        fetch("http://localhost:3001/api/products")
+            .then((response) => response.json())
+            .then((data) => {
+                let productos = data.products;
+                let productoExistente = productos.find(
+                    (product) => {
+                        return product.name === campoDisk.value;
+                    }
+                );
+                if (productoExistente) {
+                    e.preventDefault();
+                    errores.push(
+                        "Este producto ya está registrado en nuestra base de datos."
+                    );
+                    let ulErrores = document.querySelector("div.errores2 ul");
+                    ulErrores.innerHTML = ""; // Limpiar los errores anteriores
+                    for (let i = 0; i < errores.length; i++) {
+                        ulErrores.innerHTML += "<li>" + errores[i] + "</li>";
+                    }
+                } else {
+                    // Se puede enviar el formulario
+                    formularioProducto.submit();
+                }
+            })
+            .catch((error) => {
+                console.error("Error al realizar la solicitud fetch:", error);
+            });
     }
 })

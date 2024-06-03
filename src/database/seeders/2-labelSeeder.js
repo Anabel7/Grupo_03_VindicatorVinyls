@@ -112,6 +112,27 @@ module.exports = {
                 label_path: '../../public/img/labels/lex.jpg',
                 created_at: new Date(),
                 updated_at: new Date()
+            },
+            {
+                label_name: 'DGC Records',
+                label_info: 'DGC Records es un sello discográfico estadounidense propiedad de Universal Music Group, fundado por David Geffen el 20 de marzo de 1990. Actualmente opera como sello auxiliar de Interscope Records.',
+                label_path: '../../public/img/labels/dgc.jpg',
+                created_at: new Date(),
+                updated_at: new Date()
+            },
+            {
+                label_name: 'Big Hit Music',
+                label_info: 'Big Hit Music (en hangul, 빅히트 뮤직), anteriormente Big Hit Entertainment, es una empresa de entretenimiento surcoreana fundada en 2005 por Bang Si-hyuk. Fue renombrada como Big Hit Music por su empresa matriz HYBE, antes Big Hit Entertainment Co., Ltd... A fecha de 2022, tiene contrato con el solista Lee Hyun, los grupos BTS y TXT.',
+                label_path: '../../public/img/labels/bighit.jpg',
+                created_at: new Date(),
+                updated_at: new Date()
+            },
+            {
+                label_name: 'Deathwish Inc.',
+                label_info: "Deathwish Inc. es un sello discográfico independiente estadounidense fundado en 2000 por Jacob Bannon y Tre McCarthy en Boston, Massachusetts. La etiqueta se especializa en música hardcore punk, metal y otros géneros relacionados. A lo largo de los años, Deathwish ha ganado reconocimiento por lanzar música innovadora y emocionante de artistas influyentes en la escena underground. Su catálogo incluye álbumes de bandas como Converge, Code Orange, Deafheaven, Touché Amoré, Harm's Way, y muchas más.",
+                label_path: '../../public/img/labels/deathwish.jpg',
+                created_at: new Date(),
+                updated_at: new Date()
             }
         ], {});
     },

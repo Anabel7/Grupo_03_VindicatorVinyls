@@ -16,17 +16,21 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/agregarProducto.css" />
   </head>
+
   <body>
     <%- include('../partials/header') %>
     <div class="titulo-agregar">
       <h1>Agregar Producto</h1>
     </div>
+    <div class="errores2" style="color: red">
+      <ul></ul>
+    </div>
     <section class="admin-section">
       <div class="contenedor-form">
-        <% if (errors && errors.length > 0) { %>
+        <% if (errors && errors.length> 0) { %>
         <div style="color: red">
           <ul class="errores">
-            <% errors.forEach(error => { %>
+            <% errors.forEach(error=> { %>
             <li><%= error.msg %></li>
             <% }); %>
           </ul>
@@ -53,7 +57,7 @@
 
           <label for="artista">Artista:</label><br />
           <select name="artist_name" id="artista">
-            <% artists.forEach(artist => { %>
+            <% artists.forEach(artist=> { %>
             <option value="<%= artist.artist_name %>">
               <%= artist.artist_name %>
             </option>
@@ -62,7 +66,7 @@
 
           <label for="genero">Género:</label><br />
           <select name="genre_name" id="genero">
-            <% genres.forEach(genre => { %>
+            <% genres.forEach(genre=> { %>
             <option value="<%= genre.genre_name %>">
               <%= genre.genre_name %>
             </option>
@@ -107,7 +111,7 @@
 
           <label for="discografica">Discográfica</label><br />
           <select name="label_name" id="discografica">
-            <% labels.forEach(label => { %>
+            <% labels.forEach(label=> { %>
             <option value="<%= label.label_name %>">
               <%= label.label_name %>
             </option>
@@ -127,7 +131,7 @@
         </button>
       </a>
     </div>
-    <script src="/public/js/validatorPro.js"></script>
     <%- include('../partials/footer') %>
+    <script src="/public/js/validatorPro.js"></script>
   </body>
 </html>

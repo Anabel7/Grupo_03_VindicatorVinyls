@@ -42,10 +42,10 @@ body {
   display: none;
 }
 table {
-  width: 80%;
+  width: 90%;
   border-collapse: collapse;
   background-color: #222823;
-  margin-bottom: 10vh;
+  margin: auto;
 }
 table,
 th,
